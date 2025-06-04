@@ -1,0 +1,98 @@
+{
+  "Pricing": {
+    "title": "Flexible Preisgestaltung",
+    "description": "Wählen Sie den Plan, der am besten zu Ihren Bedürfnissen passt. Von einer soliden Grundlage bis hin zu einer vollständig optimierten Lösung.",
+    "billingToggle": {
+      "annual": "Jährlich",
+      "monthly": "Monatlich"
+    },
+    "whatsIncluded": "Was ist enthalten",
+    "plans": {
+      "monthly": [
+        {
+          "name": "Basic",
+          "price": "$799 /Monat",
+          "description": "Für kleine Unternehmen oder Startups, die ihre erste digitale Präsenz aufbauen.",
+          "button": "Diesen Plan wählen",
+          "features": [
+            "Wettbewerbsanalyse",
+            "Design der Startseite + bis zu 4 Unterseiten",
+            "Erstellung individueller Seitenprototypen",
+            "Einrichtung grundlegender Analysen (z. B. Google Analytics)",
+            "Fehlerbehebung und Testunterstützung"
+          ]
+        },
+        {
+          "name": "Pro",
+          "price": "$1.999 /Monat",
+          "description": "Für kleine Unternehmen oder Startups, die ihre erste digitale Präsenz aufbauen.",
+          "button": "Diesen Plan wählen",
+          "features": [
+            "Wettbewerbsanalyse",
+            "Design der Startseite + bis zu 4 Unterseiten",
+            "Erstellung individueller Seitenprototypen",
+            "Einrichtung grundlegender Analysen (z. B. Google Analytics)",
+            "Fehlerbehebung und Testunterstützung"
+          ]
+        },
+        {
+          "name": "Max Premium",
+          "price": "$1.999 /Monat",
+          "description": "Für kleine Unternehmen oder Startups, die ihre erste digitale Präsenz aufbauen.",
+          "button": "Diesen Plan wählen",
+          "features": [
+            "Wettbewerbsanalyse",
+            "Design der Startseite + bis zu 4 Unterseiten",
+            "Erstellung individueller Seitenprototypen",
+            "Einrichtung grundlegender Analysen (z. B. Google Analytics)",
+            "Fehlerbehebung und Testunterstützung"
+          ]
+        }
+      ],
+      "yearly": []
+    }
+  },
+  "FAQ": {
+    "title": "FAQ",
+    "description": "Wir haben schon alles gehört. Hier ist alles, was Sie wissen müssen, bevor Sie mit uns zusammenarbeiten.",
+    "questions": [
+      "Wie läuft der Prozess zur Gestaltung und Entwicklung einer neuen Website ab?",
+      "Was ist, wenn ich in Zukunft Änderungen vornehmen oder Funktionen hinzufügen möchte?",
+      "Bieten Sie SEO-Dienstleistungen an?",
+      "Wie lange dauert es in der Regel, bis man Ergebnisse von der neuen Website meiner Marke sieht?",
+      "Wie stellen Sie sicher, dass die Website mobilfreundlich ist?"
+    ]
+  },
+  "Contact": {
+    "title": "Lassen Sie uns Ihre Vision verwirklichen",
+    "description": "John ist hier, um sicherzustellen, dass Ihre Erfahrung mit uns reibungslos und erfolgreich verläuft. Melden Sie sich jederzeit – er sorgt dafür, dass Sie sich während Ihrer gesamten Reise mit uns sicher und gut betreut fühlen.",
+    "form": {
+      "name": "Name*",
+      "email": "E-Mail*",
+      "message": "Nachricht (Erzählen Sie uns von Ihrem Projekt)"
+    }
+  },
+  "Footer": {
+    "newsletterTitle": "Bleiben Sie in Verbindung",
+    "newsletterDescription": "Abonnieren Sie unseren Newsletter und bleiben Sie auf dem neuesten Stand der digitalen Designtrends",
+    "emailPlaceholder": "E-Mail",
+    "links": {
+      "about": "Über uns",
+      "projects": "Projekte",
+      "blog": "Blog",
+      "content": "Inhalt",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "error404": "404",
+      "twitter": "Twitter",
+      "behance": "Behance",
+      "instagram": "Instagram",
+      "dribbble": "Dribbble"
+    },
+    "contact": {
+      "phone": "(+92) 300 9999999",
+      "email": "hello@reemstudio.com"
+    },
+    "description": "Mit Reem erhält Ihr Unternehmen mehr als nur eine Website. Wir gestalten Erlebnisse, die bei Ihren Kunden Anklang finden und sinnvolle Interaktionen fördern."
+  }
+}

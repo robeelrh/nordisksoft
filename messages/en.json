@@ -1,0 +1,98 @@
+{
+  "Pricing": {
+    "title": "Flexible pricing",
+    "description": "Choose the plan that best fits your needs. From a solid foundation to a fully optimized solution.",
+    "billingToggle": {
+      "annual": "Annual",
+      "monthly": "Monthly"
+    },
+    "whatsIncluded": "What’s Included",
+    "plans": {
+      "monthly": [
+        {
+          "name": "Basic",
+          "price": "$799 /month",
+          "description": "For small businesses or startups building their first digital presence.",
+          "button": "Choose this plan",
+          "features": [
+            "Competitor analysis",
+            "Design of homepage + up to 4 inner pages",
+            "Creation of custom page prototypes",
+            "Basic analytics setup (e.g., Google Analytics)",
+            "Bug fixing and testing support"
+          ]
+        },
+        {
+          "name": "Pro",
+          "price": "$1,999 /month",
+          "description": "For small businesses or startups building their first digital presence.",
+          "button": "Choose this plan",
+          "features": [
+            "Competitor analysis",
+            "Design of homepage + up to 4 inner pages",
+            "Creation of custom page prototypes",
+            "Basic analytics setup (e.g., Google Analytics)",
+            "Bug fixing and testing support"
+          ]
+        },
+        {
+          "name": "Max Premium",
+          "price": "$1,999 /month",
+          "description": "For small businesses or startups building their first digital presence.",
+          "button": "Choose this plan",
+          "features": [
+            "Competitor analysis",
+            "Design of homepage + up to 4 inner pages",
+            "Creation of custom page prototypes",
+            "Basic analytics setup (e.g., Google Analytics)",
+            "Bug fixing and testing support"
+          ]
+        }
+      ],
+      "yearly": []
+    }
+  },
+  "FAQ": {
+    "title": "FAQ",
+    "description": "We've heard it all. Here's everything you need to know before working with us.",
+    "questions": [
+      "What's your process for designing and developing a new website?",
+      "What if I need to make changes or add features in the future?",
+      "Do you offer SEO services?",
+      "How long does it typically take to see results from my brand’s new website?",
+      "How do you ensure the website is mobile-friendly?"
+    ]
+  },
+  "Contact": {
+    "title": "Let’s bring your vision to life",
+    "description": "John is here to ensure your experience with us is smooth and successful. Reach out anytime — he’s here to make sure you feel confident and supported throughout your journey with us.",
+    "form": {
+      "name": "Name*",
+      "email": "E-mail*",
+      "message": "Message (Tell us about your project)"
+    }
+  },
+  "Footer": {
+    "newsletterTitle": "Stay connected",
+    "newsletterDescription": "Join our newsletter and stay updated on the latest trends in digital design",
+    "emailPlaceholder": "E-mail",
+    "links": {
+      "about": "About",
+      "projects": "Projects",
+      "blog": "Blog",
+      "content": "Content",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "error404": "404",
+      "twitter": "Twitter",
+      "behance": "Behance",
+      "instagram": "Instagram",
+      "dribbble": "Dribbble"
+    },
+    "contact": {
+      "phone": "(+92) 300 9999999",
+      "email": "hello@reemstudio.com"
+    },
+    "description": "With reem, your company gets more than just a website. We design experiences that resonate with your customers and drive meaningful engagement."
+  }
+}
