@@ -1,4 +1,79 @@
 {
+  "HeroSection": {
+    "headlineMain": "Digital",
+    "headlineSub": "Design Studio",
+    "description": "Wir erstellen digitale Designs, die Marken helfen, schneller zu agieren und besser zu konvertieren. Ihr Unternehmen verdient mehr als nur eine Website. Es braucht Ergebnisse."
+  },
+  "Navigation": {
+    "reem": "REEM",
+    "about": "ÜBER UNS",
+    "services": "DIENSTLEISTUNGEN",
+    "contact": "KONTAKT",
+    "menu": "MENÜ"
+  },
+  "StatsSection": {
+    "headlineMain": "Unsere Arbeit spricht durch Zahlen.",
+    "headlineSub": "Das haben wir bisher erreicht.",
+    "metrics": [
+      {
+        "label": "19+",
+        "title": "Veröffentlichte Websites",
+        "description": "Wir helfen Marken, online sichtbar zu werden."
+      },
+      {
+        "label": "1,2M+",
+        "title": "Erreichte Nutzer",
+        "description": "Unsere Designs begeistern Millionen weltweit."
+      },
+      {
+        "label": "98%",
+        "title": "Kundenzufriedenheitsrate",
+        "description": "Wir bauen langfristige Partnerschaften durch messbare Ergebnisse auf."
+      },
+      {
+        "label": "12+",
+        "title": "Jahre Erfahrung",
+        "description": "Jahrzehntelange Erfahrung in der Umsetzung wirkungsvoller digitaler Lösungen."
+      }
+    ]
+  },
+  "CommitmentSection": {
+    "headline": "Ihre Ziele, unsere Priorität",
+    "description": "Von der Idee bis zum Start setzen wir uns für Ihren Erfolg ein – mit schnellen Reaktionszeiten und individueller Liebe zum Detail."
+  },
+  "Services": {
+    "title": "Unsere Dienstleistungen",
+    "items": [
+      {
+        "id": "01",
+        "title": "Branding",
+        "description": "Wir schaffen wirkungsvolle Markenidentitäten, die Ihr Unternehmen differenzieren und eine Verbindung zu Ihrem Publikum herstellen."
+      },
+      {
+        "id": "02",
+        "title": "Entwicklung",
+        "description": "Wir entwickeln schnelle, skalierbare und sichere Web- und Mobilanwendungen, die auf Ihre Geschäftsziele zugeschnitten sind."
+      },
+      {
+        "id": "03",
+        "title": "Websites",
+        "description": "Wir entwerfen und entwickeln responsive, benutzerfreundliche Websites, die Ihre Online-Präsenz stärken."
+      },
+      {
+        "id": "04",
+        "title": "Designunterstützung",
+        "description": "Unser Team bietet kontinuierliche Designunterstützung, um sicherzustellen, dass Ihre visuellen Inhalte konsistent und wirkungsvoll bleiben."
+      }
+    ]
+  },
+  "About": {
+    "quote": "Reem hilft Unternehmen, beeindruckende und strategisch durchdachte Erlebnisse zu schaffen, die das Publikum fesseln. Unsere Experten arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass jedes Detail mit Ihren Zielen übereinstimmt.",
+    "description": "Von der Idee bis zur Umsetzung entwickeln wir digitale Lösungen, die nicht nur außergewöhnlich aussehen, sondern auch Ergebnisse liefern und dauerhafte Verbindungen schaffen.",
+    "person": {
+      "name": "Alice Wilson",
+      "title": "Projektmanagerin und Gründerin"
+    }
+  },
   "Pricing": {
     "title": "Flexible Preisgestaltung",
     "description": "Wählen Sie den Plan, der am besten zu Ihren Bedürfnissen passt. Von einer soliden Grundlage bis hin zu einer vollständig optimierten Lösung.",

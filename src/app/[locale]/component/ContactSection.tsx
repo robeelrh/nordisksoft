@@ -1,4 +1,4 @@
-import { ContactBG } from "@/assets";
+import { ContactBG } from "@/assests";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
@@ -7,7 +7,10 @@ export default function ContactSection() {
   const t = useTranslations("Contact");
 
   return (
-    <section className="relative h-[60vh] w-full flex items-start justify-center">
+    <section
+      id="contact"
+      className="relative h-[60vh] w-full flex items-start justify-center"
+    >
       <Image
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         alt="Background Image"

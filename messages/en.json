@@ -1,4 +1,79 @@
 {
+  "HeroSection": {
+    "headlineMain": "Digital",
+    "headlineSub": "Design Studio",
+    "description": "We create digital designs that help brands move faster and convert better. Your business deserves more than just a website. It needs results."
+  },
+  "Navigation": {
+    "reem": "REEM",
+    "about": "ABOUT",
+    "services": "SERVICES",
+    "contact": "CONTACT",
+    "menu": "MENU"
+  },
+  "StatsSection": {
+    "headlineMain": "Our work speaks through numbers.",
+    "headlineSub": "Here’s what we’ve achieved so far.",
+    "metrics": [
+      {
+        "label": "19+",
+        "title": "Websites launched",
+        "description": "Helping brands make their mark online."
+      },
+      {
+        "label": "1.2M+",
+        "title": "Users reached",
+        "description": "Our designs engage millions globally."
+      },
+      {
+        "label": "98%",
+        "title": "Client satisfaction rate",
+        "description": "We build long-term partnerships through proven results."
+      },
+      {
+        "label": "12+",
+        "title": "Years of expertise",
+        "description": "Decades of experience in delivering impactful digital solutions."
+      }
+    ]
+  },
+  "CommitmentSection": {
+    "headline": "Your goals, our priority",
+    "description": "From concept to launch, we're committed to your success with rapid response times and personalized attention to detail."
+  },
+  "Services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "id": "01",
+        "title": "Branding",
+        "description": "We create impactful brand identities that differentiate your business and connect with your audience."
+      },
+      {
+        "id": "02",
+        "title": "Development",
+        "description": "We build fast, scalable, and secure web and mobile applications tailored to your business goals."
+      },
+      {
+        "id": "03",
+        "title": "Websites",
+        "description": "We design and develop responsive, user-friendly websites that enhance your online presence."
+      },
+      {
+        "id": "04",
+        "title": "Design support",
+        "description": "Our team offers ongoing design assistance to ensure your visual assets remain consistent and effective."
+      }
+    ]
+  },
+  "About": {
+    "quote": "Reem helps companies create stunning and strategically sound experiences that engage audiences. Our experts work closely with you to ensure that every detail is aligned with your goals.",
+    "description": "From concept to launch, we craft digital solutions that not only look exceptional but also drive results, building connections that last.",
+    "person": {
+      "name": "Alice Wilson",
+      "title": "Project manager and founder"
+    }
+  },
   "Pricing": {
     "title": "Flexible pricing",
     "description": "Choose the plan that best fits your needs. From a solid foundation to a fully optimized solution.",
