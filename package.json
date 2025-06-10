@@ -12,6 +12,7 @@
     "@fontsource/inter": "^5.2.5",
     "@fontsource/koulen": "^5.2.5",
     "@hookform/resolvers": "^5.0.1",
+    "framer-motion": "^12.16.0",
     "lucide-react": "^0.511.0",
     "next": "15.3.3",
     "next-intl": "^4.1.0",

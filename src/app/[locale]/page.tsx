@@ -7,12 +7,14 @@ import ServiceSection from "./component/ServiceSection";
 import HeroSection from "./component/HeroSection";
 import StatsSection from "./component/StatsSection";
 import CommitmentSection from "./component/CommitmentSection";
+import TransformationSection from "./component/TransformationSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <StatsSection />
+      <TransformationSection />
       <CommitmentSection />
       <ServiceSection />
       <AboutSection />
