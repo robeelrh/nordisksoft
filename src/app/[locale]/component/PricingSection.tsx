@@ -88,6 +88,7 @@ export default function PricingSection() {
         variants={slideFromBottom}
         initial="hidden"
         whileInView="visible"
+        transition={{ delay: 0.3 }}
         viewport={{ once: true, amount: 0.3 }}
       >
         <PricingPlans isMonthly={isMonthly} />

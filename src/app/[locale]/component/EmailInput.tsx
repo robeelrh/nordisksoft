@@ -7,7 +7,6 @@ export default function EmailInput() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = () => {
-    console.log("Email submitted:", email);
     setEmail("");
   };
 

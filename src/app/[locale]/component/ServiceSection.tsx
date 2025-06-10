@@ -155,9 +155,11 @@ export default function ServiceSection() {
                     >
                       {service.title}
                     </motion.p>
-                    <span className="text-xm font-medium text-white">{`{${
-                      index + 1
-                    }}`}</span>
+                    <span
+                      className={`text-xm font-medium  ${
+                        isSelected ? "text-[#F4F4F5]" : "text-[#F4F4F580]"
+                      }`}
+                    >{`{${index + 1}}`}</span>
                   </div>
                   <motion.div
                     className="border-t border-[#FFFFFF80]"

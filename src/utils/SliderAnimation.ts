@@ -18,11 +18,9 @@ export const slideFromTop = {
     transition: {
       duration: 0.8,
       ease: "easeOut",
-      delay: 0.2,
     },
   },
 };
-
 
 export const slideFromRight = {
   hidden: { opacity: 0, x: 50 },
@@ -32,7 +30,7 @@ export const slideFromRight = {
     transition: {
       duration: 0.8,
       ease: "easeOut",
-      delay: 0.4,
+      // delay: 0.4,
     },
   },
 };
@@ -45,7 +43,7 @@ export const slideFromBottom = {
     transition: {
       duration: 0.8,
       ease: "easeOut",
-      delay: 0.3,
+      // delay: 0.3,
     },
   },
 };
@@ -57,6 +55,23 @@ export const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const slideFromBack = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8,
+    rotateX: 45,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotateX: 0,
+    transition: {
+      duration: 1,
       ease: "easeOut",
     },
   },

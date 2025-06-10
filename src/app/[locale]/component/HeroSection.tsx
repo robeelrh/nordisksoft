@@ -5,61 +5,15 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "./Navbar";
+import {
+  slideFromBottom,
+  slideFromLeft,
+  slideFromRight,
+  slideFromTop,
+} from "@/utils/SliderAnimation";
 
 export default function HeroSection() {
   const t = useTranslations("HeroSection");
-
-  // Animation variants
-  const slideFromTopZeroDelay = {
-    hidden: { opacity: 0, y: -50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const slideFromLeft = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-        delay: 0.3,
-      },
-    },
-  };
-
-  const slideFromRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-        delay: 0.6,
-      },
-    },
-  };
-
-  const slideFromBottom = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0.9,
-      },
-    },
-  };
 
   return (
     <section className="relative h-[110vh] w-full flex items-start justify-center">
@@ -73,7 +27,12 @@ export default function HeroSection() {
 
       <div className="z-10 flex flex-col w-full h-full">
         {/* Navbar - slide from top */}
-        <motion.div variants={slideFromTopZeroDelay} initial="hidden" animate="visible">
+        <motion.div
+          variants={slideFromTop}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2 }}
+        >
           <Navbar />
         </motion.div>
 
@@ -84,6 +43,7 @@ export default function HeroSection() {
             variants={slideFromLeft}
             initial="hidden"
             animate="visible"
+            transition={{ delay: 0.3 }}
           >
             {t("headlineMain")}
           </motion.p>
@@ -94,6 +54,7 @@ export default function HeroSection() {
             variants={slideFromRight}
             initial="hidden"
             animate="visible"
+            transition={{ delay: 0.6 }}
           >
             {t("headlineSub")}
           </motion.p>
@@ -104,6 +65,7 @@ export default function HeroSection() {
             variants={slideFromBottom}
             initial="hidden"
             animate="visible"
+            transition={{ delay: 0.9 }}
           >
             {t("description")}
           </motion.p>

@@ -4,7 +4,11 @@ import { AliceWilson } from "@/assests";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { fadeInUp, slideFromLeft, slideFromRight } from "@/utils/SliderAnimation";
+import {
+  fadeInUp,
+  slideFromLeft,
+  slideFromRight,
+} from "@/utils/SliderAnimation";
 
 export default function AboutSection() {
   const t = useTranslations("About");
@@ -18,7 +22,6 @@ export default function AboutSection() {
       },
     },
   };
-
 
   return (
     <section id="about" className="h-[80vh] w-11/12 flex items-center mx-auto">
@@ -52,6 +55,7 @@ export default function AboutSection() {
           variants={slideFromRight}
           initial="hidden"
           whileInView="visible"
+          transition={{ delay: 0.5 }}
           viewport={{ once: true, amount: 0.3 }}
         >
           {t("quote")}

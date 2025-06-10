@@ -1,0 +1,177 @@
+{
+  "HeroSection": {
+    "headlineMain": "Digitalt",
+    "headlineSub": "Design Studio",
+    "description": "Vi lager digitale design som hjelper merkevarer med å handle raskere og konvertere bedre. Din bedrift fortjener mer enn bare et nettsted. Den trenger resultater."
+  },
+  "Navigation": {
+    "reem": "REEM",
+    "about": "OM OSS",
+    "services": "TJENESTER",
+    "contact": "KONTAKT",
+    "menu": "MENY"
+  },
+  "StatsSection": {
+    "headlineMain": "Arbeidet vårt snakker i tall.",
+    "headlineSub": "Dette har vi oppnådd så langt.",
+    "metrics": [
+      {
+        "label": "19+",
+        "title": "Lanserte nettsider",
+        "description": "Vi hjelper merkevarer med å bli synlige på nett."
+      },
+      {
+        "label": "1,2M+",
+        "title": "Nådd brukere",
+        "description": "Våre design begeistrer millioner over hele verden."
+      },
+      {
+        "label": "98%",
+        "title": "Kundetilfredshet",
+        "description": "Vi bygger langsiktige partnerskap gjennom målbare resultater."
+      },
+      {
+        "label": "12+",
+        "title": "Års erfaring",
+        "description": "Tiår med erfaring i å levere effektive digitale løsninger."
+      }
+    ]
+  },
+  "TransformationSection": {
+    "headline": "Fra vanlig til ekstraordinært",
+    "subtext": "Design som varer og vokser med din virksomhet"
+  },
+  "CommitmentSection": {
+    "headline": "Dine mål, vår prioritet",
+    "description": "Fra idé til lansering er vi dedikert til din suksess – med raske responstider og fokus på detaljer."
+  },
+  "Services": {
+    "title": "Våre tjenester",
+    "items": [
+      {
+        "id": "01",
+        "title": "Branding",
+        "description": "Vi skaper sterke merkevareidentiteter som skiller din virksomhet ut og knytter bånd til målgruppen din."
+      },
+      {
+        "id": "02",
+        "title": "Utvikling",
+        "description": "Vi utvikler raske, skalerbare og sikre web- og mobilapplikasjoner tilpasset dine forretningsmål."
+      },
+      {
+        "id": "03",
+        "title": "Nettsider",
+        "description": "Vi designer og utvikler responsive, brukervennlige nettsider som styrker din digitale tilstedeværelse."
+      },
+      {
+        "id": "04",
+        "title": "Designstøtte",
+        "description": "Vårt team gir løpende designstøtte for å sikre at ditt visuelle innhold forblir konsistent og effektivt."
+      }
+    ]
+  },
+  "About": {
+    "quote": "Reem hjelper bedrifter med å skape imponerende og strategisk gjennomtenkte opplevelser som engasjerer publikum. Våre eksperter samarbeider tett med deg for å sikre at hvert detalj samsvarer med dine mål.",
+    "description": "Fra idé til gjennomføring utvikler vi digitale løsninger som ikke bare ser fantastiske ut, men også gir resultater og bygger varige forbindelser.",
+    "person": {
+      "name": "Alice Wilson",
+      "title": "Prosjektleder og grunnlegger"
+    }
+  },
+  "Pricing": {
+    "title": "Fleksibel prising",
+    "description": "Velg den planen som passer best for dine behov – fra en solid grunnmur til en fullt optimalisert løsning.",
+    "billingToggle": {
+      "annual": "Årlig",
+      "monthly": "Månedlig"
+    },
+    "whatsIncluded": "Hva er inkludert",
+    "plans": {
+      "monthly": [
+        {
+          "name": "Basic",
+          "price": "$799 /måned",
+          "description": "For små bedrifter eller startups som bygger sin første digitale tilstedeværelse.",
+          "button": "Velg denne planen",
+          "features": [
+            "Konkurrentanalyse",
+            "Design av forside + opptil 4 undersider",
+            "Utvikling av skreddersydde sideprototyper",
+            "Oppsett av grunnleggende analyse (f.eks. Google Analytics)",
+            "Feilretting og teststøtte"
+          ]
+        },
+        {
+          "name": "Pro",
+          "price": "$1.999 /måned",
+          "description": "For små bedrifter eller startups som bygger sin første digitale tilstedeværelse.",
+          "button": "Velg denne planen",
+          "features": [
+            "Konkurrentanalyse",
+            "Design av forside + opptil 4 undersider",
+            "Utvikling av skreddersydde sideprototyper",
+            "Oppsett av grunnleggende analyse (f.eks. Google Analytics)",
+            "Feilretting og teststøtte"
+          ]
+        },
+        {
+          "name": "Max Premium",
+          "price": "$1.999 /måned",
+          "description": "For små bedrifter eller startups som bygger sin første digitale tilstedeværelse.",
+          "button": "Velg denne planen",
+          "features": [
+            "Konkurrentanalyse",
+            "Design av forside + opptil 4 undersider",
+            "Utvikling av skreddersydde sideprototyper",
+            "Oppsett av grunnleggende analyse (f.eks. Google Analytics)",
+            "Feilretting og teststøtte"
+          ]
+        }
+      ],
+      "yearly": []
+    }
+  },
+  "FAQ": {
+    "title": "FAQ",
+    "description": "Vi har hørt det meste. Her er alt du trenger å vite før du samarbeider med oss.",
+    "questions": [
+      "Hvordan foregår prosessen for å designe og utvikle en ny nettside?",
+      "Hva om jeg ønsker å gjøre endringer eller legge til funksjoner senere?",
+      "Tilbyr dere SEO-tjenester?",
+      "Hvor lang tid tar det vanligvis før man ser resultater fra den nye nettsiden?",
+      "Hvordan sikrer dere at nettsiden er mobilvennlig?"
+    ]
+  },
+  "Contact": {
+    "title": "La oss realisere din visjon",
+    "description": "John er her for å sørge for at din opplevelse med oss blir smidig og vellykket. Ta kontakt når som helst – han sørger for at du føler deg trygg og ivaretatt hele veien.",
+    "form": {
+      "name": "Navn*",
+      "email": "E-post*",
+      "message": "Melding (Fortell oss om prosjektet ditt)"
+    }
+  },
+  "Footer": {
+    "newsletterTitle": "Hold kontakten",
+    "newsletterDescription": "Abonner på vårt nyhetsbrev og få siste nytt innen digitale designtrender",
+    "emailPlaceholder": "E-post",
+    "links": {
+      "about": "Om oss",
+      "projects": "Prosjekter",
+      "blog": "Blogg",
+      "content": "Innhold",
+      "privacy": "Personvernerklæring",
+      "terms": "Vilkår og betingelser",
+      "error404": "404",
+      "twitter": "Twitter",
+      "behance": "Behance",
+      "instagram": "Instagram",
+      "dribbble": "Dribbble"
+    },
+    "contact": {
+      "phone": "(+92) 300 9999999",
+      "email": "hello@reemstudio.com"
+    },
+    "description": "Med Reem får din bedrift mer enn bare en nettside. Vi skaper opplevelser som resonerer med kundene dine og fremmer meningsfulle interaksjoner."
+  }
+}

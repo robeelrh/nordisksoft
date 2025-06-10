@@ -5,7 +5,11 @@ import { motion } from "framer-motion";
 import EmailInput from "./EmailInput";
 import { Link } from "@/i18n/navigation";
 import "@fontsource/koulen";
-import { slideFromLeft, slideFromRight, slideFromTop } from "@/utils/SliderAnimation";
+import {
+  slideFromLeft,
+  slideFromRight,
+  slideFromTop,
+} from "@/utils/SliderAnimation";
 
 export default function FooterSection() {
   const t = useTranslations("Footer");
@@ -61,7 +65,6 @@ export default function FooterSection() {
 
   // Animation variants
 
-
   const staggerContainer = {
     hidden: {},
     visible: {
@@ -112,6 +115,7 @@ export default function FooterSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: 0.2 }}
             >
               <div className="lg:text-2xl xl:text-3xl">
                 {t("newsletterTitle")}
@@ -128,6 +132,7 @@ export default function FooterSection() {
               variants={slideFromRight}
               initial="hidden"
               whileInView="visible"
+              transition={{ delay: 0.4 }}
               viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div

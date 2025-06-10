@@ -4,7 +4,11 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
-import { slideFromBottom, slideFromLeft, slideFromRight } from "@/utils/SliderAnimation";
+import {
+  slideFromBottom,
+  slideFromLeft,
+  slideFromRight,
+} from "@/utils/SliderAnimation";
 
 export default function ContactSection() {
   const t = useTranslations("Contact");
@@ -39,6 +43,7 @@ export default function ContactSection() {
             variants={slideFromBottom}
             initial="hidden"
             whileInView="visible"
+            transition={{ delay: 0.3 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="w-2/3">{t("description")}</p>
@@ -50,6 +55,7 @@ export default function ContactSection() {
             variants={slideFromRight}
             initial="hidden"
             whileInView="visible"
+            transition={{ delay: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <ContactForm />

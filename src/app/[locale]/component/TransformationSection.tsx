@@ -1,3 +1,4 @@
+"use client";
 import {
   TransformationArrow,
   TransformationBg,
@@ -5,38 +6,55 @@ import {
   TransformationWhiteText,
 } from "@/assests";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { slideFromBack } from "@/utils/SliderAnimation";
 
 export default function TransformationSection() {
   const t = useTranslations("TransformationSection");
+
+  // Animation for text images coming from behind
 
   return (
     <section className="relative h-[120vh] w-full flex flex-col ">
       <div className="absolute top-0 left-1/4 w-1/2 h-3/5 bg-black z-0" />
 
-      {/* Overlaid Text on Top of Image + Black Box */}
-      <div className="absolute lg:top-13.5 xl:top-5.5 2xl:top-0 lg:left-1/4 lg:w-1/2 flex justify-center  z-20">
-        <div className="relative w-full h-auto">
+      {/* Overlaid White Text on Top of Image + Black Box */}
+      <div className="absolute lg:top-13.5 xl:top-5.5 2xl:top-0 lg:left-1/4 lg:w-1/2 flex justify-center z-20">
+        <motion.div
+          className="relative w-full h-auto"
+          variants={slideFromBack}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Image
             src={TransformationWhiteText}
             alt="Text Image"
             className="w-full h-auto object-contain"
-            width={1000} // or your image's natural width
-            height={212} // maintain aspect ratio
+            width={1000}
+            height={212}
           />
-        </div>
+        </motion.div>
       </div>
 
-      <div className="absolute lg:top-[13.26%] lg:left-[7%] lg:w-[86%] flex justify-center  z-10">
-        <div className="relative w-full h-auto">
+      {/* Black Text Behind */}
+      <div className="absolute lg:top-[13.26%] lg:left-[7%] lg:w-[86%] flex justify-center z-10">
+        <motion.div
+          className="relative w-full h-auto"
+          variants={slideFromBack}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Image
             src={TransformationBlackText}
             alt="Text Image"
             className="w-full h-auto object-contain"
-            width={1000} // or your image's natural width
-            height={212} // maintain aspect ratio
+            width={1000}
+            height={212}
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Top half image */}
