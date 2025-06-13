@@ -1,12 +1,13 @@
-"use client";
-import { Plus } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import { slideFromLeft } from "@/utils/SliderAnimation";
+"use client"
+
+import { Plus } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { motion } from "framer-motion"
+import { slideFromLeft } from "@/utils/SliderAnimation"
 
 export default function FAQSection() {
-  const t = useTranslations("FAQ");
-  const FAQS = t.raw("questions") as string[];
+  const t = useTranslations("FAQ")
+  const FAQS = t.raw("questions") as string[]
 
   const staggerContainer = {
     hidden: {},
@@ -16,10 +17,10 @@ export default function FAQSection() {
         delayChildren: 0.5,
       },
     },
-  };
+  }
 
   const faqItemAnimation = {
-    hidden: { opacity: 0, x: 30 }, // Reduced from 50 to 30
+    hidden: { opacity: 0, x: 30 },
     visible: {
       opacity: 1,
       x: 0,
@@ -28,26 +29,25 @@ export default function FAQSection() {
         ease: "easeOut",
       },
     },
-  };
+  }
 
   return (
-    <section className="h-[60vh] w-full flex items-center lg:px-6 xl:px-10 font-inter overflow-hidden">
-      {" "}
-      {/* Added overflow-hidden */}
+    <section className="min-h-[40vh] w-full flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 md:py-12 font-inter overflow-hidden">
       {/* Left panel - slide from left */}
       <motion.div
-        className="w-2/5"
+        className="w-full lg:w-2/5 mb-6 lg:mb-0"
         variants={slideFromLeft}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <p className="font-semibold lg:text-7xl xl:text-8xl">{t("title")}</p>
-        <p className="text-[#11111180] mt-2 w-2/3">{t("description")}</p>
+        <h2 className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">{t("title")}</h2>
+        <p className="text-[#11111180] mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:w-2/3">{t("description")}</p>
       </motion.div>
+
       {/* FAQ list - slide from right with staggered items */}
       <motion.div
-        className="w-3/5 lg:space-y-2 xl:space-y-4"
+        className="w-full lg:w-3/5 space-y-1 sm:space-y-2 md:space-y-3"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -55,7 +55,7 @@ export default function FAQSection() {
       >
         {FAQS.map((question, index) => (
           <motion.div
-            className="border-b border-black flex justify-between items-center lg:py-3 xl:py-4"
+            className="border-b border-black flex justify-between items-center py-2 sm:py-3 md:py-4"
             key={index}
             variants={faqItemAnimation}
             whileHover={{
@@ -63,7 +63,7 @@ export default function FAQSection() {
               transition: { duration: 0.2 },
             }}
           >
-            <p>{question}</p>
+            <p className="text-sm sm:text-base md:text-lg pr-4">{question}</p>
             <motion.div
               whileHover={{
                 scale: 1.1,
@@ -71,11 +71,11 @@ export default function FAQSection() {
                 transition: { duration: 0.2 },
               }}
             >
-              <Plus className="text-red-500 cursor-pointer" size={15} />
+              <Plus className="text-red-500 cursor-pointer h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
             </motion.div>
           </motion.div>
         ))}
       </motion.div>
     </section>
-  );
+  )
 }

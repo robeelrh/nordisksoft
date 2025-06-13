@@ -1,10 +1,10 @@
-"use client";
-import { motion } from "framer-motion";
+"use client"
+import { motion } from "framer-motion"
 
 interface StatCardProps {
-  label: string;
-  title: string;
-  description: string;
+  label: string
+  title: string
+  description: string
 }
 
 export default function StatCard({ label, title, description }: StatCardProps) {
@@ -24,12 +24,12 @@ export default function StatCard({ label, title, description }: StatCardProps) {
         delay: 0.3,
       },
     },
-  };
+  }
 
   return (
-    <div className="w-full flex flex-col gap-5 font-inter">
+    <div className="w-full flex flex-col gap-3 sm:gap-4 md:gap-5 font-inter">
       <motion.p
-        className="font-semibold text-7xl"
+        className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
         variants={slideFromBack}
         initial="hidden"
         whileInView="visible"
@@ -42,10 +42,10 @@ export default function StatCard({ label, title, description }: StatCardProps) {
         {label}
       </motion.p>
       <div className="w-full h-[1px] bg-black" />
-      <div className="flex flex-col gap-3">
-        <p className="font-semibold text-lg">{title}</p>
-        <p className="text-[#11111180] text-md font-medium">{description}</p>
+      <div className="flex flex-col gap-2 sm:gap-3">
+        <p className="font-semibold text-base sm:text-lg">{title}</p>
+        <p className="text-[#11111180] text-sm sm:text-base md:text-md font-medium">{description}</p>
       </div>
     </div>
-  );
+  )
 }
