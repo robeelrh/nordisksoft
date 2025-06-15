@@ -1,25 +1,27 @@
-"use client"
+"use client";
 
-import { FoodPackage } from "@/assests"
-import { useTranslations } from "next-intl"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { useState } from "react"
-import { fadeInUp, slideFromLeft } from "@/utils/SliderAnimation"
+import { FoodPackage } from "@/assests";
+import { useTranslations } from "next-intl";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
+import { fadeInUp, slideFromLeft } from "@/utils/SliderAnimation";
 
 type TService = {
-  id: number
-  title: string
-  description: string
-}
+  id: number;
+  title: string;
+  description: string;
+};
 
 export default function ServiceSection() {
-  const t = useTranslations("Services")
-  const services = t.raw("items") as TService[]
+  const t = useTranslations("Services");
+  const services = t.raw("items") as TService[];
 
   // Select "Branding" by default
-  const defaultService = services.find((s) => s.title === "Branding") || services[0]
-  const [selectedService, setSelectedService] = useState<TService>(defaultService)
+  const defaultService =
+    services.find((s) => s.title === "Branding") || services[0];
+  const [selectedService, setSelectedService] =
+    useState<TService>(defaultService);
 
   const staggerContainer = {
     hidden: {},
@@ -29,7 +31,7 @@ export default function ServiceSection() {
         delayChildren: 0.5,
       },
     },
-  }
+  };
 
   const serviceItemAnimation = {
     hidden: { opacity: 0, x: 50 },
@@ -41,7 +43,7 @@ export default function ServiceSection() {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   const contentStagger = {
     hidden: {},
@@ -51,17 +53,18 @@ export default function ServiceSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   return (
     <div
       id="services"
-      className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] bg-black py-8 sm:py-10 md:py-12 lg:py-5 xl:py-10"
+      className="flex min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] bg-black py-8 sm:py-10 md:py-12 lg:py-5 xl:py-10"
     >
-      <div className="w-11/12 mx-auto flex flex-col h-full">
-        <p className="font-koulen text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6 md:mb-0">REEM</p>
-        <div className="flex flex-col md:flex-row items-start md:items-center h-full gap-6 sm:gap-8 md:gap-10">
-          {/* Service list - Appears first on mobile */}
+      <div className=" flex flex-col w-11/12 mx-auto">
+        <p className="font-koulen text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6 md:mb-0">
+          REEM
+        </p>
+        <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-center gap-6 sm:gap-8 md:gap-10">
           <motion.div
             className="w-full md:w-3/5 font-inter flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 order-first md:order-last"
             variants={staggerContainer}
@@ -70,7 +73,7 @@ export default function ServiceSection() {
             viewport={{ once: true, amount: 0.3 }}
           >
             {services.map((service) => {
-              const isSelected = service.id === selectedService.id
+              const isSelected = service.id === selectedService.id;
               return (
                 <motion.div
                   key={service.id}
@@ -97,18 +100,17 @@ export default function ServiceSection() {
                   </div>
                   <motion.div className="border-t border-[#FFFFFF80]" />
                 </motion.div>
-              )
+              );
             })}
           </motion.div>
 
-          {/* Image and description - Appears second on mobile */}
           <div className="w-full md:w-2/5 flex flex-col justify-center items-start space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 order-last md:order-first mt-6 md:mt-0">
-            {/* Image - slide from left */}
             <motion.div
               className="w-full"
               variants={slideFromLeft}
               initial="hidden"
               whileInView="visible"
+              transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div
@@ -128,7 +130,6 @@ export default function ServiceSection() {
               </motion.div>
             </motion.div>
 
-            {/* Title and description - slide from bottom */}
             <motion.div
               className="space-y-2 sm:space-y-3 md:space-y-4 font-inter"
               variants={contentStagger}
@@ -166,5 +167,5 @@ export default function ServiceSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }

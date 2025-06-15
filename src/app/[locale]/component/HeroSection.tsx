@@ -36,36 +36,36 @@ export default function HeroSection() {
           <Navbar />
         </motion.div>
 
-        <div className="flex-1 flex flex-col justify-center items-start lg:px-5 xl:px-10 text-white font-inter">
-   {/* Main heading - slide from left */}
-<motion.p
-  className="font-semibold text-[60px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[230px] 2xl:text-[260px] leading-none"
-  variants={slideFromLeft}
-  initial="hidden"
-  animate="visible"
-  transition={{ delay: 0.3 }}
->
-  {t("headlineMain")}
-</motion.p>
+        <div className="flex-1 flex flex-col justify-center  items-start px-3 lg:px-5 xl:px-10 text-white font-inter">
+          {/* Main heading - slide from left */}
+          <motion.p
+            className="font-semibold text-[60px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[230px] 2xl:text-[260px] leading-none"
+            variants={slideFromLeft}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
+          >
+            {t("headlineMain")}
+          </motion.p>
 
-{/* Sub heading - slide from right */}
-<motion.p
-  className="font-semibold text-[40px] sm:text-[60px] md:text-[80px] lg:text-[110px] xl:text-[140px] 2xl:text-[190px] leading-none lg:ml-[23%] xl:ml-[26%] 2xl:ml-[23%]"
-  variants={slideFromRight}
-  initial="hidden"
-  animate="visible"
-  transition={{ delay: 0.6 }}
->
-  {t("headlineSub")}
-</motion.p>
+          {/* Sub heading - slide from right */}
+          <motion.p
+            className="font-semibold text-[40px] sm:text-[60px] md:text-[80px] lg:text-[110px] xl:text-[140px] 2xl:text-[190px] leading-none ml-[10%] md:ml-[20%] lg:ml-[23%] xl:ml-[26%] 2xl:ml-[23%]"
+            variants={slideFromRight}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
+          >
+            {t("headlineSub")}
+          </motion.p>
 
           {/* Description - slide from bottom */}
           <motion.p
-            className="lg:w-[40%] xl:w-[22%] font-normal mt-6"
+            className="w-[2/3] md:w-2/3 lg:w-[40%] xl:w-[22%] font-normal mt-6"
             variants={slideFromBottom}
             initial="hidden"
             animate="visible"
-            transition={{ delay: 0.9 }}
+            transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
           >
             {t("description")}
           </motion.p>

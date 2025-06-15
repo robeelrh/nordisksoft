@@ -1,10 +1,10 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 interface StatCardProps {
-  label: string
-  title: string
-  description: string
+  label: string;
+  title: string;
+  description: string;
 }
 
 export default function StatCard({ label, title, description }: StatCardProps) {
@@ -19,12 +19,12 @@ export default function StatCard({ label, title, description }: StatCardProps) {
       scale: 1,
       z: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.4,
         ease: "easeOut",
         delay: 0.3,
       },
     },
-  }
+  };
 
   return (
     <div className="w-full flex flex-col gap-3 sm:gap-4 md:gap-5 font-inter">
@@ -44,8 +44,10 @@ export default function StatCard({ label, title, description }: StatCardProps) {
       <div className="w-full h-[1px] bg-black" />
       <div className="flex flex-col gap-2 sm:gap-3">
         <p className="font-semibold text-base sm:text-lg">{title}</p>
-        <p className="text-[#11111180] text-sm sm:text-base md:text-md font-medium">{description}</p>
+        <p className="text-[#11111180] text-sm sm:text-base md:text-md font-medium">
+          {description}
+        </p>
       </div>
     </div>
-  )
+  );
 }

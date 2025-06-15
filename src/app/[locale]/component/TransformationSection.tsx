@@ -26,6 +26,7 @@ export default function TransformationSection() {
           variants={slideFromBack}
           initial="hidden"
           whileInView="visible"
+          transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
         >
           <Image
@@ -45,6 +46,7 @@ export default function TransformationSection() {
           variants={slideFromBack}
           initial="hidden"
           whileInView="visible"
+          transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
         >
           <Image

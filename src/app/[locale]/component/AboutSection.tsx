@@ -1,33 +1,38 @@
-"use client"
+"use client";
 
-import { AliceWilson } from "@/assests"
-import { useTranslations } from "next-intl"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { fadeInUp, slideFromLeft, slideFromRight } from "@/utils/SliderAnimation"
+import { AliceWilson } from "@/assests";
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  slideFromBottom,
+  slideFromLeft,
+  slideFromRight,
+} from "@/utils/SliderAnimation";
 
 export default function AboutSection() {
-  const t = useTranslations("About")
+  const t = useTranslations("About");
 
-  const staggerContainer = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.6,
-      },
-    },
-  }
+  // const staggerContainer = {
+  //   hidden: {},
+  //   visible: {
+  //     transition: {
+  //       staggerChildren: 0.2,
+  //       delayChildren: 0.6,
+  //     },
+  //   },
+  // }
 
   return (
     <section id="about" className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="w-11/12 max-w-[1600px] mx-auto flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-12 items-center">
+      <div className="w-11/12 max-w-11/12 mx-auto flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-12 items-center">
         {/* Image - slide from left */}
         <motion.div
           className="w-full md:w-1/3 lg:w-2/5 px-6 sm:px-4 md:px-0"
           variants={slideFromLeft}
           initial="hidden"
           whileInView="visible"
+          transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div
@@ -54,7 +59,7 @@ export default function AboutSection() {
             variants={slideFromRight}
             initial="hidden"
             whileInView="visible"
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
             {t("quote")}
@@ -62,28 +67,32 @@ export default function AboutSection() {
 
           {/* Other text elements - slide from bottom with stagger */}
           <motion.div
-            variants={staggerContainer}
+            // variants={staggerContainer}
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ once: true, amount: 0.3 }}
+            variants={slideFromBottom}
             initial="hidden"
             whileInView="visible"
+            transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col gap-5 sm:gap-6 md:gap-7"
           >
-            <motion.p
-              className="w-full md:w-4/5 lg:w-3/5 text-sm sm:text-base md:text-lg text-[#11111180]"
-              variants={fadeInUp}
-            >
+            <p className="w-full md:w-4/5 lg:w-3/5 text-sm sm:text-base md:text-lg text-[#11111180]">
               {t("description")}
-            </motion.p>
+            </p>
 
-            <motion.div className="border-t border-[#11111180]" variants={fadeInUp} />
+            <motion.div className="border-t border-[#11111180]" />
 
-            <motion.div className="space-y-1 sm:space-y-2" variants={fadeInUp}>
+            <motion.div className="space-y-1 sm:space-y-2">
               <p className="text-lg sm:text-xl">{t("person.name")}</p>
-              <p className="text-sm sm:text-base text-[#11111180]">{t("person.title")}</p>
+              <p className="text-sm sm:text-base text-[#11111180]">
+                {t("person.title")}
+              </p>
             </motion.div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

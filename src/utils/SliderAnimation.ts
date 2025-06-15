@@ -3,15 +3,11 @@ export const slideFromLeft = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
   },
 };
 
 export const slideFromTop = {
-  hidden: { opacity: 0, y: -30 },
+  hidden: { opacity: 0, y: -50 },
   visible: {
     opacity: 1,
     y: 0,
@@ -19,6 +15,15 @@ export const slideFromTop = {
       duration: 0.8,
       ease: "easeOut",
     },
+  },
+};
+
+export const slideFromTopLeft = {
+  hidden: { opacity: 0, y: -30, x: -50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    x: 0,
   },
 };
 
@@ -27,24 +32,14 @@ export const slideFromRight = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      // delay: 0.4,
-    },
   },
 };
 
 export const slideFromBottom = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      // delay: 0.3,
-    },
   },
 };
 
@@ -53,10 +48,6 @@ export const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
   },
 };
 
