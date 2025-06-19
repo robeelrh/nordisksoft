@@ -1,14 +1,12 @@
 import FooterSection from "@/app/[locale]/component/FooterSection";
 import ContactSection from "@/app/[locale]/component/ContactSection";
 import FAQSection from "@/app/[locale]/component/FAQSection";
-import PricingSection from "@/app/[locale]/component/PricingSection";
 import AboutSection from "@/app/[locale]/component/AboutSection";
 import ServiceSection from "@/app/[locale]/component/ServiceSection";
 import HeroSection from "@/app/[locale]/component/HeroSection";
 import StatsSection from "@/app/[locale]/component/StatsSection";
 import CommitmentSection from "@/app/[locale]/component/CommitmentSection";
 import TransformationSection from "@/app/[locale]/component/TransformationSection";
-
 export default function HomePage() {
   return (
     <>
@@ -18,7 +16,7 @@ export default function HomePage() {
       <CommitmentSection />
       <ServiceSection />
       <AboutSection />
-      <PricingSection />
+      {/* <PricingSection />*/}
       <FAQSection />
       <ContactSection />
       <FooterSection />
