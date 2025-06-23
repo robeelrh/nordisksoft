@@ -1,20 +1,15 @@
-"use client";
+"use client"
 
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import EmailInput from "./EmailInput";
-import { Link } from "@/i18n/navigation";
-import "@fontsource/koulen";
-import {
-  slideFromBottom,
-  slideFromLeft,
-  slideFromRight,
-  slideFromTop,
-  slideFromTopLeft,
-} from "@/utils/SliderAnimation";
+import { useTranslations } from "next-intl"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import EmailInput from "./EmailInput"
+import { Link } from "@/i18n/navigation"
+import "@fontsource/koulen"
+import { slideFromBottom, slideFromLeft, slideFromRight, slideFromTop, slideFromTopLeft } from "@/utils/SliderAnimation"
 
 export default function FooterSection() {
-  const t = useTranslations("Footer");
+  const t = useTranslations("Footer")
   const LINKS = [
     {
       text: t("links.about"),
@@ -60,10 +55,10 @@ export default function FooterSection() {
       text: t("links.dribbble"),
       link: "/",
     },
-  ];
+  ]
 
-  const firstColumnLinks = LINKS.slice(0, LINKS.length / 2 + 2);
-  const secondColumnLinks = LINKS.slice(LINKS.length / 2 + 2);
+  const firstColumnLinks = LINKS.slice(0, LINKS.length / 2 + 2)
+  const secondColumnLinks = LINKS.slice(LINKS.length / 2 + 2)
 
   // Animation variants
   const staggerContainer = {
@@ -73,7 +68,7 @@ export default function FooterSection() {
         staggerChildren: 0.1,
       },
     },
-  };
+  }
 
   const linkAnimation = {
     hidden: { opacity: 0, x: 20 },
@@ -85,23 +80,30 @@ export default function FooterSection() {
         ease: "easeOut",
       },
     },
-  };
+  }
 
   return (
     <section className="min-h-[50vh] py-8 sm:py-10 md:py-12 lg:m-2 xl:m-5 bg-[#F4F4F5] px-5 lg:px-0">
       <div className=" lg:w-11/12 h-full mx-auto flex flex-col md:flex-row gap-6 md:gap-0">
-        {/* REEM section - slide from left */}
+        {/* Logo section - slide from left */}
         <div className="w-full md:w-1/3 flex flex-col lg:gap-20">
-          <motion.p
-            className="text-7xl md:text-8xl lg:text-[160px] xl:text-[200px] font-koulen leading-none m-0 p-0 my-auto"
+          <motion.div
+            className="flex items-center justify-start my-auto"
             variants={slideFromTopLeft}
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            REEM
-          </motion.p>
+            <Image
+              src="/Logo_black.png"
+              alt="REEM Logo"
+              width={120}
+              height={120}
+              className="w-auto h-[120px] sm:h-[200px] md:h-[210px] lg:h-[240px] xl:h-[340px] object-contain"
+              priority
+            />
+          </motion.div>
           <div className="space-y-1 sm:space-y-2 lg:space-y-1 xl:space-y-3 font-inter font-medium mt-4 md:mt-0">
             <motion.p
               className="text-sm  lg:text-md xl:text-lg"
@@ -137,9 +139,7 @@ export default function FooterSection() {
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="text-2xl lg:text-2xl xl:text-3xl">
-                {t("newsletterTitle")}
-              </div>
+              <div className="text-2xl lg:text-2xl xl:text-3xl">{t("newsletterTitle")}</div>
               <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full md:w-[85%]">
                 {t("newsletterDescription")}
               </div>
@@ -163,11 +163,7 @@ export default function FooterSection() {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 {firstColumnLinks.map((link, index) => (
-                  <motion.div
-                    key={index}
-                    variants={linkAnimation}
-                    className="text-sm sm:text-base"
-                  >
+                  <motion.div key={index} variants={linkAnimation} className="text-sm sm:text-base">
                     <Link href={link.link}>{link.text}</Link>
                   </motion.div>
                 ))}
@@ -206,5 +202,5 @@ export default function FooterSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
