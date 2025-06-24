@@ -1,38 +1,73 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import type React from "react"
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
 
-export default function EmailInput() {
-  const [email, setEmail] = useState("");
+interface EmailInputProps {
+  placeholder?: string
+  onSubmit?: (email: string) => void
+  className?: string
+}
 
-  const handleSubmit = () => {
-    setEmail("");
-  };
+export default function EmailInput({ placeholder = "Enter your email", onSubmit, className = "" }: EmailInputProps) {
+  const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleKeyDown = async (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleSubmit();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email.trim()) return
+
+    setIsSubmitting(true)
+
+    try {
+      if (onSubmit) {
+        await onSubmit(email)
+      } else {
+        // Default behavior - simulate newsletter signup
+        console.log("Newsletter signup:", email)
+        alert("Thank you for subscribing to our newsletter!")
+      }
+      setEmail("")
+    } catch (error) {
+      console.error("Error submitting email:", error)
+      alert("Error subscribing. Please try again.")
+    } finally {
+      setIsSubmitting(false)
     }
-  };
+  }
+
   return (
-    <div className="flex items-center border-b border-black px-2 py-1 bg-transparent max-w-xs">
+    <motion.form
+      onSubmit={handleSubmit}
+      className={`flex items-center gap-2 bg-white rounded-lg p-1 shadow-sm border border-gray-200 ${className}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <input
         type="email"
-        placeholder="E-mail"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        onKeyDown={(e) => handleKeyDown(e)}
-        className="flex-grow bg-transparent outline-none text-sm text-gray-800 placeholder-gray-500"
+        placeholder={placeholder}
+        className="flex-1 px-3 py-2 text-sm bg-transparent border-none outline-none placeholder-gray-500 text-gray-900"
+        required
+        disabled={isSubmitting}
       />
-      <button
-        onClick={handleSubmit}
-        className="ml-2 cursor-pointer bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition"
-        aria-label="Submit Email"
+      <motion.button
+        type="submit"
+        disabled={isSubmitting || !email.trim()}
+        className="bg-[#56aeff] hover:bg-[#4a9ae8] disabled:bg-gray-300 text-white p-2 rounded-md transition-colors duration-200 disabled:cursor-not-allowed"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <ArrowRight size={16} />
-      </button>
-    </div>
-  );
+        {isSubmitting ? (
+          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+        ) : (
+          <ArrowRight className="w-4 h-4" />
+        )}
+      </motion.button>
+    </motion.form>
+  )
 }

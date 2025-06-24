@@ -1,59 +1,56 @@
 "use client"
 
-import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
-import Image from "next/image"
 import EmailInput from "./EmailInput"
 import { Link } from "@/i18n/navigation"
 import "@fontsource/koulen"
 import { slideFromBottom, slideFromLeft, slideFromRight, slideFromTop, slideFromTopLeft } from "@/utils/SliderAnimation"
 
 export default function FooterSection() {
-  const t = useTranslations("Footer")
   const LINKS = [
     {
-      text: t("links.about"),
-      link: "/",
+      text: "Projects",
+      link: "/projects",
     },
     {
-      text: t("links.projects"),
-      link: "/",
+      text: "Services",
+      link: "/services",
     },
     {
-      text: t("links.blog"),
-      link: "/",
+      text: "About",
+      link: "/about",
     },
     {
-      text: t("links.content"),
-      link: "/",
+      text: "FAQ",
+      link: "/faq",
     },
     {
-      text: t("links.privacy"),
-      link: "/",
+      text: "Contact",
+      link: "/contact",
     },
     {
-      text: t("links.terms"),
-      link: "/",
+      text: "Privacy Policy",
+      link: "/privacy",
     },
     {
-      text: t("links.error404"),
-      link: "/",
+      text: "Terms of Service",
+      link: "/terms",
     },
     {
-      text: t("links.behance"),
-      link: "/",
+      text: "Twitter",
+      link: "https://twitter.com",
     },
     {
-      text: t("links.twitter"),
-      link: "/",
+      text: "Instagram",
+      link: "https://instagram.com",
     },
     {
-      text: t("links.instagram"),
-      link: "/",
+      text: "Facebook",
+      link: "https://facebook.com",
     },
     {
-      text: t("links.dribbble"),
-      link: "/",
+      text: "Dribbble",
+      link: "https://dribbble.com",
     },
   ]
 
@@ -82,9 +79,21 @@ export default function FooterSection() {
     },
   }
 
+  const handleEmailSubmit = async (email: string) => {
+    try {
+      // Handle newsletter signup
+      console.log("Newsletter signup:", email)
+      // You can add your newsletter API call here
+      alert("Thank you for subscribing!")
+    } catch (error) {
+      console.error("Newsletter signup error:", error)
+      throw error
+    }
+  }
+
   return (
-    <section className="min-h-[50vh] py-8 sm:py-10 md:py-12 lg:m-2 xl:m-5 bg-[#F4F4F5] px-5 lg:px-0">
-      <div className=" lg:w-11/12 h-full mx-auto flex flex-col md:flex-row gap-6 md:gap-0">
+    <section className="min-h-[60vh] py-8 sm:py-10 md:py-12 bg-[#F4F4F5] w-full">
+      <div className="w-full h-full flex flex-col md:flex-row gap-6 md:gap-0 max-w-none px-8 lg:px-16 xl:px-24">
         {/* Logo section - slide from left */}
         <div className="w-full md:w-1/3 flex flex-col lg:gap-20">
           <motion.div
@@ -95,41 +104,41 @@ export default function FooterSection() {
             transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Image
-              src="/Logo_black.png"
-              alt="REEM Logo"
-              width={120}
-              height={120}
-              className="w-auto h-[120px] sm:h-[200px] md:h-[210px] lg:h-[240px] xl:h-[340px] object-contain"
-              priority
-            />
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                <div className="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[35px] border-b-[#56aeff]"></div>
+                <div className="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[35px] border-b-[#56aeff] -ml-[30px]"></div>
+              </div>
+              <span className="text-2xl lg:text-3xl xl:text-4xl font-bold text-black ml-2">NORDISK</span>
+              <span className="text-lg lg:text-xl xl:text-2xl font-normal text-black">SOFT</span>
+            </div>
           </motion.div>
           <div className="space-y-1 sm:space-y-2 lg:space-y-1 xl:space-y-3 font-inter font-medium mt-4 md:mt-0">
             <motion.p
-              className="text-sm  lg:text-md xl:text-lg"
+              className="text-sm lg:text-md xl:text-lg"
               variants={slideFromLeft}
               initial="hidden"
               whileInView="visible"
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              {t("contact.phone")}
+              (+92) 300 9999999
             </motion.p>
             <motion.p
-              className="text-md  md:text-2xl lg:text-2xl xl:text-3xl"
+              className="text-md md:text-2xl lg:text-2xl xl:text-3xl"
               variants={slideFromBottom}
               initial="hidden"
               whileInView="visible"
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              {t("contact.email")}
+              hello@nordisksoft.com
             </motion.p>
           </div>
         </div>
 
         <div className="w-full md:w-2/3 flex flex-col justify-between font-inter font-medium gap-6 md:gap-0">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-4 my-auto">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-2 my-auto">
             {/* Newsletter section - slide from top */}
             <motion.div
               className="w-full md:w-1/2 flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4"
@@ -139,16 +148,16 @@ export default function FooterSection() {
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="text-2xl lg:text-2xl xl:text-3xl">{t("newsletterTitle")}</div>
+              <div className="text-2xl lg:text-2xl xl:text-3xl text-[#56aeff]">Stay connected</div>
               <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full md:w-[85%]">
-                {t("newsletterDescription")}
+                Join our newsletter and stay updated on the latest trends in digital design
               </div>
-              <EmailInput />
+              <EmailInput placeholder="E-mail" onSubmit={handleEmailSubmit} />
             </motion.div>
 
             {/* Links section - slide from right */}
             <motion.div
-              className="w-full md:w-1/2 flex  lg:gap-6 xl:gap-10"
+              className="w-full md:w-1/2 flex lg:gap-4 xl:gap-6"
               variants={slideFromRight}
               initial="hidden"
               whileInView="visible"
@@ -197,7 +206,8 @@ export default function FooterSection() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            {t("description")}
+            With Nordisk Soft, your company grows seamlessly through innovative software solutions. We empower your
+            business to thrive in the digital age.
           </motion.p>
         </div>
       </div>

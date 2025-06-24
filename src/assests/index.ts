@@ -6,3 +6,8 @@ export { default as TransformationBg } from "./transformation-bg.svg";
 export { default as TransformationArrow } from "./transformation-arrow.svg";
 export { default as TransformationWhiteText } from "./transformation-white-text.svg";
 export { default as TransformationBlackText } from "./transformation-black-text.svg";
+
+export { default as cards_1  }from "./cards_1.png";
+
+export { default as cards_2 } from "./cards_2.jpg";
+
