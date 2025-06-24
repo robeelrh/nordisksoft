@@ -51,7 +51,7 @@ export default function TeamShowcaseSection() {
           </motion.div>
 
           {/* Right Content - Takes 2 columns */}
-          <div className="lg:col-span-2 relative h-[900px]">
+          <div className="lg:col-span-2 relative h-[500px]">
             {/* Top Orange Card with Profile */}
             <motion.div
               className="absolute top-0 left-0"
