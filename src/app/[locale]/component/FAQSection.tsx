@@ -32,11 +32,11 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="min-h-[40vh] w-full flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 md:py-12 font-inter overflow-hidden">
+    <section className="min-h-[70vh]  w-4/5 mx-auto flex flex-col lg:flex-row items-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 md:py-12 font-inter overflow-hidden">
       {/* Left panel - slide from left */}
-      <div className="w-full lg:w-2/5 mb-6 lg:mb-0">
+      <div className="w-full lg:w-1/4 mb-6 lg:mb-0 ">
         <motion.h2
-          className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+          className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-blue "
           variants={slideFromLeft}
           initial="hidden"
           whileInView="visible"
@@ -59,7 +59,7 @@ export default function FAQSection() {
 
       {/* FAQ list - slide from right with staggered items */}
       <motion.div
-        className="w-full lg:w-3/5 space-y-1 sm:space-y-2 md:space-y-3"
+        className="w-full lg:w-3/4 space-y-1 sm:space-y-2 md:space-y-3"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -67,7 +67,7 @@ export default function FAQSection() {
       >
         {FAQS.map((question, index) => (
           <motion.div
-            className="border-b border-black flex justify-between items-center py-2 sm:py-3 md:py-4"
+            className="border-b border-gray flex justify-between items-center py-3 md:py-6"
             key={index}
             variants={faqItemAnimation}
             whileHover={{
@@ -83,7 +83,7 @@ export default function FAQSection() {
                 transition: { duration: 0.2 },
               }}
             >
-              <Plus className="text-red-500 cursor-pointer h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+              <Plus className="text-blue cursor-pointer h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
             </motion.div>
           </motion.div>
         ))}

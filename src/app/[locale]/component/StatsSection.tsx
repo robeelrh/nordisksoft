@@ -16,7 +16,7 @@ export default function StatsSection() {
   const metrics = t.raw("metrics") as TMetrics[];
 
   return (
-    <section className="w-full min-h-[50vh] py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 flex flex-col items-start justify-center gap-6 sm:gap-8 md:gap-10 font-inter">
+    <section className=" min-h-[70vh] py-12 sm:py-16 md:py-20 lg:py-24 w-4/5 mx-auto flex flex-col items-start justify-around font-inter">
       <div className="w-full flex items-center justify-center flex-col font-semibold gap-3 text-start text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4">
         <motion.p
           variants={slideFromTop}
@@ -24,9 +24,11 @@ export default function StatsSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
-          className=" text-start md:text-center w-full"
+          className="text-start md:text-center w-full text-black"
         >
-          {t("headlineMain")}
+          {t.rich("headlineMain", {
+            highlight: (chunks) => <span className="text-blue">{chunks}</span>,
+          })}
         </motion.p>
         <motion.p
           variants={slideFromTop}
@@ -34,9 +36,11 @@ export default function StatsSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-          className=" text-start md:text-center w-full"
+          className="text-start md:text-center w-full text-black"
         >
-          {t("headlineSub")}
+          {t.rich("headlineSub", {
+            highlight: (chunks) => <span className="text-blue">{chunks}</span>,
+          })}
         </motion.p>
       </div>
 

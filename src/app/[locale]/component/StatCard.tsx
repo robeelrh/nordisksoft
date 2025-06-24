@@ -27,9 +27,9 @@ export default function StatCard({ label, title, description }: StatCardProps) {
   };
 
   return (
-    <div className="w-full flex flex-col gap-3 sm:gap-4 md:gap-5 font-inter">
+    <div className="w-full flex flex-col gap-3 sm:gap-4 font-inter">
       <motion.p
-        className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+        className="font-semibold text-4xl sm:text-5xl text-blue"
         variants={slideFromBack}
         initial="hidden"
         whileInView="visible"
@@ -41,10 +41,10 @@ export default function StatCard({ label, title, description }: StatCardProps) {
       >
         {label}
       </motion.p>
-      <div className="w-full h-[1px] bg-black" />
+      <div className="w-full h-[1px] bg-gray" />
       <div className="flex flex-col gap-2 sm:gap-3">
-        <p className="font-semibold text-base sm:text-lg">{title}</p>
-        <p className="text-[#11111180] text-sm sm:text-base md:text-md font-medium">
+        <p className="font-semibold text-base sm:text-lg lg:text-xl">{title}</p>
+        <p className="text-[#11111180] text-sm sm:text-base md:text-md lg:text-lg font-medium">
           {description}
         </p>
       </div>

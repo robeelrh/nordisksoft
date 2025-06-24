@@ -12,8 +12,8 @@
     "menu": "MENU"
   },
   "StatsSection": {
-    "headlineMain": "Our work speaks through numbers.",
-    "headlineSub": "Here’s what we’ve achieved so far.",
+    "headlineMain": "Our work <highlight>speaks</highlight> through numbers.",
+    "headlineSub": "Here’s what we’ve <highlight>achieved</highlight> so far.",
     "metrics": [
       {
         "label": "19+",
@@ -42,30 +42,30 @@
     "subtext": "Design that’s built to last and grow with your business"
   },
   "CommitmentSection": {
-    "headline": "Your goals, our priority",
+    "headline": "Your <highlight>goals</highlight>, our <highlight>priority</highlight>",
     "description": "From concept to launch, we're committed to your success with rapid response times and personalized attention to detail."
   },
   "Services": {
-    "title": "Our Services",
+    "title": "Services",
     "items": [
       {
         "id": "01",
-        "title": "Branding",
+        "title": "Dev Ops",
         "description": "We create impactful brand identities that differentiate your business and connect with your audience."
       },
       {
         "id": "02",
-        "title": "Development",
+        "title": "Web Development",
         "description": "We build fast, scalable, and secure web and mobile applications tailored to your business goals."
       },
       {
         "id": "03",
-        "title": "Websites",
+        "title": "UI UX Design",
         "description": "We design and develop responsive, user-friendly websites that enhance your online presence."
       },
       {
         "id": "04",
-        "title": "Design support",
+        "title": "IT Team Outsourcing",
         "description": "Our team offers ongoing design assistance to ensure your visual assets remain consistent and effective."
       }
     ]
@@ -143,8 +143,11 @@
     ]
   },
   "Contact": {
-    "title": "Let’s bring your vision to life",
-    "description": "John is here to ensure your experience with us is smooth and successful. Reach out anytime — he’s here to make sure you feel confident and supported throughout your journey with us.",
+    "headlineTop": "Let's Work Together",
+    "headlineMain": "Connect Us!",
+    "description": "Let's create something amazing together! Reach out I'd love to hear about your project and ideas.",
+    "features": ["24/7 Full Time Support", "Available Worldwide"],
+    "button": "Contact Now",
     "form": {
       "name": "Name*",
       "email": "E-mail*",

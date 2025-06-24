@@ -1,17 +1,22 @@
-"use client"
-import { TransformationArrow, TransformationBg, TransformationBlackText, TransformationWhiteText } from "@/assests"
-import { useTranslations } from "next-intl"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { slideFromBack } from "@/utils/SliderAnimation"
+"use client";
+import {
+  TransformationArrow,
+  TransformationBg,
+  TransformationBlackText,
+  TransformationWhiteText,
+} from "@/assests";
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { slideFromBack } from "@/utils/SliderAnimation";
 
 export default function TransformationSectionOption1() {
-  const t = useTranslations("TransformationSection")
+  const t = useTranslations("TransformationSection");
 
   return (
     <section className="relative h-[120vh] w-full flex flex-col">
       {/* Black background box - responsive positioning */}
-<div className="absolute top-0 left-[45%] w-[10%] h-[35%] sm:left-[45%] sm:w-[10%] sm:h-[30%] md:left-[20%] md:w-[60%] md:h-[50%] lg:left-1/4 lg:w-1/2 lg:h-3/5 bg-black z-0" />
+      {/* <div className="absolute top-0 left-[45%] w-[10%] h-[35%] sm:left-[45%] sm:w-[10%] sm:h-[30%] md:left-[20%] md:w-[60%] md:h-[50%] lg:left-1/4 lg:w-1/2 lg:h-3/5 bg-black z-0" /> */}
 
       {/* Overlaid White Text on Top of Image + Black Box */}
       <div className="absolute top-[5%] left-[10%] w-[80%] sm:top-[7%] sm:left-[15%] sm:w-[70%] md:top-[10%] md:left-[20%] md:w-[60%] lg:top-13.5 xl:top-5.5 2xl:top-0 lg:left-1/4 lg:w-1/2 flex justify-center z-20">
@@ -81,16 +86,21 @@ export default function TransformationSectionOption1() {
                   <h3 className="text-base sm:text-lg md:text-xl font-normal w-full sm:w-3/4 md:w-2/3 text-[#11111180]">
                     {t("subtext")}
                   </h3>
-<Image
-  src="/Logo_black.png"
-  alt="Company Logo"
-  width={150}
-  height={60}
-  className="h-auto w-auto"
-/>
+                  <Image
+                    src="/Logo_black.png"
+                    alt="Company Logo"
+                    width={150}
+                    height={60}
+                    className="h-auto w-auto"
+                  />
                 </div>
                 <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 bg-black rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center">
-                  <Image src={TransformationArrow || "/placeholder.svg"} alt="Arrow Icon" width={16} height={16} />
+                  <Image
+                    src={TransformationArrow || "/placeholder.svg"}
+                    alt="Arrow Icon"
+                    width={16}
+                    height={16}
+                  />
                 </div>
               </>
             )}
@@ -98,5 +108,5 @@ export default function TransformationSectionOption1() {
         ))}
       </div>
     </section>
-  )
+  );
 }

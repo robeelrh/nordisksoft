@@ -1,32 +1,30 @@
-"use client"
+"use client";
 
-import { FoodPackage } from "@/assests"
-import { useTranslations } from "next-intl"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { useState, useEffect, useCallback } from "react"
-import { useSearchParams } from "next/navigation"
-import { fadeInUp, slideFromLeft } from "@/utils/SliderAnimation"
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
+import { FoodPackage } from "@/assests";
+import Image from "next/image";
 
 type TService = {
-  id: number
-  title: string
-  description: string
-}
+  id: number;
+  title: string;
+  description: string;
+};
 
 export default function ServiceSection() {
-  const t = useTranslations("Services")
-  const services = t.raw("items") as TService[]
-  const searchParams = useSearchParams()
+  const t = useTranslations("Services");
+  const services = t.raw("items") as TService[];
+  const searchParams = useSearchParams();
 
-  // Get search parameter
-  const search = searchParams.get("search")
+  const search = searchParams.get("search");
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
 
-  // Function to map search values to service titles - wrapped in useCallback
   const getServiceBySearch = useCallback(
     (searchValue: string | null) => {
       if (!searchValue || searchValue === "all") {
-        return services.find((s) => s.title === "Branding") || services[0]
+        return services.find((s) => s.title === "Branding") || services[0];
       }
 
       const searchMap: { [key: string]: string } = {
@@ -34,24 +32,21 @@ export default function ServiceSection() {
         development: "Development",
         websites: "Websites",
         "design-support": "Design Support",
-      }
+      };
 
-      const targetTitle = searchMap[searchValue]
+      const targetTitle = searchMap[searchValue];
       return (
-        services.find((s) => s.title === targetTitle) || services.find((s) => s.title === "Branding") || services[0]
-      )
+        services.find((s) => s.title === targetTitle) ||
+        services.find((s) => s.title === "Branding") ||
+        services[0]
+      );
     },
-    [services],
-  )
+    [services]
+  );
 
-  // Select service based on search parameter or default to "Branding"
-  const [selectedService, setSelectedService] = useState<TService>(() => getServiceBySearch(search))
-
-  // Update selected service when search parameter changes
   useEffect(() => {
-    const newService = getServiceBySearch(search)
-    setSelectedService(newService)
-  }, [search, getServiceBySearch]) // Added getServiceBySearch to dependencies
+    getServiceBySearch(search);
+  }, [search, getServiceBySearch]);
 
   const staggerContainer = {
     hidden: {},
@@ -61,146 +56,79 @@ export default function ServiceSection() {
         delayChildren: 0.5,
       },
     },
-  }
+  };
 
-  const serviceItemAnimation = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  }
-
-  const contentStagger = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  }
+  // const serviceItemAnimation = {
+  //   hidden: { opacity: 0, x: 50 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: {
+  //       duration: 0.6,
+  //       ease: "easeOut",
+  //     },
+  //   },
+  // };
 
   return (
     <div
       id="services"
-      className="flex min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] bg-black py-8 sm:py-10 md:py-12 lg:py-5 xl:py-10"
+      className="font-inter flex min-h-[50vh] sm:min-h-[60vh] bg-gradient-to-r from-[#111111] to-[#213c58] py-8 sm:py-10 md:py-12 lg:py-5 xl:py-12 w-4/5 mx-auto rounded-3xl"
     >
-      <div className=" flex flex-col w-11/12 mx-auto">
-        <Image
-          src="/Logo.png"
-          alt="Company Logo"
-          width={150}
-          height={50}
-          priority
-        />
+      <div className="flex flex-col gap-9 w-full md:w-10/12 mx-auto">
+        <p className="text-white text-3xl font-semibold">/{t("title")}</p>
 
-        <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-center gap-6 sm:gap-8 md:gap-10">
-          <motion.div
-            className="w-full md:w-3/5 font-inter flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 order-first md:order-last"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {services.map((service) => {
-              const isSelected = service.id === selectedService.id
-              return (
-                <motion.div
-                  key={service.id}
-                  className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-5 cursor-pointer"
-                  variants={serviceItemAnimation}
-                  onClick={() => setSelectedService(service)}
-                  whileHover={{
-                    x: 10,
-                    transition: { duration: 0.2 },
-                  }}
-                >
-                  <div className="flex items-start">
-                    <motion.p
-                      className={`font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl transition-colors duration-300 ${
-                        isSelected ? "text-[#F4F4F5]" : "text-[#F4F4F580]"
-                      }`}
-                      animate={{
-                        scale: isSelected ? 1.02 : 1,
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {service.title}
-                    </motion.p>
-                  </div>
-                  <motion.div className="border-t border-[#FFFFFF80]" />
-                </motion.div>
-              )
-            })}
-          </motion.div>
-
-          <div className="w-full md:w-2/5 flex flex-col justify-center items-start space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 order-last md:order-first mt-6 md:mt-0">
-            <motion.div
-              className="w-full"
-              variants={slideFromLeft}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.3 }}
+        <motion.div
+          className="flex flex-col gap-4 sm:gap-5 md:gap-7 lg:gap-8 ml-2"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className="relative group space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6 cursor-pointer overflow-hidden"
+              onMouseEnter={() => setHoveredService(service.id)}
+              onMouseLeave={() => setHoveredService(null)}
             >
-              <motion.div
-                className="relative w-full max-w-xs sm:max-w-sm"
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.3 },
-                }}
-              >
+              {/* Background Image */}
+              <motion.div className="absolute left-0 top-1/2 -translate-y-1/2 z-0 opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none">
                 <Image
-                  className="w-full h-auto object-contain"
-                  alt="Food Image"
-                  src={FoodPackage || "/placeholder.svg"}
-                  width={300}
-                  height={200}
+                  src={FoodPackage}
+                  alt="food"
+                  width={90}
+                  height={100}
+                  className="rounded-2xl"
                 />
               </motion.div>
-            </motion.div>
 
-            <motion.div
-              className="space-y-2 sm:space-y-3 md:space-y-4 font-inter"
-              variants={contentStagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <AnimatePresence mode="wait">
+              {/* Title & Index (Index stays fixed) */}
+              <div className="relative z-10 flex items-start justify-between">
                 <motion.p
-                  key={`title-${selectedService.id}`}
-                  className="text-[#F4F4F580] text-base sm:text-lg md:text-xl lg:text-2xl"
-                  variants={fadeInUp}
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
+                  className={`font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 text-white`}
+                  animate={{
+                    x: hoveredService === service.id ? 100 : 0,
+                  }}
+                  transition={{ duration: 0.4 }}
                 >
-                  {selectedService.title}
+                  {service.title}
                 </motion.p>
-              </AnimatePresence>
 
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={`desc-${selectedService.id}`}
-                  className="text-[#F4F4F5] text-sm sm:text-base md:text-lg w-full lg:w-full xl:w-1/2"
-                  variants={fadeInUp}
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
+                <p
+                  className={`font-semibold text-lg md:text-xl lg:text-2xl transition-colors duration-300 ${
+                    hoveredService === service.id
+                      ? "text-blue-400"
+                      : "text-white"
+                  }`}
                 >
-                  {selectedService.description}
-                </motion.p>
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        </div>
+                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                </p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
-  )
+  );
 }

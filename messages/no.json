@@ -12,8 +12,8 @@
     "menu": "MENY"
   },
   "StatsSection": {
-    "headlineMain": "Arbeidet vårt snakker i tall.",
-    "headlineSub": "Dette har vi oppnådd så langt.",
+    "headlineMain": "Arbeidet vårt <highlight>snakker</highlight> i tall.",
+    "headlineSub": "Dette har vi <highlight>oppnådd</highlight> så langt.",
     "metrics": [
       {
         "label": "19+",
@@ -42,11 +42,11 @@
     "subtext": "Design som varer og vokser med din virksomhet"
   },
   "CommitmentSection": {
-    "headline": "Dine mål, vår prioritet",
+    "headline": "<highlight>Dine</highlight> mål, vår <highlight>prioritet</highlight>",
     "description": "Fra idé til lansering er vi dedikert til din suksess – med raske responstider og fokus på detaljer."
   },
   "Services": {
-    "title": "Våre tjenester",
+    "title": "Tjenester",
     "items": [
       {
         "id": "01",
@@ -143,8 +143,11 @@
     ]
   },
   "Contact": {
-    "title": "La oss realisere din visjon",
-    "description": "John er her for å sørge for at din opplevelse med oss blir smidig og vellykket. Ta kontakt når som helst – han sørger for at du føler deg trygg og ivaretatt hele veien.",
+    "headlineTop": "La oss jobbe sammen",
+    "headlineMain": "Kontakt oss!",
+    "description": "La oss skape noe fantastisk sammen! Ta kontakt – jeg vil gjerne høre om prosjektet og ideene dine.",
+    "features": ["24/7 fulltidssupport", "Tilgjengelig over hele verden"],
+    "button": "Kontakt nå",
     "form": {
       "name": "Navn*",
       "email": "E-post*",
