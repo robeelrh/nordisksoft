@@ -7,12 +7,12 @@ import {
   VideoCard1,
   VideoCard2,
 } from "@/assests";
+import { useWindowWidth } from "@/hook/useWindowWidth";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 
-type TTestimonial = "image" | "text";
 interface Testimonial {
   id: number;
   name: string;
@@ -20,8 +20,8 @@ interface Testimonial {
   rating: number;
   score: string;
   testimonial: string;
-  image: StaticImageData;
-  type: TTestimonial;
+  image: StaticImageData | string;
+  type: "image" | "text" | "video";
   // bgImage?: string;
 }
 
@@ -49,13 +49,13 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    name: "Alexa Snow",
-    title: "Director",
+    name: "Alex",
+    title: "CEO",
     rating: 5,
     score: "4.5/5",
     testimonial: "",
-    image: VideoCard2,
-    type: "image",
+    image: "/videos/alex-video-3.mp4",
+    type: "video",
   },
   {
     id: 4,
@@ -68,6 +68,17 @@ const testimonials: Testimonial[] = [
     image: TextCard2,
     type: "text",
   },
+  {
+    id: 5,
+    name: "Alexa Snow",
+    title: "Director",
+    rating: 5,
+    score: "4.5/5",
+    testimonial: "",
+    image: VideoCard2,
+    type: "image",
+  },
+
   {
     id: 6,
     name: "James Rodriguez",
@@ -85,16 +96,26 @@ export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Auto-scroll logic
+  const width = useWindowWidth();
+
+  let cardWidth = 560;
+  if (width < 640) cardWidth = 560;
+  else if (width < 768) cardWidth = 560;
+  else if (width < 1024) cardWidth = 580;
+  else if (width < 1440) cardWidth = 520;
+  else if (width < 2000) cardWidth = 450;
+  else if (width < 2400) cardWidth = 400;
+  else cardWidth = 360;
+
   useEffect(() => {
-    if (isHovered) return; // Stop sliding on hover
+    if (isHovered) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 1000); // Adjust speed if needed
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, [isHovered]); // Re-run effect when hover state changes
+  }, [isHovered]);
 
   const containerVariants = {
     hidden: {},
@@ -106,7 +127,10 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="projects" className="py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 m-4 rounded-3xl">
+    <section
+      id="projects"
+      className="py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 m-4 rounded-3xl"
+    >
       <div className="flex flex-col gap-12">
         {/* Header */}
         <div className="w-10/12 mx-auto flex flex-col gap-12">
@@ -131,7 +155,7 @@ export default function TestimonialsSection() {
         >
           <motion.div
             className="flex gap-6"
-            animate={{ x: `-${currentIndex * 320}px` }}
+            animate={{ x: `-${currentIndex * (cardWidth + 24)}px` }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
             variants={containerVariants}
             initial="hidden"
@@ -153,6 +177,8 @@ export default function TestimonialsSection() {
               >
                 {testimonial.type === "image" ? (
                   <ImageTestimonialCard testimonial={testimonial} />
+                ) : testimonial.type === "video" ? (
+                  <VideoTestimonialCard testimonial={testimonial} />
                 ) : (
                   <TextTestimonialCard testimonial={testimonial} />
                 )}
@@ -177,6 +203,7 @@ function ImageTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         fill
         className="object-center rounded-2xl"
       />
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl" />
 
       {/* Rating and Score */}
@@ -202,6 +229,43 @@ function ImageTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       <div className="absolute bottom-4 left-4">
         <h3 className="text-white font-semibold text-lg">{testimonial.name}</h3>
         <p className="text-white/70 text-sm">{testimonial.title}</p>
+      </div>
+    </div>
+  );
+}
+
+export function VideoTestimonialCard({
+  testimonial,
+}: {
+  testimonial: Testimonial;
+}) {
+  return (
+    <div className="relative h-full group rounded-2xl overflow-hidden">
+      {/* Video with controls */}
+      <video
+        className="object-cover w-full h-full rounded-2xl z-10 relative"
+        src={testimonial.image as string}
+        preload="auto"
+        controls
+      />
+
+      {/* Rating and Score - top right */}
+      <div className="absolute top-4 right-4 flex items-center gap-2 z-20">
+        <div className="flex">
+          {[...Array(5)].map((_, i) => (
+            <Star
+              key={i}
+              className={`w-4 h-4 ${
+                i < testimonial.rating
+                  ? "fill-yellow-400 text-yellow-400"
+                  : "fill-gray-400 text-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+        <span className="text-white/80 text-sm font-medium">
+          {testimonial.score}
+        </span>
       </div>
     </div>
   );
