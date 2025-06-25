@@ -10,7 +10,6 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { slideFromBack } from "@/utils/SliderAnimation";
-import { Link } from "lucide-react";
 
 export default function TransformationSectionOption1() {
   const t = useTranslations("TransformationSection");

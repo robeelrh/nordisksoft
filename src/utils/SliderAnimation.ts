@@ -1,5 +1,3 @@
-import { delay } from "framer-motion";
-
 export const slideFromLeft = {
   hidden: { opacity: 0, x: -50 },
   visible: {
