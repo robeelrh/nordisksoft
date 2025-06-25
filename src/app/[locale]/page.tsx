@@ -8,7 +8,6 @@ import StatsSection from "@/app/[locale]/component/StatsSection";
 import CommitmentSection from "@/app/[locale]/component/CommitmentSection";
 import TestimonialsSection from "@/app/[locale]/component/TestimonialsSection";
 
-
 import TransformationSection from "@/app/[locale]/component/TransformationSection";
 export default function HomePage() {
   return (
@@ -19,8 +18,7 @@ export default function HomePage() {
       <CommitmentSection />
       <ServiceSection />
       <AboutSection />
-       <TestimonialsSection />
-
+      <TestimonialsSection />
       <FAQSection />
       <ContactSection />
       <FooterSection />

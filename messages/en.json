@@ -4,14 +4,13 @@
     "headlineSub": "Design Studio",
     "description": "We create digital designs that help brands move faster and convert better. Your business deserves more than just a website. It needs results."
   },
-  "Navigation": 
-  {
-  "projects": "Projects",
-  "services": "Services",
-  "about": "About",
-  "faq": "FAQ",
-  "contact": "Contact"
-},
+  "Navigation": {
+    "projects": "Projects",
+    "services": "Services",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
   "StatsSection": {
     "headlineMain": "Our work <highlight>speaks</highlight> through numbers.",
     "headlineSub": "Here’s what we’ve <highlight>achieved</highlight> so far.",

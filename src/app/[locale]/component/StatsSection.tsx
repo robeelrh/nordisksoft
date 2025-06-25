@@ -16,7 +16,7 @@ export default function StatsSection() {
   const metrics = t.raw("metrics") as TMetrics[];
 
   return (
-    <section className=" min-h-[70vh] py-12 sm:py-16 md:py-20 lg:py-24 w-4/5 mx-auto flex flex-col items-start justify-around font-inter">
+    <section className=" min-h-[75vh]  py-8 lg:py-18 w-4/5 mx-auto flex flex-col items-start justify-around font-inter">
       <div className="w-full flex items-center justify-center flex-col font-semibold gap-3 text-start text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4">
         <motion.p
           variants={slideFromTop}

@@ -2,12 +2,26 @@ export { default as ContactBG } from "./contact-bg.svg";
 export { default as AliceWilson } from "./alice-wilson.svg";
 export { default as FoodPackage } from "./food-package.svg";
 export { default as HeroSectionBg } from "./hero-section-bg.svg";
-export { default as TransformationBg } from "./transformation-bg.svg";
+export { default as TransformationBg } from "./transformation-bg.png";
 export { default as TransformationArrow } from "./transformation-arrow.svg";
 export { default as TransformationWhiteText } from "./transformation-white-text.svg";
 export { default as TransformationBlackText } from "./transformation-black-text.svg";
-
-export { default as cards_1  }from "./cards_1.png";
-
-export { default as cards_2 } from "./cards_2.jpg";
-
+export { default as LogoBlack } from "./logo-black.svg";
+export { default as LogoWhite } from "./logo-white.svg";
+export { default as VideoCard1 } from "./video-card-1.png";
+export { default as VideoCard2 } from "./video-card-2.jpg";
+export { default as TextCard1 } from "./text-card-1.svg";
+export { default as TextCard2 } from "./text-card-2.svg";
+export { default as TextCard3 } from "./text-card-3.svg";
+export { default as DevOpsImage } from "./devOps-image.svg";
+export { default as OutSourcingImage } from "./outsourcing-image.svg";
+export { default as UIImage } from "./ui-image.svg";
+export { default as WebImage } from "./web-image.svg";
+export { default as TextTop } from "./text-top.svg";
+export { default as TextBottom } from "./text-bottom.svg";
+export { default as PencilCenter } from "./pencil-center.svg";
+export { default as ImageTop } from "./image-top.svg";
+export { default as ImageBottom } from "./image-bottom.svg";
+export { default as ImageCenter } from "./image-center.png";
+export { default as EmojiTop } from "./emoji-top.png";
+export { default as EmojiBottom } from "./emoji-bottom.png";

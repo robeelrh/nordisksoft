@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Navigation from "./Navbar"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Navigation from "./Navbar";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-[70vh] md:min-h-screen flex flex-col overflow-hidden">
       <Navigation />
-      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/main.jpg?height=800&width=1200"
@@ -17,12 +16,10 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 flex-1 flex items-center justify-center text-center px-6 lg:px-8 max-w-5xl mx-auto">
+      <div className="z-10 flex-1 flex items-center justify-center text-center px-6 lg:px-8 max-w-5xl mx-auto">
         <motion.h1
           className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight"
           initial={{ opacity: 0, y: 50 }}
@@ -37,6 +34,5 @@ export default function HeroSection() {
         </motion.h1>
       </div>
     </section>
-  )
+  );
 }
-

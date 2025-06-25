@@ -4,18 +4,26 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
-import { FoodPackage } from "@/assests";
-import Image from "next/image";
+import { DevOpsImage, OutSourcingImage, UIImage, WebImage } from "@/assests";
+import Image, { StaticImageData } from "next/image";
 
 type TService = {
   id: number;
   title: string;
   description: string;
+  image: StaticImageData;
 };
 
 export default function ServiceSection() {
   const t = useTranslations("Services");
-  const services = t.raw("items") as TService[];
+  const partialServices = t.raw("items") as Omit<TService, "image">[];
+
+  const staticImages = [DevOpsImage, WebImage, UIImage, OutSourcingImage];
+  const services: TService[] = partialServices.map((service, index) => ({
+    ...service,
+    image: staticImages[index],
+  }));
+
   const searchParams = useSearchParams();
 
   const search = searchParams.get("search");
@@ -73,7 +81,7 @@ export default function ServiceSection() {
   return (
     <div
       id="services"
-      className="font-inter flex min-h-[50vh] sm:min-h-[60vh] bg-gradient-to-r from-[#111111] to-[#213c58] py-8 sm:py-10 md:py-12 lg:py-5 xl:py-12 w-4/5 mx-auto rounded-3xl"
+      className="font-inter flex min-h-[67vh] sm:min-h-[60vh] bg-gradient-to-r from-[#111111] to-[#213c58] py-8 sm:py-10 md:py-12  xl:py-12 w-4/5 mx-auto rounded-3xl"
     >
       <div className="flex flex-col gap-9 w-full md:w-10/12 mx-auto">
         <p className="text-white text-3xl font-semibold">/{t("title")}</p>
@@ -95,11 +103,11 @@ export default function ServiceSection() {
               {/* Background Image */}
               <motion.div className="absolute left-0 top-1/2 -translate-y-1/2 z-0 opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none">
                 <Image
-                  src={FoodPackage}
+                  src={service.image}
                   alt="food"
                   width={90}
                   height={100}
-                  className="rounded-2xl"
+                  className="rounded-lg"
                 />
               </motion.div>
 
