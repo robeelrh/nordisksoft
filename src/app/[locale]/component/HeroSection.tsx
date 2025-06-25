@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Navigation from "./Navbar";
 import { slideFromBottom } from "@/utils/SliderAnimation";
@@ -21,6 +20,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           src={backgroundContent}
           autoPlay
+          muted
           loop
           preload="auto"
         />
