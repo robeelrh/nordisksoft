@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { slideFromBack } from "@/utils/SliderAnimation";
+import { Link } from "lucide-react";
 
 export default function TransformationSectionOption1() {
   const t = useTranslations("TransformationSection");
@@ -73,15 +74,21 @@ export default function TransformationSectionOption1() {
                   <h3 className=" text-base sm:text-lg md:text-xl font-normal  w-full sm:w-3/4 md:w-2/3 text-[#11111180]">
                     {t("subtext")}
                   </h3>
+
                   <Image src={LogoBlack} alt="Company Logo" width={220} />
                 </div>
                 <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 bg-black rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center">
-                  <Image
-                    src={TransformationArrow || "/placeholder.svg"}
-                    alt="Arrow Icon"
-                    width={16}
-                    height={16}
-                  />
+                  <a
+                    href="#services"
+                    className="scroll-smooth block w-fit cursor-pointer"
+                  >
+                    <Image
+                      src={TransformationArrow || "/placeholder.svg"}
+                      alt="Arrow Icon"
+                      width={16}
+                      height={16}
+                    />
+                  </a>
                 </div>
               </>
             )}

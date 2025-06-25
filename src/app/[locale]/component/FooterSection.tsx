@@ -18,23 +18,23 @@ export default function FooterSection() {
   const LINKS = [
     {
       text: "Projects",
-      link: "/projects",
+      link: "#projects",
     },
     {
       text: "Services",
-      link: "/services",
+      link: "#services",
     },
     {
       text: "About",
-      link: "/about",
+      link: "#about",
     },
     {
       text: "FAQ",
-      link: "/faq",
+      link: "#faq",
     },
     {
       text: "Contact",
-      link: "/contact",
+      link: "#contact",
     },
     {
       text: "Privacy Policy",

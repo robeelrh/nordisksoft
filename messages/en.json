@@ -39,7 +39,7 @@
   },
   "TransformationSection": {
     "headline": "From ordinary to extra ordinary",
-    "subtext": "Design that’s built to last and grow with your business"
+    "subtext": "Work that’s built to last and grow with your business"
   },
   "CommitmentSection": {
     "headline": "Your <highlight>goals</highlight>, our <highlight>priority</highlight>",
@@ -135,11 +135,26 @@
     "title": "FAQ",
     "description": "We've heard it all. Here's everything you need to know before working with us.",
     "questions": [
-      "What's your process for designing and developing a new website?",
-      "What if I need to make changes or add features in the future?",
-      "Do you offer SEO services?",
-      "How long does it typically take to see results from my brand’s new website?",
-      "How do you ensure the website is mobile-friendly?"
+      {
+        "question": "What's your process for designing and developing a new website?",
+        "answer": "I start by understanding client goals and designing user-friendly layouts, then develop and test the website for optimal performance. After launch, I focus on maintenance and continuous improvements."
+      },
+      {
+        "question": "What if I need to make changes or add features in the future?",
+        "answer": "We plan your project with modular code to make future updates easier. Utilizing version control and thorough documentation will also help you implement new features smoothly."
+      },
+      {
+        "question": "Do you offer SEO services?",
+        "answer": "Yes, we offer comprehensive SEO services to help improve your website’s visibility and ranking. Let us assist you in achieving your online marketing goals!"
+      },
+      {
+        "question": "How long does it typically take to see results from my brand’s new website?",
+        "answer": "Results from your new website typically start to appear within 1-3 months, with long-term growth seen over 6 months or more. Consistent optimization and marketing efforts are key to accelerating success."
+      },
+      {
+        "question": "How do you ensure the website is mobile-friendly?",
+        "answer": "We ensure that your website uses responsive design with flexible layouts, optimized images, and touch-friendly elements for all screen sizes. Regularly test on real devices and tools like Google’s Mobile-Friendly Test to maintain mobile usability."
+      }
     ]
   },
   "Contact": {

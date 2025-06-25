@@ -72,13 +72,13 @@ export default function ServiceSection() {
   return (
     <div
       id="services"
-      className="font-inter flex h-[500px]  bg-gradient-to-r from-[#111111] to-[#213c58] py-8 sm:py-10 md:py-12  xl:py-12 w-4/5 mx-auto rounded-3xl"
+      className="font-inter flex h-[600px]  bg-gradient-to-r from-[#111111] to-[#213c58] py-8 sm:py-10 md:py-12  xl:py-12 w-4/5 mx-auto rounded-3xl"
     >
       <div className="flex flex-col gap-9 w-full md:w-10/12 mx-auto">
         <p className="text-white text-3xl font-semibold">/{t("title")}</p>
 
         <motion.div
-          className="flex flex-col gap-4 sm:gap-5 md:gap-7 lg:gap-8 ml-2"
+          className="flex flex-col gap-7 lg:gap-11 ml-2"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"

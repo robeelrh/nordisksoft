@@ -133,9 +133,29 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-[#56aeff] hover:bg-[#4a9ae8] disabled:bg-[#56aeff]/50 text-white py-4 px-6 rounded-lg transition-all duration-200 font-medium text-base disabled:cursor-not-allowed disabled:opacity-50 w-full"
+          className="group bg-[#56aeff] hover:bg-[#4a9ae8] disabled:bg-[#56aeff]/50 text-white py-4 px-6 rounded-lg transition-all duration-200 font-medium text-base disabled:cursor-not-allowed disabled:opacity-50 w-full relative overflow-hidden"
         >
-          {isSubmitting ? "Sending..." : "Submit"}
+          <span className="flex items-center justify-center gap-2 relative z-10">
+            {isSubmitting ? "Sending..." : "Submit"}
+            {!isSubmitting && (
+              <svg
+                className="w-4 h-4 transform transition-transform duration-200 group-hover:translate-x-1 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            )}
+          </span>
+
+          {/* Shine effect */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
         </button>
       </form>
     </div>

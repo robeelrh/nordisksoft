@@ -2,12 +2,16 @@
 
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { slideFromBottom, slideFromLeft } from "@/utils/SliderAnimation";
 
+type TFaq = {
+  question: string;
+  answer: string;
+};
 export default function FAQSection() {
   const t = useTranslations("FAQ");
-  const FAQS = t.raw("questions") as string[];
+  const FAQS = t.raw("questions") as TFaq[];
 
   const staggerContainer = {
     hidden: {},
@@ -68,26 +72,35 @@ export default function FAQSection() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        {FAQS.map((question, index) => (
+        {FAQS.map((faq, index) => (
           <motion.div
-            className="border-b border-gray flex justify-between items-center py-3 md:py-6"
             key={index}
+            className="border-b border-gray py-3 md:py-6 group cursor-pointer"
             variants={faqItemAnimation}
-            whileHover={{
-              x: 5,
-              transition: { duration: 0.2 },
-            }}
+            whileHover={{ x: 5, transition: { duration: 0.2 } }}
           >
-            <p className="text-sm sm:text-base md:text-lg pr-4">{question}</p>
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-                rotate: 90,
-                transition: { duration: 0.2 },
-              }}
-            >
-              <Plus className="text-blue cursor-pointer h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-            </motion.div>
+            {/* Question + Icon */}
+            <div className="flex justify-between items-center">
+              <p className="text-sm sm:text-base md:text-lg pr-4">
+                {faq.question}
+              </p>
+              <motion.div className="transition-transform duration-300 group-hover:rotate-45">
+                <Plus className="text-blue h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+              </motion.div>
+            </div>
+
+            {/* Animated Answer */}
+            <AnimatePresence>
+              <motion.div
+                initial={{ opacity: 0, y: -5, height: 0 }}
+                animate={{ opacity: 1, y: 0, height: "auto" }}
+                exit={{ opacity: 0, y: -5, height: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden mt-2 text-sm sm:text-base text-gray-600 group-hover:block hidden"
+              >
+                {faq.answer}
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
         ))}
       </motion.div>

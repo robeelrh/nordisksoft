@@ -9,13 +9,6 @@ export default function HeroSection() {
     <section className="relative min-h-[70vh] md:min-h-screen flex flex-col overflow-hidden">
       <Navigation />
       <div className="absolute inset-0 z-0">
-        {/* <Image
-          src="/main.jpg?height=800&width=1200"
-          alt="Tech background with network connections"
-          fill
-          className="object-cover"
-          priority
-        /> */}
         <video
           className="w-full h-full object-cover"
           src={backgroundContent}
@@ -24,7 +17,7 @@ export default function HeroSection() {
           loop
           preload="auto"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       <motion.div

@@ -32,7 +32,7 @@ export default function TeamShowcaseSection() {
   return (
     <section
       id="about"
-      className="md:h-[800px] lg:h-[600px] xl:h-[700px] w-11/12 xl:w-4/5 mx-auto flex items-center"
+      className="md:h-[800px] lg:h-[750px] xl:h-[840px] w-11/12 xl:w-4/5 mx-auto flex items-center"
     >
       <div className="grid lg:grid-cols-5 gap-14 items-start">
         <motion.div
