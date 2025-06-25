@@ -1,3 +1,5 @@
+import { delay } from "framer-motion";
+
 export const slideFromLeft = {
   hidden: { opacity: 0, x: -50 },
   visible: {
@@ -24,6 +26,10 @@ export const slideFromTopLeft = {
     opacity: 1,
     y: 0,
     x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
   },
 };
 
@@ -40,6 +46,10 @@ export const slideFromBottom = {
   visible: {
     opacity: 1,
     y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
   },
 };
 
@@ -62,7 +72,8 @@ export const slideFromBack = {
     scale: 1,
     rotateX: 0,
     transition: {
-      duration: 1,
+      duration: 0.6,
+      delay: 0.2,
       ease: "easeOut",
     },
   },

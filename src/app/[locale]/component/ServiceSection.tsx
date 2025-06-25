@@ -60,24 +60,15 @@ export default function ServiceSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.5,
+        staggerChildren: 0.2, // delay between children
       },
     },
   };
 
-  // const serviceItemAnimation = {
-  //   hidden: { opacity: 0, x: 50 },
-  //   visible: {
-  //     opacity: 1,
-  //     x: 0,
-  //     transition: {
-  //       duration: 0.6,
-  //       ease: "easeOut",
-  //     },
-  //   },
-  // };
-
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <div
       id="services"
@@ -94,13 +85,14 @@ export default function ServiceSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.id}
+              variants={fadeInRight}
+              transition={{ delay: 0.3 * index, duration: 0.4 }}
               className="relative group space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6 cursor-pointer overflow-hidden"
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
             >
-              {/* Background Image */}
               <motion.div className="absolute left-0 top-1/2 -translate-y-1/2 z-0 opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none">
                 <Image
                   src={service.image}
@@ -111,7 +103,7 @@ export default function ServiceSection() {
                 />
               </motion.div>
 
-              {/* Title & Index (Index stays fixed) */}
+              {/* Title and Index */}
               <div className="relative z-10 flex items-start justify-between">
                 <motion.p
                   className={`font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 text-white`}
@@ -133,7 +125,7 @@ export default function ServiceSection() {
                   {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

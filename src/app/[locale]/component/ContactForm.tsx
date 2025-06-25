@@ -64,11 +64,14 @@ export default function ContactForm() {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col  space-y-4 w-full"
       >
-        <div>
+        <div className="group relative">
           <input
             type="text"
             placeholder="Name*"
-            className="bg-slate-700/50 border border-[#56aeff]/30 focus:border-[#56aeff] rounded-lg w-full p-4 text-base focus:outline-none placeholder-white/50 text-white transition-colors duration-200"
+            className="peer bg-slate-700/50 border border-[#56aeff]/30 group-hover:border-[#56aeff] focus:border-[#56aeff] 
+               group-hover:text-white text-white group-hover:placeholder-white/80 placeholder-white/50
+               group-hover:shadow-[0_0_8px_#56aeff] focus:shadow-[0_0_8px_#56aeff]
+               rounded-lg w-full p-4 text-base focus:outline-none transition-all duration-200"
             {...register("name")}
             ref={(e) => {
               register("name").ref(e);
@@ -83,11 +86,14 @@ export default function ContactForm() {
           )}
         </div>
 
-        <div>
+        <div className="group relative">
           <input
             type="email"
             placeholder="Email*"
-            className="bg-slate-700/50 border border-[#56aeff]/30 focus:border-[#56aeff] rounded-lg w-full p-4 text-base focus:outline-none placeholder-white/50 text-white transition-colors duration-200"
+            className="peer bg-slate-700/50 border border-[#56aeff]/30 group-hover:border-[#56aeff] focus:border-[#56aeff] 
+               group-hover:text-white text-white group-hover:placeholder-white/80 placeholder-white/50
+               group-hover:shadow-[0_0_8px_#56aeff] focus:shadow-[0_0_8px_#56aeff]
+               rounded-lg w-full p-4 text-base focus:outline-none transition-all duration-200"
             {...register("email")}
             ref={(e) => {
               register("email").ref(e);
@@ -102,11 +108,14 @@ export default function ContactForm() {
           )}
         </div>
 
-        <div>
+        <div className="group relative">
           <textarea
             rows={4}
             placeholder="Message* (Tell us about your project)"
-            className="bg-slate-700/50 border border-[#56aeff]/30 focus:border-[#56aeff] rounded-lg w-full p-4 text-base focus:outline-none placeholder-white/50 text-white resize-none transition-colors duration-200"
+            className="peer bg-slate-700/50 border border-[#56aeff]/30 group-hover:border-[#56aeff] focus:border-[#56aeff] 
+               group-hover:text-white text-white group-hover:placeholder-white/80 placeholder-white/50
+               group-hover:shadow-[0_0_8px_#56aeff] focus:shadow-[0_0_8px_#56aeff]
+               rounded-lg w-full p-4 text-base focus:outline-none resize-none transition-all duration-200"
             {...register("message")}
             ref={(e) => {
               register("message").ref(e);

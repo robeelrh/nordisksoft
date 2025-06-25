@@ -83,15 +83,18 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Auto-scroll effect
+  // Auto-scroll logic
   useEffect(() => {
+    if (isHovered) return; // Stop sliding on hover
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 2000); // Change slide every 3 seconds
+    }, 1000); // Adjust speed if needed
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered]); // Re-run effect when hover state changes
 
   const containerVariants = {
     hidden: {},
@@ -103,35 +106,33 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900  m-4 rounded-3xl ">
-      {/* Header */}
-      <div className=" flex flex-col gap-12">
+    <section id="projects" className="py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 m-4 rounded-3xl">
+      <div className="flex flex-col gap-12">
+        {/* Header */}
         <div className="w-10/12 mx-auto flex flex-col gap-12">
-          <p className="text-white font-semibold text-lg lg:text-3xl ">
+          <p className="text-white font-semibold text-lg lg:text-3xl">
             /Testimonials
           </p>
           <motion.h2
             className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-[#56aeff] leading-tight"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             Success stories from our clients
           </motion.h2>
         </div>
 
-        {/* Horizontal Scrolling Testimonials */}
-        <div className="relative overflow-hidden">
+        {/* Slider */}
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <motion.div
             className="flex gap-6"
-            animate={{
-              x: `-${currentIndex * 320}px`, // Adjust based on card width + gap
-            }}
-            transition={{
-              duration: 0.8,
-              ease: "easeInOut",
-            }}
+            animate={{ x: `-${currentIndex * 320}px` }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -140,15 +141,11 @@ export default function TestimonialsSection() {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
-                className={`
-                    flex-shrink-0 w-140 h-70
-                    ${
-                      testimonial.type === "text"
-                        ? "bg-slate-700/50 p-6"
-                        : "bg-slate-600/30 overflow-hidden"
-                    } 
-                    rounded-2xl backdrop-blur-sm border border-white/10
-                  `}
+                className={`flex-shrink-0 w-140 h-70 ${
+                  testimonial.type === "text"
+                    ? "bg-slate-700/50 p-6"
+                    : "bg-slate-600/30 overflow-hidden"
+                } rounded-2xl backdrop-blur-sm border border-white/10`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -164,8 +161,6 @@ export default function TestimonialsSection() {
           </motion.div>
         </div>
       </div>
-
-      {/* Navigation Dots */}
     </section>
   );
 }

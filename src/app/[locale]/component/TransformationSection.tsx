@@ -22,8 +22,6 @@ export default function TransformationSectionOption1() {
           variants={slideFromBack}
           initial="hidden"
           whileInView="visible"
-          transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.1 }}
         >
           <Image
             src={TransformationWhiteText}
@@ -41,8 +39,6 @@ export default function TransformationSectionOption1() {
           variants={slideFromBack}
           initial="hidden"
           whileInView="visible"
-          transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.1 }}
         >
           <Image
             src={TransformationBlackText}
@@ -54,15 +50,12 @@ export default function TransformationSectionOption1() {
         </motion.div>
       </div>
 
-      {/* Top half image */}
       <div className="flex-3/5 w-2/5  mx-auto z-10 h-[70vh]">
         <Image
-          className="w-full h-full object-fill" // or use object-contain based on desired scaling
+          className="w-full h-full object-fill"
           alt="Background Image"
           src={TransformationBg}
-          // fill
         />
-        {/* <div className="bg-red-300 ">dedw</div> */}
       </div>
 
       {/* Bottom half - responsive layout */}

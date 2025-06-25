@@ -32,7 +32,10 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="h-[580px] w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row items-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 font-inter overflow-hidden">
+    <section
+      id="faq"
+      className="h-[580px] w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row items-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 font-inter overflow-hidden"
+    >
       {/* Left panel - slide from left */}
       <div className="w-full lg:w-1/4 mb-6 lg:mb-0 ">
         <motion.h2

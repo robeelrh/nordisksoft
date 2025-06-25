@@ -17,32 +17,23 @@ export default function StatsSection() {
 
   return (
     <section className=" min-h-[75vh]  py-8 lg:py-18 w-4/5 mx-auto flex flex-col items-start justify-around font-inter">
-      <div className="w-full flex items-center justify-center flex-col font-semibold gap-3 text-start text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4">
-        <motion.p
-          variants={slideFromTop}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
-          className="text-start md:text-center w-full text-black"
-        >
+      <motion.div
+        className="w-full flex items-center justify-center flex-col font-semibold gap-3 text-start text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4"
+        variants={slideFromTop}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <p className="text-start md:text-center w-full text-black">
           {t.rich("headlineMain", {
             highlight: (chunks) => <span className="text-blue">{chunks}</span>,
           })}
-        </motion.p>
-        <motion.p
-          variants={slideFromTop}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-          className="text-start md:text-center w-full text-black"
-        >
+        </p>
+        <p className="text-start md:text-center w-full text-black">
           {t.rich("headlineSub", {
             highlight: (chunks) => <span className="text-blue">{chunks}</span>,
           })}
-        </motion.p>
-      </div>
+        </p>
+      </motion.div>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-10">
         {metrics.map((item, index) => (
