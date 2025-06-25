@@ -39,16 +39,40 @@ export default function ContactNowButton({
         rounded-[40px]
         ${className}
       `}
-      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      animate="default"
+      whileHover="hover"
+      variants={{
+        default: { scale: 1 },
+        hover: { scale: 1.02 },
+      }}
     >
-      <div className="bg-blue rounded-full p-3 flex items-center justify-center">
+      <motion.div
+        className="bg-blue rounded-full p-3 flex items-center justify-center"
+        variants={{
+          default: { x: 0 },
+          hover: { x: "calc(100% + 100px)" },
+        }}
+        transition={{
+          type: "tween",
+          duration: 0.4,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+      >
         <ArrowRight className="w-5 h-5 text-white" />
-      </div>
-      <span className="text-xl font-medium p-2">{text}</span>
+      </motion.div>
+      <motion.span
+        className="text-xl font-medium p-2"
+        animate={{ x: 0 }}
+        whileHover={{ x: -40 }}
+        transition={{
+          type: "tween",
+          duration: 0.4,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+      >
+        {text}
+      </motion.span>
     </motion.button>
   );
 }
