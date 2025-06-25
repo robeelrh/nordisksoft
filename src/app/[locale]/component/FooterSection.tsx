@@ -100,7 +100,7 @@ export default function FooterSection() {
   // };
 
   return (
-    <section className="h-[55vh] bg-[#F4F4F5] w-full">
+    <section className="h-[500px] bg-[#F4F4F5] w-full">
       <div className="h-full flex flex-col md:flex-row gap-6 md:gap-0 w-full px-3 xl:px-0 xl:w-4/5 mx-auto py-16">
         <div className="w-full md:w-1/3 h-full flex flex-col justify-between">
           <motion.div

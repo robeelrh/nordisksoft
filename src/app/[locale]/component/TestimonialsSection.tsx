@@ -103,7 +103,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-16 mx-auto w-11/12 xl:w-4/5 h-[67vh] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900  m-4 rounded-3xl ">
+    <section className="py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900  m-4 rounded-3xl ">
       {/* Header */}
       <div className=" flex flex-col gap-12">
         <div className="w-10/12 mx-auto flex flex-col gap-12">

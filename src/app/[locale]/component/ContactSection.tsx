@@ -13,7 +13,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-16 md:h-[120vh] lg:h-[75vh] xl:h-[70vh] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 mx-auto xl:w-4/5 w-11/12  rounded-3xl my-6"
+      className="py-16 md:h-[970px] lg:h-[670px] xl:h-[640px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 mx-auto xl:w-4/5 w-11/12  rounded-3xl my-6"
     >
       <div className="w-10/12 mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 h-full">
         {/* Left Content */}
