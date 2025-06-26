@@ -55,7 +55,7 @@ export default function Navigation() {
 
           {/* Desktop Hire Us Button */}
           <button className="hidden lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-7 py-3 rounded-lg items-center gap-2 transition-all duration-200 text-xl font-semibold">
-            Hire Us
+            {t("hireUs")}
             <ArrowRight className="w-4 h-4" />
           </button>
 
@@ -104,7 +104,7 @@ export default function Navigation() {
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Hire Us
+                  {t("hireUs")}
                   <ArrowRight className="w-4 h-4" />
                 </motion.button>
               </div>

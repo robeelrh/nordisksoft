@@ -124,13 +124,12 @@ export default function TestimonialsSection() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 1000); // Increased interval for better UX
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [isHovered, playingVideoId]);
 
   const handleVideoPlay = (id: number) => {
-    // Pause all other videos
     Object.entries(videoRefs.current).forEach(([key, video]) => {
       if (video && parseInt(key) !== id) {
         video.pause();

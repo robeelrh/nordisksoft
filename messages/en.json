@@ -1,15 +1,15 @@
 {
   "HeroSection": {
-    "headlineMain": "Digital",
-    "headlineSub": "Design Studio",
-    "description": "We create digital designs that help brands move faster and convert better. Your business deserves more than just a website. It needs results."
+    "headline": "Building Innovative <highlight>Software Solutions</highlight>,",
+    "subheadline": "Empowering Your Future  "
   },
   "Navigation": {
     "projects": "Projects",
     "services": "Services",
     "about": "About",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "hireUs": "Hire us"
   },
   "StatsSection": {
     "headlineMain": "Our work <highlight>speaks</highlight> through numbers.",
@@ -71,12 +71,8 @@
     ]
   },
   "About": {
-    "quote": "Reem helps companies create stunning and strategically sound experiences that engage audiences. Our experts work closely with you to ensure that every detail is aligned with your goals.",
-    "description": "From concept to launch, we craft digital solutions that not only look exceptional but also drive results, building connections that last.",
-    "person": {
-      "name": "Alice Wilson",
-      "title": "Project manager and founder"
-    }
+    "quote": "Nordisk soft helps companies create stunning and strategically sound experiences that <highlight>engage audiences</highlight>. Our <highlight>experts</highlight> work closely with you to ensure that every detail is aligned with <highlight>your goals.</highlight>",
+    "description": "From concept to launch, we craft digital solutions that not only look exceptional but also drive results, building connections that last."
   },
   "Pricing": {
     "title": "Flexible pricing",
@@ -158,15 +154,17 @@
     ]
   },
   "Contact": {
-    "headlineTop": "Let's Work Together",
-    "headlineMain": "Connect Us!",
-    "description": "Let's create something amazing together! Reach out I'd love to hear about your project and ideas.",
-    "features": ["24/7 Full Time Support", "Available Worldwide"],
+    "heading": "Let's Work Together",
+    "title": "Connect Us!",
+    "description": "Let's create something amazing together! Reach out, I'd love to hear about your project and ideas.",
+    "support1": "24/7 Full Time Support",
+    "support2": "Available Worldwide",
     "button": "Contact Now",
     "form": {
       "name": "Name*",
-      "email": "E-mail*",
-      "message": "Message (Tell us about your project)"
+      "email": "Email*",
+      "message": "Message* (Tell us about your project)",
+      "submit": "Submit"
     }
   },
   "Footer": {
@@ -177,10 +175,11 @@
       "about": "About",
       "projects": "Projects",
       "blog": "Blog",
-      "content": "Content",
+      "contact": "Contact",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "error404": "404",
+      "services": "Services",
+      "faq": "FAQ",
       "twitter": "Twitter",
       "behance": "Behance",
       "instagram": "Instagram",
@@ -190,6 +189,6 @@
       "phone": "(+92) 300 9999999",
       "email": "hello@reemstudio.com"
     },
-    "description": "With reem, your company gets more than just a website. We design experiences that resonate with your customers and drive meaningful engagement."
+    "description": " With Nordisk Soft, your company grows seamlessly through innovative software solutions. We empower your business to thrive in the digital age."
   }
 }

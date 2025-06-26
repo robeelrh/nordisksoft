@@ -8,8 +8,10 @@ import {
   slideFromRight,
 } from "@/utils/SliderAnimation";
 import { Plus } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ContactSection() {
+  const t = useTranslations("Contact");
   return (
     <section
       id="contact"
@@ -20,7 +22,7 @@ export default function ContactSection() {
         <div className="flex flex-col gap-12 lg:w-1/2 h-full justify-between">
           <div className="flex flex-col gap-8 text-white font-inter">
             <p className="font-semibold text-lg lg:text-3xl text-white">
-              Let&apos;s Work Together
+              {t("heading")}
             </p>
             <motion.p
               className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-none text-blue"
@@ -30,7 +32,7 @@ export default function ContactSection() {
               transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              Connect Us!
+              {t("title")}
             </motion.p>
 
             <motion.div
@@ -41,15 +43,14 @@ export default function ContactSection() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <p className="text-sm sm:text-base text-white max-w-md">
-                Let&apos;s create something amazing together! Reach out I&apos;d
-                love to hear about your project and ideas.
+                {t("description")}
               </p>
             </motion.div>
           </div>
 
           <div className="flex flex-col gap-4">
-            <Feature feature="24/7 Full Time Support" />
-            <Feature feature="Available Worldwide" />
+            <Feature feature={t("support1")} />
+            <Feature feature={t("support2")} />
           </div>
 
           {/* Contact Now Button */}
@@ -60,7 +61,7 @@ export default function ContactSection() {
             transition={{ delay: 0.5, duration: 0.4, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <ContactNowButton />
+            <ContactNowButton text={t("button")} />
           </motion.div>
         </div>
 

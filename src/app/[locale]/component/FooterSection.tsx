@@ -13,35 +13,37 @@ import {
 } from "@/utils/SliderAnimation";
 import Image from "next/image";
 import { LogoBlack } from "@/assests";
+import { useTranslations } from "next-intl";
 
 export default function FooterSection() {
+  const t = useTranslations("Footer");
   const LINKS = [
     {
-      text: "Projects",
+      text: t("links.projects"),
       link: "#projects",
     },
     {
-      text: "Services",
+      text: t("links.services"),
       link: "#services",
     },
     {
-      text: "About",
+      text: t("links.about"),
       link: "#about",
     },
     {
-      text: "FAQ",
+      text: t("links.faq"),
       link: "#faq",
     },
     {
-      text: "Contact",
+      text: t("links.contact"),
       link: "#contact",
     },
     {
-      text: "Privacy Policy",
+      text: t("links.privacy"),
       link: "/privacy",
     },
     {
-      text: "Terms of Service",
+      text: t("links.terms"),
       link: "/terms",
     },
     {
@@ -147,11 +149,10 @@ export default function FooterSection() {
             >
               <div className="flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4 ml-6 lg:ml-8 xl:ml-9 2xl:ml-13">
                 <div className="text-2xl lg:text-2xl xl:text-3xl text-blue font-medium">
-                  Stay connected
+                  {t("newsletterTitle")}
                 </div>
                 <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full md:w-[85%]">
-                  Join our newsletter and stay updated on the latest trends in
-                  digital design
+                  {t("newsletterDescription")}
                 </div>
               </div>
               <EmailInput />
@@ -214,9 +215,7 @@ export default function FooterSection() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            With Nordisk Soft, your company grows seamlessly through innovative
-            software solutions. We empower your business to thrive in the
-            digital age.
+            {t("description")}
           </motion.p>
         </div>
       </div>

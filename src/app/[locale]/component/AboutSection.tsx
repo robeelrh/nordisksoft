@@ -17,9 +17,12 @@ import {
   slideFromTop,
 } from "@/utils/SliderAnimation";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function TeamShowcaseSection() {
+  const t = useTranslations("About");
+
   return (
     <section
       id="about"
@@ -33,21 +36,12 @@ export default function TeamShowcaseSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="text-2xl xl:text-3xl font-semibold font-inter leading-tight">
-            <span className="text-gray-800">
-              &ldquo;Nordisk soft helps companies create stunning and
-              strategically sound experiences that{" "}
-            </span>
-
-            <span className="text-[#56aeff]">engage audiences</span>
-            <span className="text-gray-800">.</span>
-            <span className="text-gray-800">Our </span>
-            <span className="text-[#56aeff]">experts</span>
-            <span className="text-gray-800">
-              work closely with you to ensure that every detail is aligned with
-            </span>
-            <span className="text-[#56aeff]"> your goals</span>
-            <span className="text-gray-800">&ldquo;</span>
+          <div className="text-2xl xl:text-3xl font-semibold font-inter leading-tight text-gray-800">
+            {t.rich("quote", {
+              highlight: (chunks) => (
+                <span className="text-blue">{chunks}</span>
+              ),
+            })}
           </div>
 
           <motion.p
@@ -57,9 +51,7 @@ export default function TeamShowcaseSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            From concept to launch, we craft digital solutions that not only
-            look exceptional but also drive results, building connections that
-            last.
+            {t("description")}.
           </motion.p>
           <div className="h-[1px] bg-gray" />
         </motion.div>

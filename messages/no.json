@@ -1,15 +1,15 @@
 {
   "HeroSection": {
-    "headlineMain": "Digitalt",
-    "headlineSub": "Design Studio",
-    "description": "Vi lager digitale design som hjelper merkevarer med å handle raskere og konvertere bedre. Din bedrift fortjener mer enn bare et nettsted. Den trenger resultater."
+    "headline": "Bygger innovative <highlight>programvareløsninger</highlight>",
+    "subheadline": "Styrker din fremtid"
   },
   "Navigation": {
-    "reem": "REEM",
-    "about": "OM OSS",
-    "services": "TJENESTER",
-    "contact": "KONTAKT",
-    "menu": "MENY"
+    "projects": "Prosjekter",
+    "services": "Tjenester",
+    "about": "Om oss",
+    "faq": "Vanlige spørsmål",
+    "contact": "Kontakt",
+    "hireUs": "Ansett oss"
   },
   "StatsSection": {
     "headlineMain": "Arbeidet vårt <highlight>snakker</highlight> i tall.",
@@ -17,22 +17,22 @@
     "metrics": [
       {
         "label": "19+",
-        "title": "Lanserte nettsider",
-        "description": "Vi hjelper merkevarer med å bli synlige på nett."
+        "title": "Lanserte nettsteder",
+        "description": "Vi hjelper merkevarer med å sette sitt preg på nettet."
       },
       {
         "label": "1,2M+",
-        "title": "Nådd brukere",
-        "description": "Våre design begeistrer millioner over hele verden."
+        "title": "Brukere nådd",
+        "description": "Våre design engasjerer millioner globalt."
       },
       {
         "label": "98%",
         "title": "Kundetilfredshet",
-        "description": "Vi bygger langsiktige partnerskap gjennom målbare resultater."
+        "description": "Vi bygger langsiktige partnerskap gjennom dokumenterte resultater."
       },
       {
         "label": "12+",
-        "title": "Års erfaring",
+        "title": "År med ekspertise",
         "description": "Tiår med erfaring i å levere effektive digitale løsninger."
       }
     ]
@@ -50,33 +50,29 @@
     "items": [
       {
         "id": "01",
-        "title": "Branding",
-        "description": "Vi skaper sterke merkevareidentiteter som skiller din virksomhet ut og knytter bånd til målgruppen din."
+        "title": "Dev Ops",
+        "description": "Vi skaper innflytelsesrike merkevareidentiteter som skiller din virksomhet ut og knytter kontakt med målgruppen din."
       },
       {
         "id": "02",
-        "title": "Utvikling",
-        "description": "Vi utvikler raske, skalerbare og sikre web- og mobilapplikasjoner tilpasset dine forretningsmål."
+        "title": "Webutvikling",
+        "description": "Vi bygger raske, skalerbare og sikre nett- og mobilapplikasjoner tilpasset dine forretningsmål."
       },
       {
         "id": "03",
-        "title": "Nettsider",
-        "description": "Vi designer og utvikler responsive, brukervennlige nettsider som styrker din digitale tilstedeværelse."
+        "title": "UI UX Design",
+        "description": "Vi designer og utvikler responsive, brukervennlige nettsteder som styrker din tilstedeværelse på nett."
       },
       {
         "id": "04",
-        "title": "Designstøtte",
-        "description": "Vårt team gir løpende designstøtte for å sikre at ditt visuelle innhold forblir konsistent og effektivt."
+        "title": "IT Teamutleie",
+        "description": "Vårt team tilbyr kontinuerlig designstøtte for å sikre at dine visuelle elementer forblir konsekvente og effektive."
       }
     ]
   },
   "About": {
-    "quote": "Reem hjelper bedrifter med å skape imponerende og strategisk gjennomtenkte opplevelser som engasjerer publikum. Våre eksperter samarbeider tett med deg for å sikre at hvert detalj samsvarer med dine mål.",
-    "description": "Fra idé til gjennomføring utvikler vi digitale løsninger som ikke bare ser fantastiske ut, men også gir resultater og bygger varige forbindelser.",
-    "person": {
-      "name": "Alice Wilson",
-      "title": "Prosjektleder og grunnlegger"
-    }
+    "quote": "Nordisk Soft hjelper selskaper med å skape imponerende og strategisk gjennomtenkte opplevelser som <highlight>engasjerer målgruppen</highlight>. Våre <highlight>eksperter</highlight> jobber tett med deg for å sikre at hver detalj er i tråd med <highlight>dine mål</highlight>.",
+    "description": "Fra idé til lansering skaper vi digitale løsninger som ikke bare ser eksepsjonelle ut, men også gir resultater og bygger varige relasjoner."
   },
   "Pricing": {
     "title": "Fleksibel prising",
@@ -131,27 +127,45 @@
       "yearly": []
     }
   },
+
   "FAQ": {
     "title": "FAQ",
     "description": "Vi har hørt det meste. Her er alt du trenger å vite før du samarbeider med oss.",
     "questions": [
-      "Hvordan foregår prosessen for å designe og utvikle en ny nettside?",
-      "Hva om jeg ønsker å gjøre endringer eller legge til funksjoner senere?",
-      "Tilbyr dere SEO-tjenester?",
-      "Hvor lang tid tar det vanligvis før man ser resultater fra den nye nettsiden?",
-      "Hvordan sikrer dere at nettsiden er mobilvennlig?"
+      {
+        "question": "Hva er prosessen deres for å designe og utvikle et nytt nettsted?",
+        "answer": "Jeg starter med å forstå kundens mål og designer brukervennlige oppsett, deretter utvikler og tester jeg nettstedet for optimal ytelse. Etter lansering fokuserer jeg på vedlikehold og kontinuerlige forbedringer."
+      },
+      {
+        "question": "Hva om jeg trenger å gjøre endringer eller legge til funksjoner i fremtiden?",
+        "answer": "Vi planlegger prosjektet ditt med modulær kode for å gjøre fremtidige oppdateringer enklere. Bruk av versjonskontroll og grundig dokumentasjon gjør det også lettere å implementere nye funksjoner."
+      },
+      {
+        "question": "Tilbyr dere SEO-tjenester?",
+        "answer": "Ja, vi tilbyr omfattende SEO-tjenester for å forbedre nettstedets synlighet og rangering. La oss hjelpe deg med å nå dine mål innen digital markedsføring!"
+      },
+      {
+        "question": "Hvor lang tid tar det vanligvis før jeg ser resultater fra det nye nettstedet mitt?",
+        "answer": "Resultater fra det nye nettstedet ditt begynner vanligvis å vises innen 1–3 måneder, med langsiktig vekst etter 6 måneder eller mer. Jevn optimalisering og markedsføring er nøkkelen til raskere suksess."
+      },
+      {
+        "question": "Hvordan sikrer dere at nettstedet er mobilvennlig?",
+        "answer": "Vi bruker responsivt design med fleksible oppsett, optimaliserte bilder og berøringsvennlige elementer for alle skjermstørrelser. Vi tester jevnlig på ekte enheter og med verktøy som Googles Mobile-Friendly Test for å sikre god mobilbrukervennlighet."
+      }
     ]
   },
   "Contact": {
-    "headlineTop": "La oss jobbe sammen",
-    "headlineMain": "Kontakt oss!",
-    "description": "La oss skape noe fantastisk sammen! Ta kontakt – jeg vil gjerne høre om prosjektet og ideene dine.",
-    "features": ["24/7 fulltidssupport", "Tilgjengelig over hele verden"],
+    "heading": "La oss jobbe sammen",
+    "title": "Kontakt oss!",
+    "description": "La oss skape noe fantastisk sammen! Ta kontakt – jeg vil gjerne høre om prosjektet ditt og ideene dine.",
+    "support1": "24/7 fulltidssupport",
+    "support2": "Tilgjengelig over hele verden",
     "button": "Kontakt nå",
     "form": {
       "name": "Navn*",
       "email": "E-post*",
-      "message": "Melding (Fortell oss om prosjektet ditt)"
+      "message": "Melding* (Fortell oss om prosjektet ditt)",
+      "submit": "Send inn"
     }
   },
   "Footer": {
@@ -165,7 +179,9 @@
       "content": "Innhold",
       "privacy": "Personvernerklæring",
       "terms": "Vilkår og betingelser",
-      "error404": "404",
+      "services": "Tjenester",
+      "faq": "Vanlige spørsmål",
+      "contact": "Kontakt",
       "twitter": "Twitter",
       "behance": "Behance",
       "instagram": "Instagram",
@@ -175,6 +191,6 @@
       "phone": "(+92) 300 9999999",
       "email": "hello@reemstudio.com"
     },
-    "description": "Med Reem får din bedrift mer enn bare en nettside. Vi skaper opplevelser som resonerer med kundene dine og fremmer meningsfulle interaksjoner."
+    "description": "Med Nordisk Soft vokser selskapet ditt sømløst gjennom innovative programvareløsninger. Vi gir virksomheten din kraft til å blomstre i den digitale tidsalderen."
   }
 }

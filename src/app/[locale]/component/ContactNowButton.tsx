@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ContactNowButtonProps {
   onClick?: () => void;
@@ -12,7 +13,7 @@ interface ContactNowButtonProps {
 export default function ContactNowButton({
   onClick,
   className = "",
-  text = "Contact Now",
+  text,
 }: ContactNowButtonProps) {
   const handleClick = () => {
     if (onClick) {
@@ -31,7 +32,7 @@ export default function ContactNowButton({
       className={`
         bg-[#302f2f] hover:bg-gray-700 cursor-pointer
         text-white font-medium
-        px-3 py-2
+        w-52 px-2 py-2
         flex items-center gap-3
         transition-all duration-200
         shadow-sm hover:shadow-md
