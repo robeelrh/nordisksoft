@@ -12,7 +12,7 @@ import { slideFromLeft } from "@/utils/SliderAnimation";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 
 interface Testimonial {
   id: number;
@@ -96,6 +96,8 @@ const testimonials: Testimonial[] = [
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [playingVideoId, setPlayingVideoId] = useState<number | null>(null);
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
 
   const width = useWindowWidth();
 
@@ -108,16 +110,6 @@ export default function TestimonialsSection() {
   else if (width < 2400) cardWidth = 400;
   else cardWidth = 360;
 
-  useEffect(() => {
-    if (isHovered) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [isHovered]);
-
   const containerVariants = {
     hidden: {},
     visible: {
@@ -125,6 +117,32 @@ export default function TestimonialsSection() {
         staggerChildren: 0.1,
       },
     },
+  };
+
+  useEffect(() => {
+    if (isHovered || playingVideoId !== null) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 1000); // Increased interval for better UX
+
+    return () => clearInterval(interval);
+  }, [isHovered, playingVideoId]);
+
+  const handleVideoPlay = (id: number) => {
+    // Pause all other videos
+    Object.entries(videoRefs.current).forEach(([key, video]) => {
+      if (video && parseInt(key) !== id) {
+        video.pause();
+      }
+    });
+    setPlayingVideoId(id);
+  };
+
+  const handleVideoPause = (id: number) => {
+    if (playingVideoId === id) {
+      setPlayingVideoId(null);
+    }
   };
 
   return (
@@ -181,7 +199,15 @@ export default function TestimonialsSection() {
                 {testimonial.type === "image" ? (
                   <ImageTestimonialCard testimonial={testimonial} />
                 ) : testimonial.type === "video" ? (
-                  <VideoTestimonialCard testimonial={testimonial} />
+                  <VideoTestimonialCard
+                    key={testimonial.id}
+                    testimonial={testimonial}
+                    ref={(el) => {
+                      videoRefs.current[testimonial.id] = el;
+                    }}
+                    onPlay={() => handleVideoPlay(testimonial.id)}
+                    onPause={() => handleVideoPause(testimonial.id)}
+                  />
                 ) : (
                   <TextTestimonialCard testimonial={testimonial} />
                 )}
@@ -237,19 +263,26 @@ function ImageTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   );
 }
 
-export function VideoTestimonialCard({
-  testimonial,
-}: {
+interface VideoTestimonialCardProps {
   testimonial: Testimonial;
-}) {
+  onPlay: () => void;
+  onPause: () => void;
+}
+
+const VideoTestimonialCard = forwardRef<
+  HTMLVideoElement,
+  VideoTestimonialCardProps
+>(({ testimonial, onPlay, onPause }, ref) => {
   return (
     <div className="relative h-full group rounded-2xl overflow-hidden">
-      {/* Video with controls */}
       <video
+        ref={ref}
         className="object-cover w-full h-full rounded-2xl z-10 relative"
         src={testimonial.image as string}
-        preload="auto"
         controls
+        onPlay={onPlay}
+        onPause={onPause}
+        onEnded={onPause}
       />
 
       {/* Rating and Score - top right */}
@@ -272,7 +305,8 @@ export function VideoTestimonialCard({
       </div>
     </div>
   );
-}
+});
+VideoTestimonialCard.displayName = "VideoTestimonialCard";
 
 function TextTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
