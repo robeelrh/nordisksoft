@@ -8,6 +8,7 @@ import {
   VideoCard2,
 } from "@/assests";
 import { useWindowWidth } from "@/hook/useWindowWidth";
+import { slideFromLeft } from "@/utils/SliderAnimation";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
@@ -139,9 +140,11 @@ export default function TestimonialsSection() {
           </p>
           <motion.h2
             className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-[#56aeff] leading-tight"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial="hidden"
+            whileInView="visible"
+            variants={slideFromLeft}
             transition={{ duration: 0.3, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             Success stories from our clients
           </motion.h2>

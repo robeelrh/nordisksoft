@@ -80,10 +80,6 @@ export default function FooterSection() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
     },
   };
 
@@ -140,29 +136,28 @@ export default function FooterSection() {
         </div>
 
         <div className="w-full md:w-2/3 flex flex-col justify-between font-inter font-medium gap-6 md:gap-0">
-          <div className="flex flex-col md:flex-row gap-6 md:gap-2 ">
-            {/* Newsletter section - slide from top */}
+          <div className="flex flex-col md:flex-row gap-0 lg::gap-2 ">
             <motion.div
-              className="w-full md:w-1/2 flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4"
+              className="w-full md:w-3/5  flex flex-col gap-4 sm:gap-6 lg:gap-4 xl:gap-8 "
               variants={slideFromTop}
               initial="hidden"
               whileInView="visible"
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="text-2xl lg:text-2xl xl:text-3xl text-blue font-medium">
-                Stay connected
-              </div>
-              <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full md:w-[85%]">
-                Join our newsletter and stay updated on the latest trends in
-                digital design
+              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4 ml-6 lg:ml-8 xl:ml-9 2xl:ml-13">
+                <div className="text-2xl lg:text-2xl xl:text-3xl text-blue font-medium">
+                  Stay connected
+                </div>
+                <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full md:w-[85%]">
+                  Join our newsletter and stay updated on the latest trends in
+                  digital design
+                </div>
               </div>
               <EmailInput />
             </motion.div>
 
-            {/* Links section - slide from right */}
-
-            <div className="w-full md:w-1/2 flex flex-col items-end xl:items-center">
+            <div className="w-full md:w-2/5 flex flex-col items-end xl:items-center">
               <motion.div
                 className="flex  lg:gap-4 xl:gap-6"
                 variants={slideFromRight}
@@ -182,6 +177,7 @@ export default function FooterSection() {
                     <motion.div
                       key={index}
                       variants={linkAnimation}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
                       className="text-base lg:text-lg"
                     >
                       <Link href={link.link}>{link.text}</Link>
@@ -199,6 +195,7 @@ export default function FooterSection() {
                     <motion.div
                       key={index + firstColumnLinks.length}
                       variants={linkAnimation}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
                       className="text-base lg:text-lg"
                     >
                       <Link href={link.link}>{link.text}</Link>
@@ -209,7 +206,6 @@ export default function FooterSection() {
             </div>
           </div>
 
-          {/* Bottom description - slide from right */}
           <motion.p
             className="text-[#11111180] text-base w-full md:w-[80%] mx-auto lg:mx-0"
             variants={slideFromRight}

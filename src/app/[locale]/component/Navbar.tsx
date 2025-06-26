@@ -33,6 +33,7 @@ export default function Navigation() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromTop}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -53,7 +54,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Hire Us Button */}
-          <button className="hidden lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg items-center gap-2 transition-all duration-200 text-xl font-semibold">
+          <button className="hidden lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-7 py-3 rounded-lg items-center gap-2 transition-all duration-200 text-xl font-semibold">
             Hire Us
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -99,7 +100,7 @@ export default function Navigation() {
                   className="w-full bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.5 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

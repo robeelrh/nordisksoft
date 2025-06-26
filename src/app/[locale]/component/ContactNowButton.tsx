@@ -18,7 +18,6 @@ export default function ContactNowButton({
     if (onClick) {
       onClick();
     } else {
-      // Default behavior - scroll to contact form or open contact modal
       const contactSection = document.getElementById("contact");
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: "smooth" });
@@ -30,13 +29,15 @@ export default function ContactNowButton({
     <motion.button
       onClick={handleClick}
       className={`
-        bg-[#302f2f] hover:bg-gray-800  cursor-pointer
+        bg-[#302f2f] hover:bg-gray-700 cursor-pointer
         text-white font-medium
         px-3 py-2
         flex items-center gap-3
         transition-all duration-200
         shadow-sm hover:shadow-md
         rounded-[40px]
+        overflow-hidden
+        relative
         ${className}
       `}
       whileTap={{ scale: 0.98 }}
@@ -48,7 +49,24 @@ export default function ContactNowButton({
       }}
     >
       <motion.div
-        className="bg-blue rounded-full p-3 flex items-center justify-center"
+        className="absolute left-0 h-full bg-blue rounded-full"
+        variants={{
+          default: { width: 0, opacity: 0 },
+          hover: {
+            width: ["0%", "100%", "0%"],
+            opacity: [0, 0.3, 0],
+            left: ["0%", "0%", "100%"],
+            transition: {
+              width: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+              opacity: { duration: 0.4 },
+              left: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+            },
+          },
+        }}
+      />
+
+      <motion.div
+        className="bg-blue rounded-full p-3 flex items-center justify-center z-10"
         variants={{
           default: { x: 0 },
           hover: { x: "calc(100% + 100px)" },
@@ -61,14 +79,26 @@ export default function ContactNowButton({
       >
         <ArrowRight className="w-5 h-5 text-white" />
       </motion.div>
+
       <motion.span
-        className="text-xl font-medium p-2"
-        animate={{ x: 0 }}
-        whileHover={{ x: -40 }}
-        transition={{
-          type: "tween",
-          duration: 0.4,
-          ease: [0.25, 0.1, 0.25, 1],
+        className="text-xl font-medium p-2 z-10"
+        variants={{
+          default: { opacity: 1, x: 0 },
+          hover: {
+            opacity: [1, 0.5, 0],
+            x: -40,
+            transition: {
+              opacity: {
+                duration: 0.3,
+                times: [0, 0.5, 1],
+                ease: "easeOut",
+              },
+              x: {
+                duration: 0.4,
+                ease: [0.25, 0.1, 0.25, 1],
+              },
+            },
+          },
         }}
       >
         {text}

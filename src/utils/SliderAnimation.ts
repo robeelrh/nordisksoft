@@ -11,10 +11,6 @@ export const slideFromTop = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
   },
 };
 
@@ -24,10 +20,6 @@ export const slideFromTopLeft = {
     opacity: 1,
     y: 0,
     x: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
   },
 };
 
@@ -44,10 +36,6 @@ export const slideFromBottom = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
   },
 };
 
@@ -69,10 +57,5 @@ export const slideFromBack = {
     opacity: 1,
     scale: 1,
     rotateX: 0,
-    transition: {
-      duration: 0.6,
-      delay: 0.2,
-      ease: "easeOut",
-    },
   },
 };

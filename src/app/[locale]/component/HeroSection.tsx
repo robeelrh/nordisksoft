@@ -21,12 +21,14 @@ export default function HeroSection() {
       </div>
 
       <motion.div
-        className="z-10 flex-1 flex items-center justify-center text-center px-6 lg:px-8 max-w-5xl mx-auto"
+        className="z-10 flex-1/2 flex items-center justify-center text-center px-6 lg:px-8 max-w-5xl mx-auto pt-24 md:pt-32"
         initial="hidden"
         whileInView="visible"
         variants={slideFromBottom}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
       >
-        <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight font-inter">
           <span className="text-white">Building Innovative </span>
           <span className="text-[#56aeff]">Software Solutions</span>
           <span className="text-[#56aeff]">,</span>
@@ -34,6 +36,7 @@ export default function HeroSection() {
           <span className="text-white">Empowering Your Future</span>
         </h1>
       </motion.div>
+      <div className="z-10 flex-1"></div>
     </section>
   );
 }

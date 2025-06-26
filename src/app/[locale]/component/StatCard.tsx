@@ -22,11 +22,6 @@ export default function StatCard({ label, title, description }: StatCardProps) {
       z: 0,
       x: 0,
       y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-        delay: 0.3,
-      },
     },
   };
 
@@ -34,8 +29,10 @@ export default function StatCard({ label, title, description }: StatCardProps) {
     <motion.div
       className="w-full flex flex-col gap-3 sm:gap-4 font-inter"
       variants={slideFromBack}
+      transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
       style={{
         transformStyle: "preserve-3d",
         perspective: "1000px",

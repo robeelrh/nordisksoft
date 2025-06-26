@@ -20,8 +20,10 @@ export default function TransformationSectionOption1() {
         <motion.div
           className="relative w-full h-auto"
           variants={slideFromBack}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           <Image
             src={TransformationWhiteText}
@@ -37,8 +39,10 @@ export default function TransformationSectionOption1() {
         <motion.div
           className="relative w-full h-auto"
           variants={slideFromBack}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           <Image
             src={TransformationBlackText}
@@ -76,17 +80,31 @@ export default function TransformationSectionOption1() {
 
                   <Image src={LogoBlack} alt="Company Logo" width={220} />
                 </div>
-                <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 bg-black rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center">
+
+                <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2">
                   <a
                     href="#services"
-                    className="scroll-smooth block w-fit cursor-pointer"
+                    className="scroll-smooth block w-fit cursor-pointer group"
                   >
-                    <Image
-                      src={TransformationArrow || "/placeholder.svg"}
-                      alt="Arrow Icon"
-                      width={16}
-                      height={16}
-                    />
+                    <div className="relative">
+                      <div
+                        className="
+        bg-black rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 
+        flex items-center justify-center
+        transition-all duration-300
+        group-hover:shadow-[0_0_15px_rgba(59,130,246,0.7)]
+        group-hover:scale-110
+      "
+                      >
+                        <Image
+                          src={TransformationArrow || "/placeholder.svg"}
+                          alt="Arrow Icon"
+                          width={16}
+                          height={16}
+                          className="transition-transform duration-300 group-hover:scale-125"
+                        />
+                      </div>
+                    </div>
                   </a>
                 </div>
               </>

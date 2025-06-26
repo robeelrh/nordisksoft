@@ -15,7 +15,7 @@ export default function EmailInput() {
     }
   };
   return (
-    <div className="flex items-center border-b border-black px-2 py-1 bg-transparent max-w-xs">
+    <div className="flex items-center border-b border-black px-2 py-1 bg-transparent md:w-10/12 mx-auto">
       <input
         type="email"
         placeholder="E-mail"

@@ -20,8 +20,10 @@ export default function StatsSection() {
       <motion.div
         className="w-full flex items-center justify-center flex-col font-semibold gap-3 text-start text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4"
         variants={slideFromTop}
+        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true }}
       >
         <p className="text-start md:text-center w-full text-black">
           {t.rich("headlineMain", {
