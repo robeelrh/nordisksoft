@@ -26,7 +26,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm font-inter">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm">
       <div className="lg:max-w-11/12 xl:max-w-4/5  mx-auto px-6 lg:px-8">
         <motion.div
           className="flex items-center justify-between h-16 md:h-20"
@@ -54,7 +54,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Hire Us Button */}
-          <button className="hidden lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-7 py-3 rounded-lg items-center gap-2 transition-all duration-200 text-xl font-semibold">
+          <button className="hidden lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white lg:px-6 lg:py-2  xl:px-7 xl:py-3 rounded-lg items-center  font-inter gap-2 transition-all duration-200 text-xl font-semibold">
             {t("hireUs")}
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -97,7 +97,7 @@ export default function Navigation() {
                   </motion.a>
                 ))}
                 <motion.button
-                  className="w-full bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4"
+                  className="w-full bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4  font-inter"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.2 }}

@@ -106,7 +106,7 @@ export default function TeamShowcaseSection() {
                   <Image
                     src={SmileGIF}
                     alt="emoji-bottom"
-                    className="w-16 h-16 lg:w-14 lg:h-14 xl:w-18 xl:h-18" // adjust size as needed
+                    className="w-16 h-14 lg:w-14 lg:h-12 xl:w-18 xl:h-16" // adjust size as needed
                   />
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={PencilGIF}
                 alt="pencil-center"
-                className="h-30 xl:h-40  w-60 lg:w-44 xl:w-60"
+                className="h-24 xl:h-36 w-60 lg:w-44 xl:w-60"
               />
             </motion.div>
             <motion.div
@@ -188,7 +188,7 @@ export default function TeamShowcaseSection() {
                   <Image
                     src={VictoryGIF}
                     alt="emoji-bottom"
-                    className="w-16 h-16 lg:w-14 lg:h-14 xl:w-18 xl:h-18" // adjust size as needed
+                    className="w-16 h-14 lg:w-14 lg:h-12 xl:w-18 xl:h-16" // adjust size as needed
                   />
                 </div>
               </div>

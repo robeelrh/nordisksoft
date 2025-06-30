@@ -31,12 +31,12 @@ export default function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight font-inter text-white">
+        <p className="text-2xl md:text-3xl xl:text-5xl font-bold leading-tight font-inter text-white">
           {t.rich("headline", {
             highlight: (chunks) => <span className="text-blue">{chunks}</span>,
           })}
         </p>
-        <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight font-inter text-white">
+        <p className="text-2xl md:text-3xl xl:text-5xl font-bold leading-tight font-inter text-white">
           {t.rich("subheadline", {
             highlight: (chunks) => <span className="text-blue">{chunks}</span>,
           })}
