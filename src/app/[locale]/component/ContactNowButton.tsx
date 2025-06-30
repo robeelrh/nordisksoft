@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 interface ContactNowButtonProps {
   onClick?: () => void;
