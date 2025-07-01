@@ -7,14 +7,15 @@ import HeroSection from "@/app/[locale]/component/HeroSection";
 import StatsSection from "@/app/[locale]/component/StatsSection";
 import CommitmentSection from "@/app/[locale]/component/CommitmentSection";
 import TestimonialsSection from "@/app/[locale]/component/TestimonialsSection";
+import ProjectSection from "./component/ProjectSection";
 
-import TransformationSection from "@/app/[locale]/component/TransformationSection";
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <StatsSection />
-      <TransformationSection />
+      {/* <TransformationSection /> */}
+      <ProjectSection />
       <CommitmentSection />
       <ServiceSection />
       <AboutSection />

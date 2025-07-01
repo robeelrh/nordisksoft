@@ -26,9 +26,9 @@ export default function TeamShowcaseSection() {
   return (
     <section
       id="about"
-      className="md:h-[950px] lg:h-[750px] xl:h-[840px] w-11/12 xl:w-4/5 mx-auto flex items-center"
+      className="scroll-mt-28 h-[1150px] md:h-[950px] lg:h-[750px] xl:h-[840px] w-11/12 xl:w-4/5 mx-auto flex items-center"
     >
-      <div className="grid lg:grid-cols-5 gap-14 items-start">
+      <div className="grid lg:grid-cols-5 gap-20 md:gap-14 items-start">
         <motion.div
           className="lg:col-span-3 space-y-6 h-full flex flex-col justify-center"
           initial={{ opacity: 0, x: -50 }}
@@ -78,12 +78,12 @@ export default function TeamShowcaseSection() {
               <Image
                 src={TextTop}
                 alt="text-top"
-                className="h-52 lg:h-36 xl:h-44 2xl:h-48 "
+                className="h-52 lg:h-36 xl:h-44 2xl:h-48 leading-none"
               />
             </motion.div>
 
             <motion.div
-              className="relative"
+              className="relative leading-none"
               variants={slideFromTop}
               transition={{ duration: 0.8, ease: "easeOut" }}
               initial="hidden"
@@ -93,20 +93,20 @@ export default function TeamShowcaseSection() {
               <Image
                 src={ImageTop}
                 alt="image-top"
-                className="h-52 lg:h-36 xl:h-44 2xl:h-48"
+                className="h-52 lg:h-36 xl:h-44 2xl:h-48 leading-none"
               />
 
-              <div className="absolute -top-10  -left-10 lg:-left-12 xl:-left-18">
+              <div className="absolute top-0 md:-top-6 -left-10 lg:-left-12 xl:-left-14">
                 <div className="relative bg-black text-white rounded-full px-6  py-1 inline-flex items-center justify-center rotate-[-35deg] z-20">
                   <div
-                    className="absolute -bottom-7  left-16 transform -translate-x-1/2 w-0 h-0 
+                    className="absolute -bottom-7  left-14 xl:left-16 transform -translate-x-1/2 w-0 h-0 
               border-l-20 border-r-20 border-b-32 border-l-transparent 
               border-r-transparent border-b-black rotate-[-190deg]"
                   />
                   <Image
                     src={SmileGIF}
                     alt="emoji-bottom"
-                    className="w-16 h-14 lg:w-14 lg:h-12 xl:w-18 xl:h-16" // adjust size as needed
+                    className="w-12 h-10  md:w-14 md:h-12 lg:w-12 lg:h-10 xl:w-16 xl:h-12" // adjust size as needed
                   />
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function TeamShowcaseSection() {
           </motion.div>
 
           <motion.div
-            className="flex"
+            className="flex leading-none"
             animate={{
               y: [0, -6, 0],
               transition: {
@@ -130,12 +130,12 @@ export default function TeamShowcaseSection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               whileInView={"visible"}
               viewport={{ once: true }}
-              className="bg-[#49a1ff] rounded-full flex items-center justify-center"
+              className="bg-[#49a1ff] rounded-full flex items-center justify-center leading-none"
             >
               <Image
                 src={PencilGIF}
                 alt="pencil-center"
-                className="h-24 xl:h-36 w-60 lg:w-44 xl:w-60"
+                className="h-20 xl:h-30 w-60 lg:w-48 xl:w-64"
               />
             </motion.div>
             <motion.div
@@ -178,17 +178,17 @@ export default function TeamShowcaseSection() {
                 className="h-52 lg:h-36 xl:h-44 2xl:h-48"
               />
 
-              <div className="absolute -top-6 lg:-top-10 xl:-top-12 -right-14 lg:-right-12 xl:-right-18">
+              <div className="absolute -top-6 xl:-top-8 -right-14 lg:-right-12 xl:-right-16">
                 <div className="relative bg-black text-white rounded-full px-5 xl:px-7 py-1 inline-flex items-center justify-center rotate-[26deg] z-20">
                   <div
-                    className="absolute -bottom-6 left-10 lg:left-12 transform -translate-x-1/2 w-0 h-0 
+                    className="absolute -bottom-6 left-10 lg:left-10 xl:left-12 transform -translate-x-1/2 w-0 h-0 
               border-l-20 border-r-20 border-b-32 border-l-transparent 
               border-r-transparent border-b-black rotate-[190deg]"
                   />
                   <Image
                     src={VictoryGIF}
                     alt="emoji-bottom"
-                    className="w-16 h-14 lg:w-14 lg:h-12 xl:w-18 xl:h-16" // adjust size as needed
+                    className="w-16 h-14 lg:w-12 lg:h-10 xl:w-16 xl:h-14" // adjust size as needed
                   />
                 </div>
               </div>

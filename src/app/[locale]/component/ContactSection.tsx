@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";
-import ContactNowButton from "./ContactNowButton";
 import {
   slideFromBottom,
   slideFromLeft,
@@ -15,11 +14,10 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-16 mb-10 md:h-[970px] lg:h-[670px] xl:h-[640px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 mx-auto xl:w-4/5 w-11/12  rounded-3xl my-6"
+      className=" scroll-mt-28 py-16 mb-10 md:h-[970px] lg:h-[670px] xl:h-[640px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 mx-auto xl:w-4/5 w-11/12  rounded-3xl my-6"
     >
       <div className="w-10/12 mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 h-full">
-        {/* Left Content */}
-        <div className="flex flex-col gap-12 lg:w-1/2 h-full justify-between">
+        <div className="flex flex-col gap-12 lg:w-1/2 h-full justify-start">
           <div className="flex flex-col gap-8 text-white font-inter">
             <p className="font-semibold text-lg lg:text-3xl text-white">
               {t("heading")}
@@ -52,17 +50,6 @@ export default function ContactSection() {
             <Feature feature={t("support1")} />
             <Feature feature={t("support2")} />
           </div>
-
-          {/* Contact Now Button */}
-          <motion.div
-            variants={slideFromBottom}
-            initial="hidden"
-            whileInView="visible"
-            transition={{ delay: 0.5, duration: 0.4, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <ContactNowButton text={t("button")} />
-          </motion.div>
         </div>
 
         <motion.div
@@ -96,7 +83,9 @@ function Feature({ feature }: FeatureProps) {
       <div className="bg-blue/40 rounded-full p-1 flex-shrink-0">
         <Plus className="text-white h-4 w-4" />
       </div>
-      <p className="text-base lg:text-xl font-medium text-white">{feature}</p>
+      <p className="text-base lg:text-xl font-medium font-inter text-white">
+        {feature}
+      </p>
     </motion.div>
   );
 }

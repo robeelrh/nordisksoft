@@ -72,9 +72,9 @@ export default function ServiceSection() {
   return (
     <div
       id="services"
-      className="font-inter flex h-[600px]  bg-gradient-to-r from-[#111111] to-[#213c58] py-8 sm:py-10 md:py-12  xl:py-12 w-4/5 mx-auto rounded-3xl"
+      className="scroll-mt-28 font-inter flex h-[500px]  md:h-[600px]  bg-gradient-to-r from-[#111111] to-[#213c58] py-8 sm:py-10 md:py-12  xl:py-12 w-4/5 mx-auto rounded-3xl"
     >
-      <div className="flex flex-col gap-9 w-full md:w-10/12 mx-auto">
+      <div className="flex flex-col gap-9 w-full px-5 md:px-0 md:w-10/12 mx-auto">
         <p className="text-white text-3xl font-semibold">/{t("title")}</p>
 
         <motion.div

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
+import toast from "react-hot-toast";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -49,13 +50,22 @@ export default function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      console.log("Form submitted:", data);
-      reset();
-      nameRef.current?.focus();
-      alert("Message sent successfully!");
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (result.success) {
+        reset();
+        nameRef.current?.focus();
+        toast.success("Email send successfully");
+      } else {
+        throw new Error(result.error || "Unknown error");
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Error sending message. Please try again.");
+      toast.error("Error sending message. Please try again.");
     }
   };
 

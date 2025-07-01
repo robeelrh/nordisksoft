@@ -7,11 +7,13 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { LogoWhite } from "@/assests";
 import { slideFromTop } from "@/utils/SliderAnimation";
+import { useRouter } from "@/i18n/navigation";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const t = useTranslations("Navigation");
+  const router = useRouter();
 
   const navItems = [
     { name: t("projects"), href: "#projects" },
@@ -46,7 +48,7 @@ export default function Navigation() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white hover:text-[#56aeff] transition-colors duration-200 text-lg scroll-smooth block w-fit"
+                className="text-white hover:text-[#56aeff] transition-colors duration-200 text-lg scroll-smooth block w-fit "
               >
                 {item.name}
               </a>
@@ -54,7 +56,10 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Hire Us Button */}
-          <button className="hidden lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white lg:px-6 lg:py-2  xl:px-7 xl:py-3 rounded-lg items-center  font-inter gap-2 transition-all duration-200 text-xl font-semibold">
+          <button
+            className="hidden cursor-pointer lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white lg:px-6 lg:py-2  xl:px-7 xl:py-3 rounded-lg items-center  font-inter gap-2 transition-all duration-200 text-xl font-semibold"
+            onClick={() => router.replace("#contact")}
+          >
             {t("hireUs")}
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -97,12 +102,15 @@ export default function Navigation() {
                   </motion.a>
                 ))}
                 <motion.button
-                  className="w-full bg-[#56aeff] hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4  font-inter"
+                  className="w-full bg-[#56aeff] cursor-pointer  hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4  font-inter"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    router.replace("#contact");
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   {t("hireUs")}
                   <ArrowRight className="w-4 h-4" />

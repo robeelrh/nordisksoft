@@ -67,7 +67,6 @@ export default function FooterSection() {
   const firstColumnLinks = LINKS.slice(0, LINKS.length / 2 + 2);
   const secondColumnLinks = LINKS.slice(LINKS.length / 2 + 2);
 
-  // Animation variants
   const staggerContainer = {
     hidden: {},
     visible: {
@@ -85,22 +84,10 @@ export default function FooterSection() {
     },
   };
 
-  // const handleEmailSubmit = async (email: string) => {
-  //   try {
-  //     // Handle newsletter signup
-  //     console.log("Newsletter signup:", email);
-  //     // You can add your newsletter API call here
-  //     alert("Thank you for subscribing!");
-  //   } catch (error) {
-  //     console.error("Newsletter signup error:", error);
-  //     throw error;
-  //   }
-  // };
-
   return (
-    <section className="h-[500px] bg-[#F4F4F5] w-full">
+    <section className="min-h-[600px] md:min-h-[200px]  md:h-[500px] bg-[#F4F4F5] w-full">
       <div className="h-full flex flex-col md:flex-row gap-6 md:gap-0 w-full px-3 xl:px-0 xl:w-4/5 mx-auto py-16">
-        <div className="w-full md:w-1/3 h-full flex flex-col justify-between">
+        <div className="w-full md:w-1/3 h-full flex flex-col justify-between mt-4 md:mt-0">
           <motion.div
             className="flex items-center justify-start "
             variants={slideFromTopLeft}
@@ -138,7 +125,7 @@ export default function FooterSection() {
         </div>
 
         <div className="w-full md:w-2/3 flex flex-col justify-between font-inter font-medium gap-6 md:gap-0">
-          <div className="flex flex-col md:flex-row gap-0 lg::gap-2 ">
+          <div className="flex flex-col md:flex-row gap-0 lg:gap-2 ">
             <motion.div
               className="w-full md:w-3/5  flex flex-col gap-4 sm:gap-6 lg:gap-4 xl:gap-8 "
               variants={slideFromTop}
@@ -147,18 +134,20 @@ export default function FooterSection() {
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4 ml-6 lg:ml-8 xl:ml-9 2xl:ml-13">
-                <div className="text-2xl lg:text-2xl xl:text-3xl text-blue font-medium">
+              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4 ml-6 lg:ml-8 xl:ml-0">
+                <div className="text-2xl lg:text-2xl xl:text-3xl text-blue font-semibold">
                   {t("newsletterTitle")}
                 </div>
                 <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full md:w-[85%]">
                   {t("newsletterDescription")}
                 </div>
               </div>
-              <EmailInput />
+              <div className="hidden md:flex">
+                <EmailInput />
+              </div>
             </motion.div>
 
-            <div className="w-full md:w-2/5 flex flex-col items-end xl:items-center">
+            <div className="hidden  w-full md:w-2/5 md:flex flex-col items-end xl:items-center">
               <motion.div
                 className="flex  lg:gap-4 xl:gap-6"
                 variants={slideFromRight}
@@ -179,7 +168,7 @@ export default function FooterSection() {
                       key={index}
                       variants={linkAnimation}
                       transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="text-base lg:text-lg"
+                      className="text-base lg:text-lg whitespace-nowrap"
                     >
                       <Link href={link.link}>{link.text}</Link>
                     </motion.div>
@@ -217,6 +206,56 @@ export default function FooterSection() {
           >
             {t("description")}
           </motion.p>
+        </div>
+        <div className="md:hidden flex w-full">
+          <EmailInput />
+        </div>
+        <div className="md:hidden w-full px-2 flex flex-col  items-center">
+          <motion.div
+            className="flex w-full justify-between"
+            variants={slideFromRight}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div
+              className="flex-1 flex flex-col gap-1 sm:gap-2"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {firstColumnLinks.map((link, index) => (
+                <motion.div
+                  key={index}
+                  variants={linkAnimation}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="text-base lg:text-lg"
+                >
+                  <Link href={link.link}>{link.text}</Link>
+                </motion.div>
+              ))}
+            </motion.div>
+            <motion.div
+              className="flex-1 flex flex-col gap-1 sm:gap-2"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {secondColumnLinks.map((link, index) => (
+                <motion.div
+                  key={index + firstColumnLinks.length}
+                  variants={linkAnimation}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="text-base lg:text-lg"
+                >
+                  <Link href={link.link}>{link.text}</Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

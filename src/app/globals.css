@@ -4,6 +4,11 @@
 @import "@fontsource/koulen";
 @import "@fontsource/inter";
 
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/autoplay";
+
 @theme {
   --font-koulen: "Koulen";
   --font-inter: "Inter";
@@ -11,6 +16,19 @@
   --color-black: #000000;
   --color-blue: #56aeff;
   --color-gray: #1111114d;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* 

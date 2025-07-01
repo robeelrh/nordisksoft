@@ -36,7 +36,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="h-[680px] w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 font-inter overflow-hidden"
+      className=" scroll-mt-28 h-[680px] w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 font-inter overflow-hidden"
     >
       {/* Left panel - slide from left */}
       <div className="w-full lg:w-1/4 mb-6 lg:mb-0 ">
@@ -73,7 +73,7 @@ export default function FAQSection() {
         {FAQS.map((faq, index) => (
           <motion.div
             key={index}
-            className="border-b border-gray py-3 md:py-6 group cursor-pointer"
+            className="border-b border-gray p-3 md:p-6 group cursor-pointer hover:bg-gray-100 transition-colors duration-200 rounded-md"
             variants={faqItemAnimation}
             transition={{ duration: 0.6, ease: "easeOut" }}
             whileHover={{ x: 5, transition: { duration: 0.2 } }}

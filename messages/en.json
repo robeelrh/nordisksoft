@@ -1,6 +1,6 @@
 {
   "HeroSection": {
-    "headline": "Building Innovative <highlight>Software Solutions</highlight>,",
+    "headline": "Building Innovative <highlight>Software Solutions,</highlight>",
     "subheadline": "Empowering Your Future  "
   },
   "Navigation": {
@@ -36,6 +36,12 @@
         "description": "Decades of experience in delivering impactful digital solutions."
       }
     ]
+  },
+  "ProjectSection": {
+    "headline": "Our <highlight>projects</highlight> Highlights",
+    "subheadline": "Our project highlights showcase innovative solutions and successful implementations that drive client success and business growth.",
+    "devOpsProject": "Dev Ops Project",
+    "ui/uxProject": "UI UX Design Project"
   },
   "TransformationSection": {
     "headline": "From ordinary to extra ordinary",
