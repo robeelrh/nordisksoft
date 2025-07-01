@@ -13,6 +13,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Autoplay, Mousewheel, Pagination } from "swiper/modules";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { slideFromLeft } from "@/utils/SliderAnimation";
 
 interface Testimonial {
   id: number;
@@ -107,13 +108,20 @@ export default function TestimonialsSection() {
           <p className="text-white font-semibold text-lg lg:text-3xl">
             /Testimonials
           </p>
-          <h2 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-[#56aeff] leading-tight">
+          <motion.h2
+            className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-[#56aeff] leading-tight"
+            variants={slideFromLeft}
+            transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
             Success stories from our clients
-          </h2>
+          </motion.h2>
         </div>
         <motion.div
           variants={slideFromBottom}
-          transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+          transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}

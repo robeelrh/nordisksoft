@@ -38,7 +38,6 @@ export default function FAQSection() {
       id="faq"
       className=" scroll-mt-28 h-[680px] w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 font-inter overflow-hidden"
     >
-      {/* Left panel - slide from left */}
       <div className="w-full h-full lg:w-1/4 mb-6 lg:mb-0 mt-0 lg:mt-20">
         <motion.h2
           className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-blue "
@@ -101,9 +100,9 @@ export default function FAQSection() {
               <AnimatePresence>
                 {hoveredIndex === index && (
                   <motion.div
-                    initial={{ opacity: 0, height: 0, y: 10 }}
+                    initial={{ opacity: 0, height: 0, y: 20 }}
                     animate={{ opacity: 1, height: "auto", y: 0 }}
-                    exit={{ opacity: 0, height: 0, y: 10 }}
+                    exit={{ opacity: 0, height: 0, y: 20 }}
                     transition={{
                       duration: 0.4,
                       ease: [0.1, 0.62, 0.23, 0.98],
