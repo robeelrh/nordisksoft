@@ -34,11 +34,11 @@ export default function ProjectSection() {
   return (
     <section
       id="projects"
-      className="scroll-mt-28 w-full min-h-[900px] lg:min-h-[600px] lg:h-[650px] xl:h-[900px] flex flex-col justify-between px-4 sm:px-6 md:px-8 lg:px-10  py-12 font-inter"
+      className="scroll-mt-28 w-4/5 mx-auto min-h-[900px] lg:min-h-[600px] lg:h-[650px] xl:h-[900px] flex flex-col justify-between  py-12 font-inter"
     >
       <div className="w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-10">
         <motion.h2
-          className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center"
+          className="font-semibold text-2xl md:text-3xl lg:text-5xl xl:text-6xl text-center"
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}

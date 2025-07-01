@@ -24,7 +24,7 @@ export default function CommitmentSection() {
   return (
     <section className="  w-full h-[300px] md:h-[400px] md:pb-12  px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 font-inter">
       <motion.h2
-        className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center"
+        className="font-semibold text-2xl md:text-3xl lg:text-5xl xl:text-6xl text-center"
         initial="hidden"
         whileInView="visible"
         variants={slideFromLeft}

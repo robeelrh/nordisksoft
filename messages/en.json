@@ -169,7 +169,7 @@
     "form": {
       "name": "Name*",
       "email": "Email*",
-      "message": "Message* (Tell us about your project)",
+      "message": "Message* <small>(Tell us about your project)</small>",
       "submit": "Submit"
     }
   },

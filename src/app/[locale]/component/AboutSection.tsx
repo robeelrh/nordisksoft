@@ -148,7 +148,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={ImageCenter}
                 alt="image-center"
-                className="h-40 lg:h-32 xl:h-44 2xl:h-48 w-64 lg:w-52 xl:w-72"
+                className="h-36 lg:h-30 xl:h-36 2xl:h-40 w-64 lg:w-52 xl:w-72"
               />
             </motion.div>
           </motion.div>

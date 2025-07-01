@@ -80,7 +80,7 @@ export default function FAQSection() {
             onHoverStart={() => setHoveredIndex(index)}
             onHoverEnd={() => setHoveredIndex(null)}
           >
-            <div className="bg-white group-hover:bg-[#F4F4F5] rounded-2xl px-4 sm:px-6 pt-4 pb-2 transition-all duration-300 relative">
+            <div className="bg-white group-hover:bg-[#FAFAFA] rounded-2xl px-4 sm:px-6 pt-4 pb-2 transition-all duration-300 relative">
               <div className="flex justify-between items-center pb-3">
                 <p
                   className={`text-sm sm:text-base md:text-lg  ${

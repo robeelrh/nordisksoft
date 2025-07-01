@@ -119,14 +119,14 @@ export default function ContactForm() {
           )}
         </div>
 
-        <div className="group relative">
+        <div className="relative group">
           <textarea
             rows={4}
-            placeholder={t("message")}
-            className="peer bg-slate-700/50 border border-[#56aeff]/30 group-hover:border-[#56aeff] focus:border-[#56aeff] 
-               group-hover:text-white text-white group-hover:placeholder-white/80 placeholder-white/50
-               group-hover:shadow-[0_0_8px_#56aeff] focus:shadow-[0_0_8px_#56aeff]
-               rounded-lg w-full p-4 text-base focus:outline-none resize-none transition-all duration-200"
+            className="peer bg-slate-700/50 border border-[#56aeff]/30 group-hover:border-[#56aeff] focus:border-[#56aeff]
+      group-hover:text-white text-white placeholder-transparent
+      group-hover:shadow-[0_0_8px_#56aeff] focus:shadow-[0_0_8px_#56aeff]
+      rounded-lg w-full p-4 text-base focus:outline-none resize-none transition-all duration-200"
+            placeholder="Message* (Tell us about your project)"
             {...register("message")}
             ref={(e) => {
               register("message").ref(e);
@@ -134,6 +134,15 @@ export default function ContactForm() {
             }}
             onKeyDown={(e) => handleKeyDown(e, "message")}
           />
+          <label
+            htmlFor="message"
+            className="absolute left-4 top-3 text-white/60 text-base pointer-events-none peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm transition-all duration-200"
+          >
+            Message*{" "}
+            <span className="text-xs text-white/60">
+              (Tell us about your project)
+            </span>
+          </label>
           {errors.message && (
             <p className="text-red-400 text-xs sm:text-sm mt-1">
               {errors.message.message}
