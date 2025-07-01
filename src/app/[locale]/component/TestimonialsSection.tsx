@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Background,
   TextCard1,
   TextCard2,
   TextCard3,
@@ -102,8 +103,19 @@ const slideFromBottom = {
 
 export default function TestimonialsSection() {
   return (
-    <section className=" scroll-mt-28 py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 m-4 rounded-3xl">
-      <div className="flex flex-col gap-12">
+    <section className="relative scroll-mt-28 py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] rounded-3xl overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={Background}
+          alt="testimonial background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-20 flex flex-col gap-12">
         <div className="w-10/12 mx-auto flex flex-col gap-12">
           <p className="text-white font-semibold text-lg lg:text-3xl">
             /Testimonials
@@ -119,6 +131,7 @@ export default function TestimonialsSection() {
             Success stories from our clients
           </motion.h2>
         </div>
+
         <motion.div
           variants={slideFromBottom}
           transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
@@ -142,7 +155,7 @@ export default function TestimonialsSection() {
             {testimonials.map((testimonial) => (
               <SwiperSlide
                 key={testimonial.id}
-                className="!w-[300px]  md:!w-[560px] flex-shrink-0"
+                className="!w-[300px] md:!w-[560px] flex-shrink-0"
               >
                 <div
                   className={`h-[300px] md:h-[280px] ${

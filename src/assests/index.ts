@@ -28,6 +28,7 @@ export { default as VictoryGIF } from "./victory.gif";
 export { default as DevOpsProject1 } from "./devops-projects1.png";
 export { default as DevOpsProject2 } from "./devops-project2.webp";
 
-// export { default as DevOpsProject2 } from "./devops-projects2.png";
 export { default as UiUxProject1 } from "./ui-ux-projects1.png";
 export { default as UiUxProject2 } from "./ui-ux-projects2.png";
+
+export { default as Background } from "./background.png";

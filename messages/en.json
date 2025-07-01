@@ -40,7 +40,7 @@
   "ProjectSection": {
     "headline": "Our <highlight>projects</highlight> Highlights",
     "subheadline": "Our project highlights showcase innovative solutions and successful implementations that drive client success and business growth.",
-    "devOpsProject": "Dev Ops Project",
+    "devOpsProject": "DevOps Project",
     "ui/uxProject": "UI UX Design Project"
   },
   "TransformationSection": {
@@ -56,7 +56,7 @@
     "items": [
       {
         "id": "01",
-        "title": "Dev Ops",
+        "title": "DevOps",
         "description": "We create impactful brand identities that differentiate your business and connect with your audience."
       },
       {

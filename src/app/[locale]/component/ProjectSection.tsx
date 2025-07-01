@@ -116,17 +116,24 @@ interface IBigCard {
 
 function BigCard({ text, image }: IBigCard) {
   return (
-    <div className="relative w-full aspect-[464/484] overflow-hidden rounded-xl shadow-md">
+    <div className="group relative w-full aspect-[464/484] overflow-hidden rounded-xl shadow-md">
+      {/* Image with hover brightness effect */}
       <Image
         src={image}
         alt={text}
         fill
-        className="object-cover"
-        style={{ filter: "brightness(0.5)" }}
+        className="object-cover transition duration-300 filter brightness-50 group-hover:brightness-100"
         sizes="100%"
       />
-      <div className="absolute bottom-0 left-0 text-white p-4 text-xl md:text-2xl font-semibold z-10">
-        {text}
+
+      {/* Optional gradient overlay for text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-0" />
+
+      {/* Text content */}
+      <div className="absolute bottom-0 left-0 p-4 z-10">
+        <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md">
+          {text}
+        </p>
       </div>
     </div>
   );
@@ -136,20 +143,23 @@ interface ISmallCard {
   text: string;
   image: StaticImageData | string;
 }
-
 function SmallCard({ text, image }: ISmallCard) {
   return (
-    <div className="relative w-full aspect-[464/230] overflow-hidden rounded-xl shadow-md">
+    <div className="group relative w-full aspect-[464/230] overflow-hidden rounded-xl shadow-md">
       <Image
         src={image}
         alt={text}
         fill
-        className="object-cover"
-        style={{ filter: "brightness(0.5)" }}
+        className="object-cover transition duration-300 filter brightness-50 group-hover:brightness-100"
         sizes="100%"
       />
-      <div className="absolute bottom-0 left-0 text-white p-4 text-xl md:text-2xl font-semibold z-10">
-        {text}
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-0" />
+
+      <div className="absolute bottom-0 left-0 p-4 z-10">
+        <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md">
+          {text}
+        </p>
       </div>
     </div>
   );

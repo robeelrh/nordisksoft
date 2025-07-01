@@ -8,20 +8,34 @@ import {
 } from "@/utils/SliderAnimation";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { Background } from "@/assests"; // Replace with your actual background image
 
 export default function ContactSection() {
   const t = useTranslations("Contact");
+
   return (
     <section
       id="contact"
-      className=" scroll-mt-28 py-16 mb-10 md:h-[970px] lg:h-[670px] xl:h-[640px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 mx-auto xl:w-4/5 w-11/12  rounded-3xl my-6"
+      className="relative scroll-mt-28 py-16 mb-10 md:h-[970px] lg:h-[670px] xl:h-[640px] mx-auto xl:w-4/5 w-11/12 rounded-3xl my-6 overflow-hidden"
     >
-      <div className="w-10/12 mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 h-full">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={Background} 
+          alt="Contact Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      <div className="relative z-20 w-10/12 mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 h-full">
         <div className="flex flex-col gap-12 lg:w-1/2 h-full justify-start">
           <div className="flex flex-col gap-8 text-white font-inter">
             <p className="font-semibold text-lg lg:text-3xl text-white">
               {t("heading")}
             </p>
+
             <motion.p
               className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-none text-blue"
               variants={slideFromLeft}
@@ -53,7 +67,7 @@ export default function ContactSection() {
         </div>
 
         <motion.div
-          className="lg:w-1/2 w-full h-full flex items-end" // Added flex and items-end here
+          className="lg:w-1/2 w-full h-full flex items-end"
           variants={slideFromRight}
           initial="hidden"
           whileInView="visible"

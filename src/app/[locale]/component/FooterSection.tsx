@@ -85,11 +85,11 @@ export default function FooterSection() {
   };
 
   return (
-    <section className="min-h-[600px] md:min-h-[200px]  md:h-[500px] bg-[#F4F4F5] w-full">
-      <div className="h-full flex flex-col md:flex-row gap-6 md:gap-0 w-full px-3 xl:px-0 xl:w-4/5 mx-auto py-16">
+    <section className="min-h-[600px] md:min-h-[200px] md:h-[500px] bg-[#F4F4F5] w-full">
+      <div className="h-full flex flex-col gap-6 md:gap-0  md:flex-row justify-between mx-auto xl:w-4/5 w-11/12 py-16">
         <div className="w-full md:w-1/3 h-full flex flex-col justify-between mt-4 md:mt-0">
           <motion.div
-            className="flex items-center justify-start "
+            className="flex items-center justify-start"
             variants={slideFromTopLeft}
             initial="hidden"
             whileInView="visible"
@@ -105,6 +105,7 @@ export default function FooterSection() {
               />
             </div>
           </motion.div>
+
           <div className="space-y-1 sm:space-y-2 lg:space-y-1 xl:space-y-3 font-inter font-medium mt-4 md:mt-0">
             <motion.p
               className="text-sm lg:text-md xl:text-lg"
@@ -129,10 +130,10 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="w-full md:w-2/3 flex flex-col justify-between font-inter font-medium gap-6 md:gap-0">
-          <div className="flex flex-col md:flex-row gap-0 lg:gap-2 ">
+        <div className="w-full md:w-2/3 flex flex-col justify-around  font-inter font-medium">
+          <div className="flex flex-col md:flex-row gap-0 lg:gap-2">
             <motion.div
-              className="w-full md:w-3/5  flex flex-col gap-4 sm:gap-6 lg:gap-4 xl:gap-8 "
+              className="w-full md:w-3/5 flex flex-col gap-4 sm:gap-6 lg:gap-4 xl:gap-8"
               variants={slideFromTop}
               initial="hidden"
               whileInView="visible"
@@ -152,9 +153,9 @@ export default function FooterSection() {
               </div>
             </motion.div>
 
-            <div className="hidden  w-full md:w-2/5 md:flex flex-col items-end xl:items-center">
+            <div className="hidden w-full md:w-2/5 md:flex flex-col items-end xl:items-center">
               <motion.div
-                className="flex  lg:gap-4 xl:gap-6"
+                className="flex lg:gap-4 xl:gap-6"
                 variants={slideFromRight}
                 initial="hidden"
                 whileInView="visible"
@@ -179,24 +180,6 @@ export default function FooterSection() {
                     </motion.div>
                   ))}
                 </motion.div>
-                {/* <motion.div
-                  className="flex-1 flex flex-col gap-1 sm:gap-2"
-                  variants={staggerContainer}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                >
-                  {secondColumnLinks.map((link, index) => (
-                    <motion.div
-                      key={index + firstColumnLinks.length}
-                      variants={linkAnimation}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="text-base lg:text-lg"
-                    >
-                      <Link href={link.link}>{link.text}</Link>
-                    </motion.div>
-                  ))}
-                </motion.div> */}
               </motion.div>
             </div>
           </div>
@@ -212,6 +195,8 @@ export default function FooterSection() {
             {t("description")}
           </motion.p>
         </div>
+
+        {/*for  mobile */}
         <div className="md:hidden flex w-full">
           <EmailInput />
         </div>
