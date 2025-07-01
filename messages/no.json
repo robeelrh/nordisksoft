@@ -1,24 +1,24 @@
 {
   "HeroSection": {
-    "headline": "Bygger innovative <highlight>programvareløsninger</highlight>",
+    "headline": "Bygger innovative <highlight>programvareløsninger,</highlight>",
     "subheadline": "Styrker din fremtid"
   },
   "Navigation": {
     "projects": "Prosjekter",
     "services": "Tjenester",
     "about": "Om oss",
-    "faq": "Vanlige spørsmål",
+    "faq": "FAQ",
     "contact": "Kontakt",
     "hireUs": "Ansett oss"
   },
   "StatsSection": {
-    "headlineMain": "Arbeidet vårt <highlight>snakker</highlight> i tall.",
-    "headlineSub": "Dette har vi <highlight>oppnådd</highlight> så langt.",
+    "headlineMain": "Vårt arbeid <highlight>snakker</highlight> gjennom tall.",
+    "headlineSub": "Her er hva vi har <highlight>oppnådd</highlight> så langt.",
     "metrics": [
       {
         "label": "19+",
-        "title": "Lanserte nettsteder",
-        "description": "Vi hjelper merkevarer med å sette sitt preg på nettet."
+        "title": "Nettsider lansert",
+        "description": "Hjelper merkevarer med å etablere seg på nett."
       },
       {
         "label": "1,2M+",
@@ -28,7 +28,7 @@
       {
         "label": "98%",
         "title": "Kundetilfredshet",
-        "description": "Vi bygger langsiktige partnerskap gjennom dokumenterte resultater."
+        "description": "Vi bygger langsiktige samarbeid med dokumenterte resultater."
       },
       {
         "label": "12+",
@@ -37,13 +37,19 @@
       }
     ]
   },
+  "ProjectSection": {
+    "headline": "Våre <highlight>prosjekter</highlight> Høydepunkter",
+    "subheadline": "Våre prosjekthøydepunkter viser innovative løsninger og vellykkede implementeringer som driver kundevekst.",
+    "devOpsProject": "Dev Ops-prosjekt",
+    "ui/uxProject": "UI/UX designprosjekt"
+  },
   "TransformationSection": {
-    "headline": "Fra vanlig til ekstraordinært",
-    "subtext": "Design som varer og vokser med din virksomhet"
+    "headline": "Fra ordinær til ekstraordinær",
+    "subtext": "Arbeid som er bygget for å vare og vokse med din virksomhet"
   },
   "CommitmentSection": {
-    "headline": "<highlight>Dine</highlight> mål, vår <highlight>prioritet</highlight>",
-    "description": "Fra idé til lansering er vi dedikert til din suksess – med raske responstider og fokus på detaljer."
+    "headline": "Dine <highlight>mål</highlight>, vår <highlight>prioritet</highlight>",
+    "description": "Fra idé til lansering – vi er dedikert til din suksess med rask respons og personlig oppfølging."
   },
   "Services": {
     "title": "Tjenester",
@@ -51,75 +57,75 @@
       {
         "id": "01",
         "title": "Dev Ops",
-        "description": "Vi skaper innflytelsesrike merkevareidentiteter som skiller din virksomhet ut og knytter kontakt med målgruppen din."
+        "description": "Vi skaper sterke merkevareidentiteter som skiller deg ut og treffer målgruppen din."
       },
       {
         "id": "02",
         "title": "Webutvikling",
-        "description": "Vi bygger raske, skalerbare og sikre nett- og mobilapplikasjoner tilpasset dine forretningsmål."
+        "description": "Vi utvikler raske, skalerbare og sikre nett- og mobilapper tilpasset dine mål."
       },
       {
         "id": "03",
-        "title": "UI UX Design",
-        "description": "Vi designer og utvikler responsive, brukervennlige nettsteder som styrker din tilstedeværelse på nett."
+        "title": "UI/UX Design",
+        "description": "Vi designer responsive og brukervennlige nettsteder som styrker din digitale tilstedeværelse."
       },
       {
         "id": "04",
-        "title": "IT Teamutleie",
-        "description": "Vårt team tilbyr kontinuerlig designstøtte for å sikre at dine visuelle elementer forblir konsekvente og effektive."
+        "title": "IT-team outsourcing",
+        "description": "Vi tilbyr kontinuerlig designstøtte for å sikre konsistente og effektive visuelle løsninger."
       }
     ]
   },
   "About": {
-    "quote": "Nordisk Soft hjelper selskaper med å skape imponerende og strategisk gjennomtenkte opplevelser som <highlight>engasjerer målgruppen</highlight>. Våre <highlight>eksperter</highlight> jobber tett med deg for å sikre at hver detalj er i tråd med <highlight>dine mål</highlight>.",
-    "description": "Fra idé til lansering skaper vi digitale løsninger som ikke bare ser eksepsjonelle ut, men også gir resultater og bygger varige relasjoner."
+    "quote": "Nordisk Soft hjelper selskaper med å lage imponerende og strategisk solide opplevelser som <highlight>engasjerer publikum</highlight>. Våre <highlight>eksperter</highlight> jobber tett med deg for å sikre at hvert detalj er tilpasset <highlight>dine mål.</highlight>",
+    "description": "Fra idé til lansering – vi skaper digitale løsninger som ikke bare ser bra ut, men også gir resultater og bygger varige forbindelser."
   },
   "Pricing": {
     "title": "Fleksibel prising",
-    "description": "Velg den planen som passer best for dine behov – fra en solid grunnmur til en fullt optimalisert løsning.",
+    "description": "Velg planen som passer dine behov. Fra en solid start til en fullt optimalisert løsning.",
     "billingToggle": {
       "annual": "Årlig",
       "monthly": "Månedlig"
     },
-    "whatsIncluded": "Hva er inkludert",
+    "whatsIncluded": "Dette er inkludert",
     "plans": {
       "monthly": [
         {
-          "name": "Basic",
+          "name": "Grunnpakke",
           "price": "$799 /måned",
           "description": "For små bedrifter eller startups som bygger sin første digitale tilstedeværelse.",
           "button": "Velg denne planen",
           "features": [
             "Konkurrentanalyse",
-            "Design av forside + opptil 4 undersider",
-            "Utvikling av skreddersydde sideprototyper",
-            "Oppsett av grunnleggende analyse (f.eks. Google Analytics)",
+            "Design av hjemmeside + opptil 4 undersider",
+            "Opprettelse av egendefinerte prototyper",
+            "Grunnleggende analyseoppsett (f.eks. Google Analytics)",
             "Feilretting og teststøtte"
           ]
         },
         {
           "name": "Pro",
-          "price": "$1.999 /måned",
+          "price": "$1,999 /måned",
           "description": "For små bedrifter eller startups som bygger sin første digitale tilstedeværelse.",
           "button": "Velg denne planen",
           "features": [
             "Konkurrentanalyse",
-            "Design av forside + opptil 4 undersider",
-            "Utvikling av skreddersydde sideprototyper",
-            "Oppsett av grunnleggende analyse (f.eks. Google Analytics)",
+            "Design av hjemmeside + opptil 4 undersider",
+            "Opprettelse av egendefinerte prototyper",
+            "Grunnleggende analyseoppsett (f.eks. Google Analytics)",
             "Feilretting og teststøtte"
           ]
         },
         {
           "name": "Max Premium",
-          "price": "$1.999 /måned",
+          "price": "$1,999 /måned",
           "description": "For små bedrifter eller startups som bygger sin første digitale tilstedeværelse.",
           "button": "Velg denne planen",
           "features": [
             "Konkurrentanalyse",
-            "Design av forside + opptil 4 undersider",
-            "Utvikling av skreddersydde sideprototyper",
-            "Oppsett av grunnleggende analyse (f.eks. Google Analytics)",
+            "Design av hjemmeside + opptil 4 undersider",
+            "Opprettelse av egendefinerte prototyper",
+            "Grunnleggende analyseoppsett (f.eks. Google Analytics)",
             "Feilretting og teststøtte"
           ]
         }
@@ -127,70 +133,68 @@
       "yearly": []
     }
   },
-
   "FAQ": {
     "title": "FAQ",
-    "description": "Vi har hørt det meste. Her er alt du trenger å vite før du samarbeider med oss.",
+    "description": "Vi har hørt det meste. Her er alt du trenger å vite før du jobber med oss.",
     "questions": [
       {
-        "question": "Hva er prosessen deres for å designe og utvikle et nytt nettsted?",
-        "answer": "Jeg starter med å forstå kundens mål og designer brukervennlige oppsett, deretter utvikler og tester jeg nettstedet for optimal ytelse. Etter lansering fokuserer jeg på vedlikehold og kontinuerlige forbedringer."
+        "question": "Hva er prosessen for å designe og utvikle en ny nettside?",
+        "answer": "Jeg starter med å forstå kundens mål og lage brukervennlige design, deretter utvikler og tester jeg nettsiden for optimal ytelse. Etter lansering fokuserer jeg på vedlikehold og kontinuerlige forbedringer."
       },
       {
-        "question": "Hva om jeg trenger å gjøre endringer eller legge til funksjoner i fremtiden?",
-        "answer": "Vi planlegger prosjektet ditt med modulær kode for å gjøre fremtidige oppdateringer enklere. Bruk av versjonskontroll og grundig dokumentasjon gjør det også lettere å implementere nye funksjoner."
+        "question": "Hva om jeg trenger å gjøre endringer eller legge til funksjoner senere?",
+        "answer": "Vi planlegger prosjektet ditt med modulær kode for enklere fremtidige oppdateringer. Vi bruker versjonskontroll og god dokumentasjon for å sikre en smidig prosess."
       },
       {
         "question": "Tilbyr dere SEO-tjenester?",
-        "answer": "Ja, vi tilbyr omfattende SEO-tjenester for å forbedre nettstedets synlighet og rangering. La oss hjelpe deg med å nå dine mål innen digital markedsføring!"
+        "answer": "Ja, vi tilbyr omfattende SEO-tjenester for å forbedre synligheten og rangeringen til nettstedet ditt."
       },
       {
-        "question": "Hvor lang tid tar det vanligvis før jeg ser resultater fra det nye nettstedet mitt?",
-        "answer": "Resultater fra det nye nettstedet ditt begynner vanligvis å vises innen 1–3 måneder, med langsiktig vekst etter 6 måneder eller mer. Jevn optimalisering og markedsføring er nøkkelen til raskere suksess."
+        "question": "Hvor lang tid tar det vanligvis før man ser resultater fra den nye nettsiden?",
+        "answer": "Resultater vises vanligvis innen 1–3 måneder, med langsiktig vekst over 6 måneder eller mer. Kontinuerlig optimalisering er nøkkelen til suksess."
       },
       {
-        "question": "Hvordan sikrer dere at nettstedet er mobilvennlig?",
-        "answer": "Vi bruker responsivt design med fleksible oppsett, optimaliserte bilder og berøringsvennlige elementer for alle skjermstørrelser. Vi tester jevnlig på ekte enheter og med verktøy som Googles Mobile-Friendly Test for å sikre god mobilbrukervennlighet."
+        "question": "Hvordan sikrer dere at nettsiden fungerer godt på mobil?",
+        "answer": "Vi bruker responsivt design, fleksible layouter og mobilvennlige elementer. Vi tester regelmessig på ekte enheter og med verktøy som Google’s Mobile-Friendly Test."
       }
     ]
   },
   "Contact": {
     "heading": "La oss jobbe sammen",
     "title": "Kontakt oss!",
-    "description": "La oss skape noe fantastisk sammen! Ta kontakt – jeg vil gjerne høre om prosjektet ditt og ideene dine.",
-    "support1": "24/7 fulltidssupport",
-    "support2": "Tilgjengelig over hele verden",
+    "description": "La oss skape noe fantastisk sammen! Fortell oss om prosjektet ditt – vi vil gjerne høre fra deg.",
+    "support1": "24/7 Fulltidssupport",
+    "support2": "Tilgjengelig globalt",
     "button": "Kontakt nå",
     "form": {
       "name": "Navn*",
       "email": "E-post*",
-      "message": "Melding* (Fortell oss om prosjektet ditt)",
+      "message": "Melding* <small>(Fortell oss om prosjektet ditt)</small>",
       "submit": "Send inn"
     }
   },
   "Footer": {
-    "newsletterTitle": "Hold kontakten",
-    "newsletterDescription": "Abonner på vårt nyhetsbrev og få siste nytt innen digitale designtrender",
+    "newsletterTitle": "Hold deg oppdatert",
+    "newsletterDescription": "Meld deg på nyhetsbrevet vårt og få med deg de siste trendene innen digital design",
     "emailPlaceholder": "E-post",
     "links": {
       "about": "Om oss",
       "projects": "Prosjekter",
       "blog": "Blogg",
-      "content": "Innhold",
-      "privacy": "Personvernerklæring",
-      "terms": "Vilkår og betingelser",
-      "services": "Tjenester",
-      "faq": "Vanlige spørsmål",
       "contact": "Kontakt",
+      "privacy": "Personvern",
+      "terms": "Vilkår",
+      "services": "Tjenester",
+      "faq": "FAQ",
       "twitter": "Twitter",
       "behance": "Behance",
       "instagram": "Instagram",
       "dribbble": "Dribbble"
     },
     "contact": {
-      "phone": "(+92) 300 9999999",
-      "email": "hello@reemstudio.com"
+      "phone": "(+47) 400 00 000",
+      "email": "hei@nordisksoft.no"
     },
-    "description": "Med Nordisk Soft vokser selskapet ditt sømløst gjennom innovative programvareløsninger. Vi gir virksomheten din kraft til å blomstre i den digitale tidsalderen."
+    "description": "Med Nordisk Soft vokser virksomheten din sømløst gjennom innovative programvareløsninger. Vi gir deg kraften til å lykkes i den digitale tidsalderen."
   }
 }
