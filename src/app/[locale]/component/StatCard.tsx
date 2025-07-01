@@ -28,14 +28,12 @@ export default function StatCard({ label, title, description }: StatCardProps) {
     },
   };
 
-  // Split label into number and suffix
   const parseLabel = (text: string) => {
     const match = text.match(/^([\d.,]+)(.*)$/);
     return match ? [match[1], match[2]] : [text, ""];
   };
 
   const [numberPart, suffixPart] = parseLabel(label);
-
   const { ref, inView } = useInView({ triggerOnce: true });
   const [startCount, setStartCount] = useState(false);
 
@@ -50,7 +48,7 @@ export default function StatCard({ label, title, description }: StatCardProps) {
       ref={ref}
       className="w-full flex flex-col gap-3 sm:gap-4 font-inter"
       variants={slideFromBack}
-      transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+      transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -63,6 +61,7 @@ export default function StatCard({ label, title, description }: StatCardProps) {
         {startCount && (
           <CountUp
             end={parseFloat(numberPart.replace(/,/g, ""))}
+            start={0}
             duration={6}
             separator=","
             decimals={numberPart.includes(".") ? 1 : 0}

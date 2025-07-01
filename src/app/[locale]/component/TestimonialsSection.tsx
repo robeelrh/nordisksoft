@@ -12,6 +12,7 @@ import { Star } from "lucide-react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Autoplay, Mousewheel, Pagination } from "swiper/modules";
 import { useRef } from "react";
+import { motion } from "framer-motion";
 
 interface Testimonial {
   id: number;
@@ -90,6 +91,14 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+const slideFromBottom = {
+  hidden: { opacity: 0, y: 200 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 export default function TestimonialsSection() {
   return (
     <section className=" scroll-mt-28 py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 m-4 rounded-3xl">
@@ -102,42 +111,50 @@ export default function TestimonialsSection() {
             Success stories from our clients
           </h2>
         </div>
-        <Swiper
-          spaceBetween={24}
-          slidesPerView="auto"
-          loop={true}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          mousewheel={{ forceToAxis: true }}
-          modules={[Autoplay, Pagination, Mousewheel]}
-          className="w-full px-6"
+        <motion.div
+          variants={slideFromBottom}
+          transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
         >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide
-              key={testimonial.id}
-              className="!w-[300px]  md:!w-[560px] flex-shrink-0"
-            >
-              <div
-                className={`h-[300px] md:h-[280px] ${
-                  testimonial.type === "text"
-                    ? "bg-slate-700/50 p-6"
-                    : "bg-slate-600/30 overflow-hidden"
-                } rounded-2xl backdrop-blur-sm border border-white/10`}
+          <Swiper
+            spaceBetween={24}
+            slidesPerView="auto"
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            mousewheel={{ forceToAxis: true }}
+            modules={[Autoplay, Pagination, Mousewheel]}
+            className="w-full px-6"
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide
+                key={testimonial.id}
+                className="!w-[300px]  md:!w-[560px] flex-shrink-0"
               >
-                {testimonial.type === "image" ? (
-                  <ImageCard testimonial={testimonial} />
-                ) : testimonial.type === "video" ? (
-                  <VideoCard testimonial={testimonial} />
-                ) : (
-                  <TextCard testimonial={testimonial} />
-                )}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                <div
+                  className={`h-[300px] md:h-[280px] ${
+                    testimonial.type === "text"
+                      ? "bg-slate-700/50 p-6"
+                      : "bg-slate-600/30 overflow-hidden"
+                  } rounded-2xl backdrop-blur-sm border border-white/10`}
+                >
+                  {testimonial.type === "image" ? (
+                    <ImageCard testimonial={testimonial} />
+                  ) : testimonial.type === "video" ? (
+                    <VideoCard testimonial={testimonial} />
+                  ) : (
+                    <TextCard testimonial={testimonial} />
+                  )}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
     </section>
   );

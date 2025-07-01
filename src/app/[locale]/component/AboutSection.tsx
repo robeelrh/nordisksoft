@@ -33,7 +33,7 @@ export default function TeamShowcaseSection() {
           className="lg:col-span-3 space-y-6 h-full flex flex-col justify-center"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <div className="text-2xl xl:text-3xl font-semibold font-inter leading-tight text-gray-800">
@@ -48,7 +48,7 @@ export default function TeamShowcaseSection() {
             className="text-lg text-[#666666] leading-relaxed max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
             {t("description")}.
@@ -71,7 +71,7 @@ export default function TeamShowcaseSection() {
             <motion.div
               variants={slideFromLeft}
               initial="hidden"
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
               whileInView={"visible"}
               viewport={{ once: true }}
             >
@@ -85,7 +85,7 @@ export default function TeamShowcaseSection() {
             <motion.div
               className="relative leading-none"
               variants={slideFromTop}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
               initial="hidden"
               whileInView={"visible"}
               viewport={{ once: true }}
@@ -127,7 +127,7 @@ export default function TeamShowcaseSection() {
             <motion.div
               variants={slideFromLeft}
               initial="hidden"
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
               whileInView={"visible"}
               viewport={{ once: true }}
               className="bg-[#49a1ff] rounded-full flex items-center justify-center leading-none"
@@ -141,7 +141,7 @@ export default function TeamShowcaseSection() {
             <motion.div
               variants={slideFromRight}
               initial="hidden"
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
               whileInView={"visible"}
               viewport={{ once: true }}
             >
@@ -167,7 +167,7 @@ export default function TeamShowcaseSection() {
             <motion.div
               className="relative"
               variants={slideFromLeft}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
               initial="hidden"
               whileInView={"visible"}
               viewport={{ once: true }}
@@ -195,7 +195,7 @@ export default function TeamShowcaseSection() {
             </motion.div>
             <motion.div
               variants={slideFromBottom}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
               initial="hidden"
               whileInView={"visible"}
               viewport={{ once: true }}

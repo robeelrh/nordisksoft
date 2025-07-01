@@ -16,7 +16,7 @@ export default function ProjectSection() {
   const t = useTranslations("ProjectSection");
 
   const slideFromLeft = {
-    hidden: { opacity: 0, x: -100 },
+    hidden: { opacity: 0, x: -200 },
     visible: {
       opacity: 1,
       x: 0,
@@ -24,7 +24,7 @@ export default function ProjectSection() {
   };
 
   const slideFromRight = {
-    hidden: { opacity: 0, x: 100 },
+    hidden: { opacity: 0, x: 200 },
     visible: {
       opacity: 1,
       x: 0,
@@ -42,7 +42,7 @@ export default function ProjectSection() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}
-          transition={{ delay: 0.4, duration: 0.4 }}
+          transition={{ delay: 0.4, duration: 1 }}
           viewport={{ once: true }}
         >
           {t.rich("headline", {
@@ -54,7 +54,7 @@ export default function ProjectSection() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromRight}
-          transition={{ delay: 0.4, duration: 0.4 }}
+          transition={{ delay: 0.4, duration: 1 }}
           viewport={{ once: true }}
         >
           {t("subheadline")}
@@ -67,7 +67,7 @@ export default function ProjectSection() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ delay: 0.4, duration: 1 }}
           viewport={{ once: true }}
         >
           <BigCard text={t("devOpsProject")} image={DevOpsProject2} />

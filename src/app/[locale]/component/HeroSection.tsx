@@ -35,7 +35,7 @@ export default function HeroSection() {
         initial="hidden"
         whileInView="visible"
         variants={slideFromBottom}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         <p className="text-2xl md:text-3xl lg:text-5xl  font-bold leading-tight font-inter text-white">

@@ -35,7 +35,7 @@ export default function Navigation() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromTop}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
         >
           {/* Logo */}
           <div className="flex items-center gap-2">
