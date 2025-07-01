@@ -23,7 +23,7 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="h-[900px] md:h-[650px] py-8 lg:pt-10  w-4/5 mx-auto flex flex-col items-start justify-around font-inter">
+    <section className="h-[900px] md:h-[650px] py-8 lg:pt-10 w-11/12 xl:w-4/5 mx-auto flex flex-col items-start justify-around font-inter">
       <motion.div
         className="w-full flex items-center justify-center flex-col font-semibold gap-3 text-start text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4"
         variants={slideFromTop}
