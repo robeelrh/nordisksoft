@@ -36,7 +36,7 @@ export default function ProjectSection() {
       id="projects"
       className="scroll-mt-28 w-4/5 mx-auto min-h-[900px] lg:min-h-[600px] lg:h-[650px] xl:h-[740px] 2xl:h-[850px] flex flex-col justify-between  py-12 font-inter"
     >
-      <div className="w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-10">
+      <div className="w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 ">
         <motion.h2
           className="font-semibold text-2xl md:text-3xl lg:text-5xl xl:text-6xl text-center"
           initial="hidden"

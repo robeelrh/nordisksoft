@@ -143,7 +143,7 @@ export default function FooterSection() {
                 <div className="text-2xl lg:text-2xl xl:text-[32px] text-blue font-medium">
                   {t("newsletterTitle")}
                 </div>
-                <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full font-medium md:w-[85%]">
+                <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full font-medium md:w-[80%] xl:w-[75%]">
                   {t("newsletterDescription")}
                 </div>
               </div>
