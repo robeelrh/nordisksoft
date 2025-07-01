@@ -38,14 +38,14 @@ export default function FooterSection() {
       text: t("links.contact"),
       link: "#contact",
     },
-    {
-      text: t("links.privacy"),
-      link: "/privacy",
-    },
-    {
-      text: t("links.terms"),
-      link: "/terms",
-    },
+    // {
+    //   text: t("links.privacy"),
+    //   link: "/privacy",
+    // },
+    // {
+    //   text: t("links.terms"),
+    //   link: "/terms",
+    // },
     {
       text: "Twitter",
       link: "https://twitter.com",
