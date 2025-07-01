@@ -25,7 +25,7 @@ export default function HeroSection() {
           autoPlay
           muted
           loop
-          preload="auto"
+          preload="metadata"
         />
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
