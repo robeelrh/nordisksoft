@@ -26,9 +26,9 @@ export default function TeamShowcaseSection() {
   return (
     <section
       id="about"
-      className="scroll-mt-28 h-[1150px] md:h-[950px] lg:h-[750px] xl:h-[840px] w-11/12 xl:w-4/5 mx-auto flex items-center"
+      className="scroll-mt-28 h-[950px] lg:h-[750px] xl:h-[680px] w-11/12 xl:w-4/5 mx-auto flex items-center"
     >
-      <div className="grid lg:grid-cols-5 gap-20 md:gap-14 items-start">
+      <div className="grid lg:grid-cols-5 gap-20 md:gap-14 lg:gap-8 items-start">
         <motion.div
           className="lg:col-span-3 space-y-6 h-full flex flex-col justify-center"
           initial={{ opacity: 0, x: -50 }}
@@ -78,7 +78,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={TextTop}
                 alt="text-top"
-                className="h-52 lg:h-36 xl:h-44 2xl:h-48 leading-none"
+                className="h-32 md:h-52 lg:h-36 xl:h-44 2xl:h-48 leading-none"
               />
             </motion.div>
 
@@ -93,20 +93,20 @@ export default function TeamShowcaseSection() {
               <Image
                 src={ImageTop}
                 alt="image-top"
-                className="h-52 lg:h-36 xl:h-44 2xl:h-48 leading-none"
+                className="h-32 md:h-52 lg:h-36 xl:h-44 2xl:h-48 leading-none"
               />
 
-              <div className="absolute top-0 md:-top-6 -left-10 lg:-left-12 xl:-left-14">
+              <div className="absolute -top-6 -left-12 md:-left-10 lg:-left-12 xl:-left-14">
                 <div className="relative bg-black text-white rounded-full px-6  py-1 inline-flex items-center justify-center rotate-[-35deg] z-20">
                   <div
-                    className="absolute -bottom-7  left-14 xl:left-16 transform -translate-x-1/2 w-0 h-0 
+                    className="absolute -bottom-7 left-12  md:left-14 xl:left-16 transform -translate-x-1/2 w-0 h-0 
               border-l-20 border-r-20 border-b-32 border-l-transparent 
               border-r-transparent border-b-black rotate-[-190deg]"
                   />
                   <Image
                     src={SmileGIF}
                     alt="emoji-bottom"
-                    className="w-12 h-10  md:w-14 md:h-12 lg:w-12 lg:h-10 xl:w-16 xl:h-12" // adjust size as needed
+                    className="w-10 h-10  md:w-14 md:h-12 lg:w-12 lg:h-10 xl:w-16 xl:h-12" // adjust size as needed
                   />
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={PencilGIF}
                 alt="pencil-center"
-                className="h-24 xl:h-24 w-52 lg:w-36 xl:w-52"
+                className="h-16 w-40 md:h-24 xl:h-28 md:w-52 lg:w-36 xl:w-48"
               />
             </motion.div>
             <motion.div
@@ -148,7 +148,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={ImageCenter}
                 alt="image-center"
-                className="h-36 lg:h-30 xl:h-36 2xl:h-40 w-64 lg:w-52 xl:w-72"
+                className="h-28 w-52 md:h-36 lg:h-30 xl:h-36 2xl:h-40 md:w-64 lg:w-52 xl:w-72"
               />
             </motion.div>
           </motion.div>
@@ -175,7 +175,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={ImageBottom}
                 alt="image-bottom"
-                className="h-52 lg:h-36 xl:h-44 2xl:h-48"
+                className="h-32 md:h-52 lg:h-36 xl:h-44 2xl:h-48"
               />
 
               <div className="absolute -top-6 xl:-top-8 -right-14 lg:-right-12 xl:-right-16">
@@ -188,7 +188,7 @@ export default function TeamShowcaseSection() {
                   <Image
                     src={VictoryGIF}
                     alt="emoji-bottom"
-                    className="w-16 h-14 lg:w-12 lg:h-10 xl:w-16 xl:h-14" // adjust size as needed
+                    className="w-12 h-12 md:w-16 md:h-14 lg:w-12 lg:h-10 xl:w-16 xl:h-14" // adjust size as needed
                   />
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={TextBottom}
                 alt="text-bottom"
-                className="h-52 lg:h-36 xl:h-44 2xl:h-48  "
+                className="h-32 md:h-52 lg:h-36 xl:h-44 2xl:h-48  "
               />
             </motion.div>
           </motion.div>

@@ -16,7 +16,7 @@ export default function ProjectSection() {
   const t = useTranslations("ProjectSection");
 
   const slideFromLeft = {
-    hidden: { opacity: 0, x: -200 },
+    hidden: { opacity: 0, x: -170 },
     visible: {
       opacity: 1,
       x: 0,
@@ -24,7 +24,7 @@ export default function ProjectSection() {
   };
 
   const slideFromRight = {
-    hidden: { opacity: 0, x: 200 },
+    hidden: { opacity: 0, x: 170 },
     visible: {
       opacity: 1,
       x: 0,
@@ -34,11 +34,11 @@ export default function ProjectSection() {
   return (
     <section
       id="projects"
-      className="scroll-mt-20 w-11/12 xl:w-4/5 mx-auto min-h-[900px] lg:min-h-[600px] lg:h-[650px] xl:h-[740px] 2xl:h-[820px] flex flex-col justify-between  py-12 font-inter"
+      className="scroll-mt-20 w-11/12 xl:w-4/5 mx-auto min-h-[900px] lg:min-h-[600px] lg:h-[650px] xl:h-[740px] 2xl:h-[820px] flex flex-col justify-between  gap-8 md:gap-12 md:pt-4 font-inter"
     >
       <div className="w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 ">
         <motion.h2
-          className="font-semibold text-2xl md:text-3xl lg:text-5xl xl:text-6xl text-center"
+          className="font-semibold text-4xl lg:text-5xl xl:text-6xl text-center"
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}

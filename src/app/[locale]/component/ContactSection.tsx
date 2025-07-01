@@ -17,11 +17,11 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-28 py-16 mb-10 md:h-[970px] lg:h-[670px] xl:h-[640px] mx-auto xl:w-4/5 w-11/12 rounded-3xl my-6 overflow-hidden"
+      className="relative scroll-mt-28 py-16 mb-10  md:h-[970px] lg:h-[670px] xl:h-[640px] mx-auto xl:w-4/5 w-11/12 rounded-3xl my-6 overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
         <Image
-          src={Background} 
+          src={Background}
           alt="Contact Background"
           fill
           className="object-cover"
@@ -29,7 +29,7 @@ export default function ContactSection() {
         />
       </div>
 
-      <div className="relative z-20 w-10/12 mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 h-full">
+      <div className="relative z-20 px-5 md:w-10/12 md:px-0 mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 md:gap-0 lg:gap-12 h-full">
         <div className="flex flex-col gap-12 lg:w-1/2 h-full justify-start">
           <div className="flex flex-col gap-8 text-white font-inter">
             <p className="font-semibold text-lg lg:text-3xl text-white">

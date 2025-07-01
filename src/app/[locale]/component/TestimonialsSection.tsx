@@ -103,7 +103,7 @@ const slideFromBottom = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative scroll-mt-28 py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] rounded-3xl overflow-hidden">
+    <section className="relative scroll-mt-28 py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] rounded-3xl overflow-hidden my-6">
       <div className="absolute inset-0 z-0">
         <Image
           src={Background}
@@ -215,7 +215,7 @@ function VideoCard({ testimonial }: { testimonial: Testimonial }) {
       <video
         ref={videoRef}
         src={testimonial.image as string}
-        className="object-cover w-full h-full rounded-2xl"
+        className="object-fill   w-full h-full rounded-2xl"
         controls
         preload="metadata"
         onPlay={() => {

@@ -31,19 +31,19 @@ export default function HeroSection() {
       </div>
 
       <motion.div
-        className="z-10 flex-1/3 flex flex-col items-center justify-center text-center px-6 lg:px-8 max-w-5xl mx-auto pt-24 md:pt-24 xl:pt-20"
+        className="z-10 flex-1/3 flex flex-col items-center justify-center text-center px-6 lg:px-8 max-w-8xl mx-auto pt-24 md:pt-24 xl:pt-20"
         initial="hidden"
         whileInView="visible"
         variants={slideFromBottom}
         transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <p className="text-2xl md:text-3xl lg:text-5xl  font-bold leading-tight font-inter text-white">
+        <p className="text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl font-bold leading-tight font-inter text-white">
           {t.rich("headline", {
             highlight: (chunks) => <span className="text-blue">{chunks}</span>,
           })}
         </p>
-        <p className="text-2xl md:text-3xl xl:text-5xl font-bold leading-tight font-inter text-white">
+        <p className="text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl font-bold leading-tight font-inter text-white">
           {t.rich("subheadline", {
             highlight: (chunks) => <span className="text-blue">{chunks}</span>,
           })}

@@ -78,7 +78,7 @@ export default function ServiceSection() {
   return (
     <div
       id="services"
-      className="relative scroll-mt-28 font-inter flex h-[500px] md:h-[600px] py-8 sm:py-10 md:py-12 xl:py-12 mx-auto xl:w-4/5 w-11/12 rounded-3xl overflow-hidden"
+      className="relative scroll-mt-28 font-inter flex h-[500px] md:h-[600px] py-16  mx-auto xl:w-4/5 w-11/12 rounded-3xl overflow-hidden my-6"
     >
       <div className="absolute inset-0 z-0">
         <Image
@@ -90,11 +90,11 @@ export default function ServiceSection() {
         />
       </div>
 
-      <div className="flex flex-col gap-9 w-full px-5 md:px-0 md:w-10/12 mx-auto z-20">
+      <div className="flex flex-col gap-9 xl:gap-14 w-full px-5 md:px-0 md:w-10/12 mx-auto z-20 ">
         <p className="text-white text-3xl font-semibold">/{t("title")}</p>
 
         <motion.div
-          className="flex flex-col gap-7 lg:gap-11 ml-2"
+          className="flex-1 flex flex-col justify-between  ml-2"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"

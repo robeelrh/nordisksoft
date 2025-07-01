@@ -36,7 +36,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className=" scroll-mt-28 h-[680px] w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 font-inter "
+      className=" scroll-mt-28 min-h-[800px] lg:min-h-[680px] lg:h-[680px] w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 font-inter "
     >
       <div className="w-full h-full lg:w-1/4 mb-6 lg:mb-0 mt-0 lg:mt-20">
         <motion.h2
