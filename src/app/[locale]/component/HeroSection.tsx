@@ -1,12 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import Navigation from "./Navbar";
-import { slideFromBottom } from "@/utils/SliderAnimation";
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
   const backgroundContent = "/videos/hero-section-video.mp4";
   const t = useTranslations("HeroSection");
+
+  const slideFromBottom = {
+    hidden: { opacity: 0, y: 400 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
 
   return (
     <section className="relative min-h-[70vh] md:min-h-screen flex flex-col overflow-hidden">

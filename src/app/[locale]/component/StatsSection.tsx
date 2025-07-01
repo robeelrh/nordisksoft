@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import StatCard from "./StatCard";
-import { slideFromTop } from "@/utils/SliderAnimation";
 
 type TMetrics = {
   label: string;
@@ -14,6 +13,14 @@ type TMetrics = {
 export default function StatsSection() {
   const t = useTranslations("StatsSection");
   const metrics = t.raw("metrics") as TMetrics[];
+
+  const slideFromTop = {
+    hidden: { opacity: 0, y: -100 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
 
   return (
     <section className="h-[900px] md:h-[650px] py-8 lg:pt-10  w-4/5 mx-auto flex flex-col items-start justify-around font-inter">

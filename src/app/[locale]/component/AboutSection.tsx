@@ -135,7 +135,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={PencilGIF}
                 alt="pencil-center"
-                className="h-20 xl:h-30 w-60 lg:w-48 xl:w-64"
+                className="h-14 xl:h-24 w-60 lg:w-36 xl:w-52"
               />
             </motion.div>
             <motion.div
@@ -148,7 +148,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={ImageCenter}
                 alt="image-center"
-                className="h-40 lg:h-32 xl:h-44 2xl:h-48 w-56 lg:w-44 xl:w-60"
+                className="h-40 lg:h-32 xl:h-44 2xl:h-48 w-64 lg:w-52 xl:w-72"
               />
             </motion.div>
           </motion.div>

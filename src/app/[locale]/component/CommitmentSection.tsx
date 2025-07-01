@@ -1,14 +1,28 @@
 "use client";
 
-import { slideFromLeft, slideFromRight } from "@/utils/SliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 export default function CommitmentSection() {
   const t = useTranslations("CommitmentSection");
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  const slideFromRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
 
   return (
-    <section className="  w-full h-[300px] md:h-[350px] md:pb-12  px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 font-inter">
+    <section className="  w-full h-[300px] md:h-[400px] md:pb-12  px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 font-inter">
       <motion.h2
         className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center"
         initial="hidden"

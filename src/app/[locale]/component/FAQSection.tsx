@@ -73,67 +73,65 @@ export default function FAQSection() {
         {FAQS.map((faq, index) => (
           <motion.div
             key={index}
-            className="border-b border-gray p-3 md:p-6 group cursor-pointer hover:bg-gray-100 transition-colors duration-200 rounded-md"
+            className="group cursor-pointer transition-colors duration-200 rounded-2xl p-3"
             variants={faqItemAnimation}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            whileHover={{ x: 5, transition: { duration: 0.2 } }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            whileHover={{ transition: { duration: 0.4 } }}
             onHoverStart={() => setHoveredIndex(index)}
             onHoverEnd={() => setHoveredIndex(null)}
           >
-            {/* Question + Icon */}
-            <div className="flex justify-between items-center">
-              <p className="text-sm sm:text-base md:text-lg pr-4">
-                {faq.question}
-              </p>
-              <motion.div
-                className="transition-transform duration-300"
-                animate={{ rotate: hoveredIndex === index ? 45 : 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <Plus className="text-blue h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-              </motion.div>
-            </div>
-
-            {/* Animated Answer with Smooth Sliding */}
-            <AnimatePresence>
-              {hoveredIndex === index && (
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    height: 0,
-                    y: -10,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    height: "auto",
-                    y: 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    height: 0,
-                    y: -10,
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: [0.1, 0.62, 0.23, 0.98], // Custom easing for smooth feel
-                  }}
-                  className="overflow-hidden"
+            <div className="bg-white group-hover:bg-[#F4F4F5] rounded-2xl px-4 sm:px-6 pt-4 pb-2 transition-all duration-300 relative">
+              <div className="flex justify-between items-center pb-3">
+                <p
+                  className={`text-sm sm:text-base md:text-lg  ${
+                    hoveredIndex === index ? "text-blue" : "text-black"
+                  }`}
                 >
-                  <motion.div
-                    initial={{ y: -5, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -5, opacity: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.1, // Small delay for content to appear after container
-                    }}
-                    className="mt-3 pt-2 text-sm sm:text-base text-gray-600 leading-relaxed"
-                  >
-                    {faq.answer}
-                  </motion.div>
+                  {faq.question}
+                </p>
+                <motion.div
+                  className="transition-transform duration-300"
+                  animate={{ rotate: hoveredIndex === index ? 45 : 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <Plus className="text-blue h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                 </motion.div>
-              )}
-            </AnimatePresence>
+              </div>
+
+              <AnimatePresence>
+                {hoveredIndex === index && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0, y: -10 }}
+                    animate={{ opacity: 1, height: "auto", y: 0 }}
+                    exit={{ opacity: 0, height: 0, y: -10 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.1, 0.62, 0.23, 0.98],
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <motion.div
+                      initial={{ y: -5, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -5, opacity: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      className="pb-1 text-sm sm:text-base text-gray-600 leading-relaxed"
+                    >
+                      {faq.answer}
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <motion.div
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className=" w-full h-[1px] bg-gray-300 mb-2"
+                style={{
+                  bottom: hoveredIndex === index ? "0.3rem" : "0.2rem", // adjust distance from bottom
+                }}
+              />
+            </div>
           </motion.div>
         ))}
       </motion.div>

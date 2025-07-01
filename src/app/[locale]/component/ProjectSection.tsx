@@ -7,18 +7,29 @@ import {
   UiUxProject1,
   UiUxProject2,
 } from "@/assests";
-import {
-  slideFromBottom,
-  slideFromLeft,
-  slideFromRight,
-  slideFromTop,
-} from "@/utils/SliderAnimation";
+import { slideFromBottom, slideFromTop } from "@/utils/SliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 
 export default function ProjectSection() {
   const t = useTranslations("ProjectSection");
+
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  const slideFromRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
 
   return (
     <section

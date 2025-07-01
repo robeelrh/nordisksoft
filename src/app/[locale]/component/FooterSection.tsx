@@ -65,7 +65,7 @@ export default function FooterSection() {
   ];
 
   const firstColumnLinks = LINKS.slice(0, LINKS.length / 2 + 2);
-  const secondColumnLinks = LINKS.slice(LINKS.length / 2 + 2);
+  // const secondColumnLinks = LINKS.slice(LINKS.length / 2 + 2);
 
   const staggerContainer = {
     hidden: {},
@@ -97,7 +97,12 @@ export default function FooterSection() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="flex items-center gap-2">
-              <Image src={LogoBlack} alt="logo-black" />
+              <Image
+                src={LogoBlack}
+                alt="logo-black"
+                width={300}
+                height={200}
+              />
             </div>
           </motion.div>
           <div className="space-y-1 sm:space-y-2 lg:space-y-1 xl:space-y-3 font-inter font-medium mt-4 md:mt-0">
@@ -134,11 +139,11 @@ export default function FooterSection() {
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4 ml-6 lg:ml-8 xl:ml-0">
-                <div className="text-2xl lg:text-2xl xl:text-3xl text-blue font-semibold">
+              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-2 xl:gap-4 ml-6 lg:ml-0">
+                <div className="text-2xl lg:text-2xl xl:text-[32px] text-blue font-medium">
                   {t("newsletterTitle")}
                 </div>
-                <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full md:w-[85%]">
+                <div className="text-[#11111180] text-sm sm:text-base lg:text-md xl:text-lg w-full font-medium md:w-[85%]">
                   {t("newsletterDescription")}
                 </div>
               </div>
@@ -168,13 +173,13 @@ export default function FooterSection() {
                       key={index}
                       variants={linkAnimation}
                       transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="text-base lg:text-lg whitespace-nowrap"
+                      className="text-base lg:text-xl whitespace-nowrap"
                     >
                       <Link href={link.link}>{link.text}</Link>
                     </motion.div>
                   ))}
                 </motion.div>
-                <motion.div
+                {/* <motion.div
                   className="flex-1 flex flex-col gap-1 sm:gap-2"
                   variants={staggerContainer}
                   initial="hidden"
@@ -191,7 +196,7 @@ export default function FooterSection() {
                       <Link href={link.link}>{link.text}</Link>
                     </motion.div>
                   ))}
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </div>
           </div>
@@ -237,7 +242,7 @@ export default function FooterSection() {
                 </motion.div>
               ))}
             </motion.div>
-            <motion.div
+            {/* <motion.div
               className="flex-1 flex flex-col gap-1 sm:gap-2"
               variants={staggerContainer}
               initial="hidden"
@@ -254,7 +259,7 @@ export default function FooterSection() {
                   <Link href={link.link}>{link.text}</Link>
                 </motion.div>
               ))}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
