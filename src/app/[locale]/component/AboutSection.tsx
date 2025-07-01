@@ -135,7 +135,7 @@ export default function TeamShowcaseSection() {
               <Image
                 src={PencilGIF}
                 alt="pencil-center"
-                className="h-14 xl:h-24 w-60 lg:w-36 xl:w-52"
+                className="h-24 xl:h-24 w-52 lg:w-36 xl:w-52"
               />
             </motion.div>
             <motion.div

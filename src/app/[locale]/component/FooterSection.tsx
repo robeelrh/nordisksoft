@@ -115,7 +115,7 @@ export default function FooterSection() {
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              (+92) 300 9999999
+              +47 929 24 053
             </motion.p>
             <motion.p
               className="text-md md:text-2xl lg:text-2xl xl:text-3xl"
@@ -130,7 +130,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="w-full md:w-2/3 flex flex-col justify-around  font-inter font-medium">
+        <div className="w-full md:w-2/3 flex flex-col justify-between  font-inter font-medium">
           <div className="flex flex-col md:flex-row gap-0 lg:gap-2">
             <motion.div
               className="w-full md:w-3/5 flex flex-col gap-4 sm:gap-6 lg:gap-4 xl:gap-8"
@@ -185,7 +185,7 @@ export default function FooterSection() {
           </div>
 
           <motion.p
-            className="text-[#11111180] text-base w-full md:w-[80%] mx-auto lg:mx-0"
+            className="text-[#11111180] text-base w-full md:w-[67%] mx-auto lg:mx-0"
             variants={slideFromRight}
             initial="hidden"
             whileInView="visible"
