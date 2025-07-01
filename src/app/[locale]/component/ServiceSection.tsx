@@ -90,7 +90,6 @@ export default function ServiceSection() {
         />
       </div>
 
-
       <div className="flex flex-col gap-9 w-full px-5 md:px-0 md:w-10/12 mx-auto z-20">
         <p className="text-white text-3xl font-semibold">/{t("title")}</p>
 
@@ -124,7 +123,7 @@ export default function ServiceSection() {
               {/* Title and index */}
               <div className="relative z-10 flex items-start justify-between">
                 <motion.p
-                  className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white transition-transform duration-300 drop-shadow-md"
+                  className={`font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 text-white`}
                   animate={{
                     x: hoveredService === service.id ? 100 : 0,
                   }}
