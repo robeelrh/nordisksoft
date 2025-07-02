@@ -39,7 +39,7 @@ export default function Navigation() {
         >
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Image src={LogoWhite} alt="logo-white" />
+            <Image src={LogoWhite} alt="logo-white" width={200} height={100} />
           </div>
 
           {/* Desktop Navigation Items */}
