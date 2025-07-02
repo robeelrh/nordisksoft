@@ -12,6 +12,7 @@ import {
   WebImage,
 } from "@/assests";
 import Image, { StaticImageData } from "next/image";
+import { useIsMobile } from "@/hook/useIsMobile";
 
 type TService = {
   id: number;
@@ -32,7 +33,8 @@ export default function ServiceSection() {
 
   const searchParams = useSearchParams();
   const search = searchParams.get("search");
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+  const [activeService, setActiveService] = useState<number | null>(null);
 
   const getServiceBySearch = useCallback(
     (searchValue: string | null) => {
@@ -106,11 +108,20 @@ export default function ServiceSection() {
               variants={fadeInRight}
               transition={{ delay: 0.3 * index, duration: 0.4 }}
               className="relative group space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6 cursor-pointer overflow-hidden"
-              onMouseEnter={() => setHoveredService(service.id)}
-              onMouseLeave={() => setHoveredService(null)}
+              onMouseEnter={() => !isMobile && setActiveService(service.id)}
+              onMouseLeave={() => !isMobile && setActiveService(null)}
+              onClick={() =>
+                isMobile &&
+                setActiveService((prev) =>
+                  prev === service.id ? null : service.id
+                )
+              }
             >
-              {/* Left-side image on hover */}
-              <motion.div className="absolute left-0 top-1/2 -translate-y-1/2 z-0 opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none">
+              <motion.div
+                className={`absolute left-0 top-1/2 -translate-y-1/2 z-0 
+    opacity-0 pointer-events-none transition-opacity duration-500 
+    ${activeService === service.id ? "opacity-80" : "group-hover:opacity-80"}`}
+              >
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -120,12 +131,11 @@ export default function ServiceSection() {
                 />
               </motion.div>
 
-              {/* Title and index */}
               <div className="relative z-10 flex items-start justify-between">
                 <motion.p
                   className={`font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 text-white`}
                   animate={{
-                    x: hoveredService === service.id ? 100 : 0,
+                    x: activeService === service.id ? 100 : 0,
                   }}
                   transition={{ duration: 0.4 }}
                 >
@@ -134,7 +144,7 @@ export default function ServiceSection() {
 
                 <p
                   className={`font-semibold text-lg md:text-xl lg:text-2xl transition-colors duration-300 ${
-                    hoveredService === service.id
+                    activeService === service.id
                       ? "text-blue-400"
                       : "text-white"
                   }`}

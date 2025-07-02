@@ -1,5 +1,3 @@
-// === ProjectSection.tsx ===
-
 "use client";
 import {
   DevOpsProject1,
@@ -7,10 +5,12 @@ import {
   UiUxProject1,
   UiUxProject2,
 } from "@/assests";
+import { useIsMobile } from "@/hook/useIsMobile";
 import { slideFromBottom, slideFromTop } from "@/utils/SliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 
 export default function ProjectSection() {
   const t = useTranslations("ProjectSection");
@@ -115,21 +115,34 @@ interface IBigCard {
 }
 
 function BigCard({ text, image }: IBigCard) {
+  const isMobile = useIsMobile();
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    if (isMobile) setIsActive((prev) => !prev);
+  };
+
   return (
-    <div className="group relative w-full aspect-[464/484] overflow-hidden rounded-xl shadow-md">
-      {/* Image with hover brightness effect */}
+    <div
+      className="group relative w-full aspect-[464/484] overflow-hidden rounded-xl shadow-md"
+      onClick={handleClick}
+    >
       <Image
         src={image}
         alt={text}
         fill
-        className="object-cover transition duration-300 filter brightness-50 group-hover:brightness-100"
+        className={`object-cover transition duration-300 filter ${
+          isMobile
+            ? isActive
+              ? "brightness-100"
+              : "brightness-50"
+            : "brightness-50 group-hover:brightness-100"
+        }`}
         sizes="100%"
       />
 
-      {/* Optional gradient overlay for text contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-0" />
 
-      {/* Text content */}
       <div className="absolute bottom-0 left-0 p-4 z-10">
         <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md">
           {text}
@@ -144,13 +157,29 @@ interface ISmallCard {
   image: StaticImageData | string;
 }
 function SmallCard({ text, image }: ISmallCard) {
+  const isMobile = useIsMobile();
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    if (isMobile) setIsActive((prev) => !prev);
+  };
+
   return (
-    <div className="group relative w-full aspect-[464/230] overflow-hidden rounded-xl shadow-md">
+    <div
+      className="group relative w-full aspect-[464/230] overflow-hidden rounded-xl shadow-md"
+      onClick={handleClick}
+    >
       <Image
         src={image}
         alt={text}
         fill
-        className="object-cover transition duration-300 filter brightness-50 group-hover:brightness-100"
+        className={`object-cover transition duration-300 filter ${
+          isMobile
+            ? isActive
+              ? "brightness-100"
+              : "brightness-50"
+            : "brightness-50 group-hover:brightness-100"
+        }`}
         sizes="100%"
       />
 

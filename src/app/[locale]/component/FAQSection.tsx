@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { slideFromBottom, slideFromLeft } from "@/utils/SliderAnimation";
 import { useState } from "react";
+import { useIsMobile } from "@/hook/useIsMobile";
 
 type TFaq = {
   question: string;
@@ -13,7 +14,20 @@ type TFaq = {
 export default function FAQSection() {
   const t = useTranslations("FAQ");
   const FAQS = t.raw("questions") as TFaq[];
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
+  };
+
+  const handleMouseEnter = (index: number) => {
+    if (!isMobile) setActiveIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) setActiveIndex(null);
+  };
 
   const staggerContainer = {
     hidden: {},
@@ -75,22 +89,22 @@ export default function FAQSection() {
             className="group cursor-pointer transition-colors duration-200 rounded-2xl p-3"
             variants={faqItemAnimation}
             transition={{ duration: 1, ease: "easeOut" }}
-            whileHover={{ transition: { duration: 0.4 } }}
-            onHoverStart={() => setHoveredIndex(index)}
-            onHoverEnd={() => setHoveredIndex(null)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => isMobile && handleToggle(index)}
           >
             <div className="bg-white group-hover:bg-[#FAFAFA] rounded-2xl px-4 sm:px-6 pt-4 pb-2 transition-all duration-300 relative">
               <div className="flex justify-between items-center pb-3">
                 <p
                   className={`text-sm sm:text-base md:text-lg  ${
-                    hoveredIndex === index ? "text-blue" : "text-black"
+                    activeIndex === index ? "text-blue" : "text-black"
                   }`}
                 >
                   {faq.question}
                 </p>
                 <motion.div
                   className="transition-transform duration-300"
-                  animate={{ rotate: hoveredIndex === index ? 45 : 0 }}
+                  animate={{ rotate: activeIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
                   <Plus className="text-blue h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
@@ -98,7 +112,7 @@ export default function FAQSection() {
               </div>
 
               <AnimatePresence>
-                {hoveredIndex === index && (
+                {activeIndex === index && (
                   <motion.div
                     initial={{ opacity: 0, height: 0, y: 20 }}
                     animate={{ opacity: 1, height: "auto", y: 0 }}
@@ -127,7 +141,7 @@ export default function FAQSection() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className=" w-full h-[1px] bg-gray-300 mb-2"
                 style={{
-                  bottom: hoveredIndex === index ? "0.3rem" : "0.2rem", // adjust distance from bottom
+                  bottom: activeIndex === index ? "0.3rem" : "0.2rem", // adjust distance from bottom
                 }}
               />
             </div>
