@@ -136,9 +136,12 @@ export default function ContactForm() {
           />
           <label
             htmlFor="message"
-            className="absolute left-4 top-3 text-white/60 text-base pointer-events-none peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm transition-all duration-200"
+            className="absolute left-4 top-3 text-white/60 text-base pointer-events-none 
+    peer-placeholder-shown:opacity-100 peer-placeholder-shown:visible 
+    peer-focus:opacity-0 peer-focus:invisible 
+    transition-all duration-200"
           >
-            Message*{" "}
+            Message*
             <span className="text-xs text-white/60">
               (Tell us about your project)
             </span>
