@@ -160,7 +160,7 @@ export default function TestimonialsSection() {
                 <div
                   className={`h-[300px] md:h-[280px] ${
                     testimonial.type === "text"
-                      ? "bg-slate-700/50 p-6"
+                      ? "bg-[#2A2A2A] p-6"
                       : "bg-slate-600/30 overflow-hidden"
                   } rounded-2xl backdrop-blur-sm border border-white/10`}
                 >
