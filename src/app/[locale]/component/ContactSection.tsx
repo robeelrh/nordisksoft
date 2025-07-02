@@ -17,7 +17,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-28 py-16 mb-10  md:h-[970px] lg:h-[670px] xl:h-[640px] mx-auto xl:w-4/5 w-11/12 rounded-3xl my-6 overflow-hidden"
+      className="relative scroll-mt-28 py-16 2xl:py-40 mb-10  md:h-[970px] lg:h-[670px] xl:h-[640px] 2xl:h-[800px] mx-auto xl:w-4/5 w-11/12 rounded-3xl my-8 overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
         <Image

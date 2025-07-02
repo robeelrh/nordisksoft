@@ -80,7 +80,7 @@ export default function ServiceSection() {
   return (
     <div
       id="services"
-      className="relative scroll-mt-28 font-inter flex h-[500px] md:h-[600px] py-16  mx-auto xl:w-4/5 w-11/12 rounded-3xl overflow-hidden my-6"
+      className="relative scroll-mt-28 font-inter flex h-[500px] md:h-[600px] 2xl:h-[800px] py-16 2xl:py-40  mx-auto xl:w-4/5 w-11/12 rounded-3xl overflow-hidden mb-14"
     >
       <div className="absolute inset-0 z-0">
         <Image

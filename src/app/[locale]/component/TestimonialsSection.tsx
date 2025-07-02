@@ -103,7 +103,7 @@ const slideFromBottom = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative scroll-mt-28 py-16 mx-auto w-11/12 xl:w-4/5 h-[620px] rounded-3xl overflow-hidden my-6">
+    <section className="relative scroll-mt-28 py-16 2xl:py-40 mx-auto w-11/12 xl:w-4/5 h-[620px] 2xl:h-[800px] rounded-3xl overflow-hidden my-8">
       <div className="absolute inset-0 z-0">
         <Image
           src={Background}
@@ -115,7 +115,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-20 flex flex-col gap-12">
+      <div className="relative z-20 flex flex-col justify-between h-full gap-12">
         <div className="w-10/12 mx-auto flex flex-col gap-12">
           <p className="text-white font-semibold text-lg lg:text-3xl">
             /Testimonials
