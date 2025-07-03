@@ -125,7 +125,7 @@ export default function FooterSection() {
               transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              hello@nordisksoft.com
+              contact@nordisksoft.com
             </motion.p>
           </div>
         </div>
