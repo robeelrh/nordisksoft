@@ -118,7 +118,7 @@ export default function FooterSection() {
               +47 929 24 053
             </motion.p>
             <motion.p
-              className="text-md md:text-2xl lg:text-2xl xl:text-3xl"
+              className="text-md md:text-2xl lg:text-2xl 2xl:text-3xl"
               variants={slideFromBottom}
               initial="hidden"
               whileInView="visible"
