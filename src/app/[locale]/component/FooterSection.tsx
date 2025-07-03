@@ -46,25 +46,25 @@ export default function FooterSection() {
     //   text: t("links.terms"),
     //   link: "/terms",
     // },
-    {
-      text: "Twitter",
-      link: "https://twitter.com",
-    },
-    {
-      text: "Instagram",
-      link: "https://instagram.com",
-    },
-    {
-      text: "Facebook",
-      link: "https://facebook.com",
-    },
-    {
-      text: "Dribbble",
-      link: "https://dribbble.com",
-    },
+    // {
+    //   text: "Twitter",
+    //   link: "https://twitter.com",
+    // },
+    // {
+    //   text: "Instagram",
+    //   link: "https://instagram.com",
+    // },
+    // {
+    //   text: "Facebook",
+    //   link: "https://facebook.com",
+    // },
+    // {
+    //   text: "Dribbble",
+    //   link: "https://dribbble.com",
+    // },
   ];
 
-  const firstColumnLinks = LINKS.slice(0, LINKS.length / 2 + 2);
+  // const LINKS = LINKS.slice(0, LINKS.length / 2 + 2);
   // const secondColumnLinks = LINKS.slice(LINKS.length / 2 + 2);
 
   const staggerContainer = {
@@ -169,7 +169,7 @@ export default function FooterSection() {
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
                 >
-                  {firstColumnLinks.map((link, index) => (
+                  {LINKS.map((link, index) => (
                     <motion.div
                       key={index}
                       variants={linkAnimation}
@@ -216,7 +216,7 @@ export default function FooterSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              {firstColumnLinks.map((link, index) => (
+              {LINKS.map((link, index) => (
                 <motion.div
                   key={index}
                   variants={linkAnimation}
@@ -236,7 +236,7 @@ export default function FooterSection() {
             >
               {secondColumnLinks.map((link, index) => (
                 <motion.div
-                  key={index + firstColumnLinks.length}
+                  key={index + LINKS.length}
                   variants={linkAnimation}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   className="text-base lg:text-lg"
