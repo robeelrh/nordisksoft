@@ -22,7 +22,7 @@ export default function CommitmentSection() {
   };
 
   return (
-    <section className="  w-full h-[300px] md:h-[400px] md:py-12  px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 font-inter">
+    <section className="overflow-hidden  w-full h-[300px] md:h-[400px] md:py-12  px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 font-inter">
       <motion.h2
         className="font-semibold text-4xl lg:text-5xl xl:text-6xl text-center"
         initial="hidden"

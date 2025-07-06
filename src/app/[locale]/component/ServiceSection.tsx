@@ -143,7 +143,7 @@ export default function ServiceSection() {
                 </motion.p>
 
                 <p
-                  className={`font-semibold text-lg md:text-xl lg:text-2xl transition-colors duration-300 ${
+                  className={`hidden sm:block font-semibold text-lg md:text-xl lg:text-2xl transition-colors duration-300 ${
                     activeService === service.id
                       ? "text-blue-400"
                       : "text-white"

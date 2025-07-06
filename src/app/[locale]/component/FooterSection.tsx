@@ -85,7 +85,7 @@ export default function FooterSection() {
   };
 
   return (
-    <section className="min-h-[600px] md:min-h-[200px] md:h-[500px] bg-[#F4F4F5] w-full mt-24">
+    <section className="overflow-hidden min-h-[600px] md:min-h-[200px] md:h-[500px] bg-[#F4F4F5] w-full mt-24">
       <div className="h-full flex flex-col gap-6 md:gap-0  md:flex-row justify-between mx-auto xl:w-4/5 w-11/12 py-16">
         <div className="w-full md:w-1/3 h-full flex flex-col justify-between mt-4 md:mt-0">
           <motion.div

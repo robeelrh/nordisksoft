@@ -34,7 +34,7 @@ export default function ProjectSection() {
   return (
     <section
       id="projects"
-      className="scroll-mt-20 w-11/12 xl:w-4/5 mx-auto min-h-[900px] lg:min-h-[600px] lg:h-[650px] xl:h-[740px] 2xl:h-[820px] flex flex-col justify-between  gap-8 md:gap-12 md:pt-4 font-inter"
+      className="overflow-hidden scroll-mt-20 w-11/12 xl:w-4/5 mx-auto min-h-[900px] lg:min-h-[600px] lg:h-[650px] xl:h-[740px] 2xl:h-[820px] flex flex-col justify-between  gap-8 md:gap-12 md:pt-4 font-inter"
     >
       <div className="w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 ">
         <motion.h2

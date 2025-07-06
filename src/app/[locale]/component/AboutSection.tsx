@@ -26,7 +26,7 @@ export default function TeamShowcaseSection() {
   return (
     <section
       id="about"
-      className="scroll-mt-28 h-[900px] lg:h-[480px] xl:h-[630px] w-11/12 xl:w-4/5 mx-auto flex items-center my-14"
+      className="overflow-hidden scroll-mt-28 h-[970px] sm:h-[800px]  md:h-[900px] lg:h-[480px] xl:h-[630px] w-11/12 xl:w-4/5 mx-auto flex items-center my-14"
     >
       <div className="grid lg:grid-cols-5 gap-20 md:gap-14 lg:gap-8 items-start">
         <motion.div
