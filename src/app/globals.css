@@ -30,76 +30,10 @@
   display: none; /* Safari and Chrome */
 }
 
-/* html {
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-}
-
-body {
-  overflow-x: hidden; 
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-  position: relative;
-  z-index: 9999;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  position: relative;
-  z-index: 9999;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #4a4a4a;
-  border-radius: 6px;
-  position: relative;
-  z-index: 9999;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #5a5a5a;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #4a4a4a #1a1a1a;
-} */
-
 html {
   scroll-behavior: smooth;
-  scrollbar-gutter: stable; 
-  /* overflow-y: scroll; */
-  /* scrollbar-gutter: stable; */
+  scrollbar-gutter: stable;
 }
-/* 
-body {
-  overflow-x: hidden;
-} */
-
-/* ::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #4a4a4a;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #5a5a5a;
-} */
-
-/* For Firefox */
-/* * {
-  scrollbar-width: thin;
-  scrollbar-color: #4a4a4a #1a1a1a;
-} */
 
 /* 
 @theme inline {

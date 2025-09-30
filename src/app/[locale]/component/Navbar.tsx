@@ -17,6 +17,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { routing } from "@/i18n/routing";
+import LanguageSelect from "./LanguageSelect";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function Navigation() {
   };
 
   const languages = [
-    { value: "en", label: "English", flag: "🇬🇧" },
+    { value: "en", label: "English", flag: "🇺🇸" },
     { value: "no", label: "Norwegian", flag: "🇳🇴" },
   ];
 
@@ -76,7 +77,7 @@ export default function Navigation() {
           {/* Language Selector + Hire Us */}
           <div className="flex gap-4 items-center">
             <div className="hidden lg:flex space-y-2">
-              <Select
+              {/* <Select
                 key={currentLocale}
                 defaultValue={currentLocale}
                 onValueChange={(val) => {
@@ -108,7 +109,9 @@ export default function Navigation() {
                     </SelectItem>
                   ))}
                 </SelectContent>
-              </Select>
+              </Select> */}
+
+              <LanguageSelect />
             </div>
 
             <button
@@ -157,6 +160,10 @@ export default function Navigation() {
                     {item.name}
                   </motion.a>
                 ))}
+
+                <motion.div className=" space-y-2">
+                  <LanguageSelect />
+                </motion.div>
 
                 <motion.button
                   className="w-full bg-[#56aeff] cursor-pointer  hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4  font-inter"
