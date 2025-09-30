@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
@@ -8,12 +7,26 @@ import Image from "next/image";
 import { LogoWhite } from "@/assests";
 import { slideFromTop } from "@/utils/SliderAnimation";
 import { useRouter } from "@/i18n/navigation";
+import { usePathname } from "next/navigation"; // <-- from next/navigation;
+import { useLocale } from "next-intl";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { routing } from "@/i18n/routing";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const t = useTranslations("Navigation");
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
+
+  const currentLocale = locale || "en";
 
   const navItems = [
     { name: t("projects"), href: "#projects" },
@@ -27,9 +40,14 @@ export default function Navigation() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const languages = [
+    { value: "en", label: "English", flag: "🇬🇧" },
+    { value: "no", label: "Norwegian", flag: "🇳🇴" },
+  ];
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm">
-      <div className="lg:max-w-11/12 xl:max-w-4/5  mx-auto px-6 lg:px-8">
+      <div className="lg:max-w-full xl:max-w-4/5  mx-auto px-6 lg:px-8">
         <motion.div
           className="flex items-center justify-between h-16 md:h-20"
           initial="hidden"
@@ -55,14 +73,52 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Desktop Hire Us Button */}
-          <button
-            className="hidden cursor-pointer lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white lg:px-6 lg:py-2  xl:px-7 xl:py-3 rounded-lg items-center  font-inter gap-2 transition-all duration-200 text-xl font-semibold"
-            onClick={() => router.replace("#contact")}
-          >
-            {t("hireUs")}
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          {/* Language Selector + Hire Us */}
+          <div className="flex gap-4 items-center">
+            <div className="hidden lg:flex space-y-2">
+              <Select
+                key={currentLocale}
+                defaultValue={currentLocale}
+                onValueChange={(val) => {
+                  // 🛠 Strip the current locale from the path before pushing
+                  const segments = pathname.split("/");
+                  if (
+                    routing.locales.includes(
+                      segments[1] as (typeof routing.locales)[number]
+                    )
+                  ) {
+                    segments.splice(1, 1);
+                  }
+                  const cleanPath = segments.join("/") || "/";
+
+                  router.push(cleanPath, { locale: val });
+                  router.refresh();
+                }}
+              >
+                <SelectTrigger className="border border-[#56aeff] text-white lg:px-4 lg:py-5 xl:px-5 xl:py-6 rounded-lg items-center font-inter gap-2 text-xl font-semibold">
+                  <SelectValue className="text-xl" />
+                </SelectTrigger>
+                <SelectContent align="end" className="w-[200px]">
+                  {languages.map((lang) => (
+                    <SelectItem key={lang.value} value={lang.value}>
+                      <span className="flex items-center gap-2">
+                        <span>{lang.flag}</span>
+                        <span>{lang.label}</span>
+                      </span>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <button
+              className="hidden cursor-pointer lg:flex bg-[#56aeff] hover:bg-[#4a9ae8] text-white lg:px-6 lg:py-2  xl:px-7 xl:py-3 rounded-lg items-center  font-inter gap-2 transition-all duration-200 text-xl font-semibold"
+              onClick={() => router.push("#contact")}
+            >
+              {t("hireUs")}
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -101,6 +157,7 @@ export default function Navigation() {
                     {item.name}
                   </motion.a>
                 ))}
+
                 <motion.button
                   className="w-full bg-[#56aeff] cursor-pointer  hover:bg-[#4a9ae8] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4  font-inter"
                   initial={{ opacity: 0, y: 20 }}
@@ -108,7 +165,7 @@ export default function Navigation() {
                   transition={{ duration: 0.3, delay: 0.2 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
-                    router.replace("#contact");
+                    router.push("#contact");
                     setIsMobileMenuOpen(false);
                   }}
                 >

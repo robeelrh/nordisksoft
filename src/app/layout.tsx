@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
 import { ToasterProvider } from "@/providers/toaster-provider";
+import Navigation from "./[locale]/component/Navbar";
 
-const geistSans = Geist({
+import localFont from "next/font/local";
+
+export const geistSans = localFont({
+  src: "../fonts/Geist[wght].woff2",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
+export const geistMono = localFont({
+  src: "../fonts/GeistMono[wght].woff2",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -38,11 +44,16 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="overflow-y-scroll">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale}>
+          <Navigation />
+
+          <main className=" min-h-screen ">{children}</main>
+        </NextIntlClientProvider>
+
         <ToasterProvider />
       </body>
     </html>

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { MailDataRequired } from "@sendgrid/mail"; // ✅ This is the correct import
+import { MailDataRequired } from "@sendgrid/mail"; 
 import sendgrid from "@/config/sendgrid-config";
 
 interface EmailRequest {

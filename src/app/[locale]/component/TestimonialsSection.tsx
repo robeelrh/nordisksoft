@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Background,
-  TextCard1,
-  TextCard2,
-  TextCard3,
-  VideoCard1,
-  VideoCard2,
-} from "@/assests";
+import { Background, TextCard1, TextCard2, TextCard3 } from "@/assests";
 import Image, { StaticImageData } from "next/image";
 import { Star } from "lucide-react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
@@ -28,16 +21,6 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "David Johnson",
-    title: "Creative Director",
-    rating: 4,
-    score: "4.5/5",
-    testimonial: "",
-    image: VideoCard1,
-    type: "image",
-  },
   {
     id: 2,
     name: "Banny",
@@ -69,16 +52,6 @@ const testimonials: Testimonial[] = [
       "Outstanding service and exceptional results. The team at Nordisk Soft delivered beyond our expectations with their cutting-edge solutions and professional approach.",
     image: TextCard2,
     type: "text",
-  },
-  {
-    id: 5,
-    name: "Alexa Snow",
-    title: "Director",
-    rating: 5,
-    score: "4.5/5",
-    testimonial: "",
-    image: VideoCard2,
-    type: "image",
   },
   {
     id: 6,
@@ -255,7 +228,7 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
         {testimonial.testimonial}
       </p>
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-md overflow-hidden bg-slate-600">
+        {/* <div className="w-10 h-10 rounded-md overflow-hidden bg-slate-600">
           <Image
             src={testimonial.image}
             alt={testimonial.name}
@@ -263,7 +236,7 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
             height={40}
             className="object-cover"
           />
-        </div>
+        </div> */}
         <div>
           <h4 className="text-white font-semibold text-sm">
             {testimonial.name}

@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Navigation from "./Navbar";
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
@@ -17,7 +16,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[70vh] md:min-h-screen flex flex-col overflow-hidden">
-      <Navigation />
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
