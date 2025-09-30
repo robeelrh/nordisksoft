@@ -7,16 +7,6 @@ import Image from "next/image";
 import { LogoWhite } from "@/assests";
 import { slideFromTop } from "@/utils/SliderAnimation";
 import { useRouter } from "@/i18n/navigation";
-import { usePathname } from "next/navigation"; // <-- from next/navigation;
-import { useLocale } from "next-intl";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { routing } from "@/i18n/routing";
 import LanguageSelect from "./LanguageSelect";
 
 export default function Navigation() {
@@ -24,10 +14,6 @@ export default function Navigation() {
 
   const t = useTranslations("Navigation");
   const router = useRouter();
-  const pathname = usePathname();
-  const locale = useLocale();
-
-  const currentLocale = locale || "en";
 
   const navItems = [
     { name: t("projects"), href: "#projects" },
@@ -40,11 +26,6 @@ export default function Navigation() {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  const languages = [
-    { value: "en", label: "English", flag: "🇺🇸" },
-    { value: "no", label: "Norwegian", flag: "🇳🇴" },
-  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm">
