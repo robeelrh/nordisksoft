@@ -98,7 +98,7 @@ const languages = [
 export default function LanguageSelect() {
   const [open, setOpen] = useState(false);
   const locale = useLocale();
-  const currentLocale = locale || "en";
+  const currentLocale = locale || "no";
   const router = useRouter();
   const pathname = usePathname();
 
