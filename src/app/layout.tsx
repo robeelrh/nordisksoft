@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "From software development to digital strategy, we deliver scalable and secure services tailored to your needs.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/logo.svg",
   },
 };
 
